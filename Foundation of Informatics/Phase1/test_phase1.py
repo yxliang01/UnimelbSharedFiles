@@ -1,6 +1,10 @@
 """
 Author: Xiaoliang Yu
 Create Date: 4/2/2016
+
+This script takes two arguments which are the paths
+to the xml files that we are going to test whether 
+they can be treated as equal outputs.
 """
 
 from lxml import etree as ET
@@ -75,9 +79,9 @@ for uniques in itertools.chain(root1.iterfind(xpath_for_uniques),
     uniques[:] = sorted(uniques, key=lambda unique: unique.text)
 
 if elements_equal(root1, root2):
-    print("They are identical")
+    print("They are the same outputs")
 else:
-    print("They are NOT identical" +
+    print("They are NOT the same outputs" +
           "   different in " + diff +
           "    different elements are:")
 
