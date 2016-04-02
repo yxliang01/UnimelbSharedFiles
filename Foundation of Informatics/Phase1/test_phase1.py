@@ -1,3 +1,8 @@
+"""
+Author: Xiaoliang Yu
+Create Date: 4/2/2016
+"""
+
 from lxml import etree as ET
 import sys
 import itertools
@@ -25,10 +30,18 @@ def elements_equal(e1, e2):
         diff = "text"
         diff_e1, diff_e2 = e1, e2
         return False
-    # if e1.tail != e2.tail:
-    #     diff = "tail"
-    #     diff_e1, diff_e2 = e1, e2
-    #     return False
+
+    try:
+        e1.tail = e1.tail.strip()
+        e2.tail = e2.tail.strip()
+    except AttributeError:
+        pass
+
+    if e1.tail != e2.tail:
+        diff = "tail"
+        diff_e1, diff_e2 = e1, e2
+        return False
+
     if e1.attrib != e2.attrib:
         diff = "attrib"
         diff_e1, diff_e2 = e1, e2
