@@ -1,8 +1,9 @@
 
 Author: Xiao Liang Yu
 
-Part of the content is taken from Tim and Andrew's slides
-This document may contain subjective opinions 
+Part of the content was taken from Tim and Andrew's slides
+
+This document may contain some subjective opinions 
 
 
 Foundation of Computing 2016s1
