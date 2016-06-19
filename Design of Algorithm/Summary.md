@@ -866,14 +866,26 @@ We need
 Hash functions
 -----
 
-- simplest one $h(key) = key \mod m$
-- universal hash function
+- Must be consistent
+- Examples
+    + simplest one $h(key) = key \mod m$
+    + universal hash function
 
 
 Universal Hash Function
 =====
 
+*Have to try the tutorial question*
+
 A universal hash family $H$ allows generating hash functions $h \in H \text{ such that } Pr[h(x) = h(y)] = 1/p, p \text{ is the hash table size }$
+
+
+A universal hash function
+
+- should have its result generated randomly
+- return a value depends on the every part of the key
+- for any two distinct data items $x$ and $y$, exactly $|H|/n$ of all the hash functions in $H$ map $x$ and $y$ to the same bucket, where $n$ is the number of buckets 
+
 
 Linear Congruential Generator
 -----
@@ -882,7 +894,7 @@ $$h(x) = ((ax + b) \mod q) \mod p$$
 $\text{for } a \ne 0, q \text{ a prime number $> p$ }, a,b \text{ are random integers}\mod q$
 
 
-Crytographic Hash Function
+Cryptographic Hash Function
 =====
 
 still, they are hash functions $h: key \text{ -> integer in range $[0, m)$} $
@@ -1155,7 +1167,7 @@ Dynamic Programming
 
 It's particularly useful when an algorithm needs the results of sub-problems for ****multiple times****.
 
-It's a technique used to speed up calculations when there are lots of redundant calculations. We memorize the result of each calculation for the sub-problems, then use the memorized result when we have to need 
+It's a technique used to speed up calculations when there are lots of *redundant calculations*. We memorize the result of each calculation for the sub-problems, then use the memorized result when we have to need 
 
 
 Fibonacci
@@ -1192,16 +1204,31 @@ function fib(n)
 Longest increasing subsequence
 -----
 
-Graph version (TODO)
+### Problem
+
+Given a sequence of numbers, find the longest increasing subsequence. A increasing subsequence is a subsequence with its numbers arranged in strictly increasing order. 
+
+
+### Graph version
+
+We build a graph such that there's an $edge(u,v)$ if $v$ has larger index in the array than $u$ and $v > u$.
+
+Time complexity: $O(n^2)$
+
 ```pseudocode
-function longest_subsequence(V, E)
+function longest_increasing_subsequence(V, E)
 
-    L = an array having index in range [1, |V|] with all elements 0
-    
-    for i in range [1, |V|]
-        L[i] = max{1 + L[j] for (j, i) in E}
+    input: a graph converted from a sequence of integers
+    output: the length of the longest increasing sequence
 
-    return L(n) - 1
+    L = an array having index in range [1, |V|] with all elements initialized to 0
+
+    // i - the index of the current vertex in the original array
+    for i in range [1, |V|] 
+
+        L[i] = 1 + max{L[j] for (j, i) in E} //max of {} is 0
+        
+    return max{L(n) for n in [1,|V|]}
 
 ```
 
@@ -1612,7 +1639,8 @@ Algorithms
     + [] brute-force
     + [] dynamic programming
 - [X] K-th smallest algorithm
-- [] Set Cardinality
+- [X] Set Cardinality
+- [X] Frequency estimation
 
 Complexity Analysis
 -----
@@ -1646,7 +1674,7 @@ Definition
     + [X] secret sharing - how to force recipients to exchange information in order to let them get the message
 - Hashing
     + [X] Structure
-    + [] Universal Hash Function
+    + [X] Universal Hash Function
 - Algorithms
     + [X] NP-completeness
     + [X] P
