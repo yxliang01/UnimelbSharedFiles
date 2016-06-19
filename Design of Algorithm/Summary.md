@@ -870,6 +870,17 @@ Hash functions
 - universal hash function
 
 
+Universal Hash Function
+=====
+
+A universal hash family $H$ allows generating hash functions $h \in H \text{ such that } Pr[h(x) = h(y)] = 1/p, p \text{ is the hash table size }$
+
+Linear Congruential Generator
+-----
+
+$$h(x) = ((ax + b) \mod q) \mod p$$
+$\text{for } a \ne 0, q \text{ a prime number $> p$ }, a,b \text{ are random integers}\mod q$
+
 
 Crytographic Hash Function
 =====
@@ -1356,13 +1367,13 @@ problems
 If one of the NP-complete can be solved in polynomial time, $NP = P$
 
 
-Set Cardinality (TODO)
+Set Cardinality
 =====
 
 Problem
 -----
 
-Given a stream of items from a universe $U$ with $|U| = n$, keep track of the size $m$ of the set $S$ containing all unique items that have appeared so far.
+Given a stream of items from a universe $U$ with $|U| = n$, keep track of the size $m$ of the set $S$ containing all *unique items* that have appeared so far.
 
 
 Simple solutions
@@ -1384,6 +1395,7 @@ Good estimate
 - the estimation error should be low
 - space and runtime efficient
 - theoretical guarantees
+
 
 The log log algorithm
 -----
@@ -1418,11 +1430,58 @@ You have $2^{l}$ counters, with each one having size $\log \log p$
 4. if the count of the current number is greater than the current value in the corresponding counter, update it with current count
 5. when it's done, use the formula $\hat m = cq2^{\hat k}$ to estimate the cardinality $m$
 
+### Complexity
 
-### 
+Update Time complexity(calculation time for one item): $O(1)$ time
+Estimation Time complexity: $O(q)$ time
+Space complexity: $q\log \log p$ bits
 
 
+Bitcoin
+=====
 
+- You want to prove that you have performed a certain amount of work in order to get awarded
+- Small string $Q$ is generated based on the existing transactions in the bitcoin network
+- Task: find a string $X$ which has $Q$ as a suffix, which produces a hash containing a certain amount of tailing 0s
+- First person to "find" such a string gets awarded the next bitcoin
+
+
+Frequency Estimation
+=====
+
+Problem
+-----
+
+Given a stream of items from a universe $U$, we want to know the frequency $f_i$ of each item $i$ in the stream
+
+
+Count-Min Sketch
+-----
+
+### Definitions
+
+$p$ = the number of buckets of the hash tables
+$d$ = the number of hash tables
+$N$ = the number of items counted
+
+$p = ceil(e/\epsilon)$
+$d = ceil(\log_e \frac{1}{\delta})$
+It's guaranteed that after seeing $N$ items with probability $1-\delta$:
+$$f_i \ge \cap {f_i} \ge f_i + \epsilon N$$
+
+### Complexity
+
+Update Time complexity(calculation time for one item): $O(d)$ time - compute $d$ hashes and update $d$ buckets
+Estimation Time complexity: $O(d)$ time - take minimum of $d$ buckets
+Space complexity: $p x d x \log_2 n$ bits
+
+
+Sketches
+=====
+
+- allow space efficient processing of large data sets by utilizing summarization
+- easy to implement
+- provide theoretical guaranteed estimates of cardinality of a set and item frequencies
 
 
 K-th smallest algorithm
