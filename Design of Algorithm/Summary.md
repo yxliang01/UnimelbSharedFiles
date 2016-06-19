@@ -1164,12 +1164,13 @@ function alistair_huffman(F)
 
     idx_leaf = 0
     idx_internal = -1
-    idx_parent = -1
+    idx_next_internal = -1
 
     num = an array of size 2
-    X = a linked list
 
-    while idx_parent < F.length - 2
+    while idx_next_internal < F.length - 1
+
+        idx_next_internal++
 
         for i in [0,1]
 
@@ -1180,15 +1181,11 @@ function alistair_huffman(F)
             else
 
                 num[i] = F[idx_internal]
-                X.append(idx_internal)
+                F[idx_internal] = idx_next_internal
+                idx_internal++
 
 
-        idx_internal++
-        F[idx_internal] = num[0] + num[1]
-
-        while X is not empty
-             F[X.pop()] = idx_internal
-             idx_parent++
+        F[idx_next_internal] = num[0] + num[1]
 
     // Phase 2
 
@@ -1203,28 +1200,40 @@ function alistair_huffman(F)
 
     last = F[F.length - 2]
     count_last = 1
+    count_last_parent = 0
 
     idx_next = F.length - 1
 
     for i from F.length - 3 to 0    
 
         if F[i] != last
-            max_ava = 2^{last}
+            max_ava = 2^{count_last_parent}
             repeat (max_ava - count_last) times //could be 0 times
+                if idx_next < 0
+                    return F
                 F[idx_next] = last
                 idx_next--
             last = F[i]
+            count_last_parent = count_last
             count_last = 1
         else
             count_last++
 
-    max_ava = 2^{last}
+    max_ava = 2^{count_last_parent}
     repeat (max_ava - count_last) times
+        if idx_next < 0
+            return F
         F[idx_next] = last
         idx_next--
 
+    //hmm still got some symbols not assigned
+    max_ava = 2^{last}
+    repeat (max_ava - count_last) times
+        if idx_next < 0
+            return F
+        F[idx_next] = last + 1
+        idx_next--
 
-    return F
 ```
 
 
@@ -1749,7 +1758,7 @@ Algorithms
 - Cryptography
     + [X] RSA
 - Compression
-    + [] Huffman coding
+    + [X] Huffman coding
 - knapsack
     + [X] dynamic programming
 - [X] K-th smallest algorithm
