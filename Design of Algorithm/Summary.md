@@ -180,7 +180,8 @@ Two variant:
 - amount of items is **infinite** 
 - amount of items is **finite** 
 
-naive way is bruce-force. But we can use dynamic programming to speed it up.
+
+naive way is recursive. But we can use dynamic programming to speed it up.
 
 Time complexity: 
 
@@ -606,7 +607,7 @@ Topological sort
 ### Usage
 
 - only for DAGs
-- get a linearized order of vertices such that all the all the vertices after vertex $x$ must be descendants of $x$ in a DFS tree
+- get a linearized order of vertices such that all the vertices after vertex $x$ must be descendants of $x$ in a DFS tree
     + since it's a DAG (no back edge), descendants must not able to reach their ancestors
 
 
@@ -932,12 +933,12 @@ Symmetrical VS Asymmetrical
 Symmetrical
 
 - encrypt and decrypt using the *same key*
-- AES-256
+- e.g. AES-256
 
 Asymmetrical
 
 - encrypt and decrypt using *different key*
-- RSA
+- e.g. RSA
 
 
 Trapdoor function
