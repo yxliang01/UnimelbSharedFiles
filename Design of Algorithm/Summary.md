@@ -1147,9 +1147,10 @@ function huffman_lens(s)
 
 Five important elements
 
-- leaf weights
-- internal weights
-- internal parents 
+- leaf node
+- internal nodes
+    + once there is one created, internal nodes will *never die out*
+- internal parent nodes 
 - internal depths
 - leaf depths
 
@@ -1207,7 +1208,7 @@ function alistair_huffman(F)
     for i from F.length - 3 to 0    
 
         if F[i] != last
-            max_ava = 2^{count_last_parent}
+            max_ava = 2 * count_last_parent
             repeat (max_ava - count_last) times //could be 0 times
                 if idx_next < 0
                     return F
@@ -1219,7 +1220,7 @@ function alistair_huffman(F)
         else
             count_last++
 
-    max_ava = 2^{count_last_parent}
+    max_ava = 2 * count_last_parent
     repeat (max_ava - count_last) times
         if idx_next < 0
             return F
@@ -1227,7 +1228,7 @@ function alistair_huffman(F)
         idx_next--
 
     //hmm still got some symbols not assigned
-    max_ava = 2^{last}
+    max_ava = 2 * last
     repeat (max_ava - count_last) times
         if idx_next < 0
             return F
