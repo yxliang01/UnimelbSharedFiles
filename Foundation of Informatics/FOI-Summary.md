@@ -1834,3 +1834,7 @@ If someone had posted a photo of his electronic medical record id having details
 Last Lecture Practice Exam Questions
 =====
 
+A
+-----
+
+A and G have the highest betweenness centrality. Since for A, All geodesic paths from {B,C,D,E} to nodes other than {A} are having A in them and for G, All geodesic paths from {H, I, J, K} to nodes other than {G} are having G in them. Betweenness centrality of A and G is $1/1 * 9 * 4 = 36$ with A and G in between. You may think that F has the highest betweenness centrality since it connects up the nodes connected to A and G together. However, F has the betweenness centrality of $1/1 * 5 * 5 = 25$ which is less than $36$.
