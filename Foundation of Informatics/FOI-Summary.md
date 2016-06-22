@@ -778,7 +778,7 @@ Visualization steps
 -----
 
 - Data Definition
-    + define the visualiZation goal and the supporting data variables
+    + define the visualization goal and the supporting data variables
 - Visualization selection
     + select appropriate visual structure
 - Data pre-processing
@@ -798,7 +798,7 @@ Matplotlib
 Interactivity
 =====
 
-W3schools says that for good web development you need to knwo "at least"
+W3schools says that for good web development you need to know "at least"
 
 - HTML for structure
 - CSS for style
