@@ -755,7 +755,8 @@ Guidelines
 
 - Don't change the scale across charts which are intended to be contrasted (rubber scaling)
 - Don't leave out the origin for *ratio variables* unless necessary
-- Don't use *line chart* for *comparing nominal variables* (is that possible??)
+- Don't use *line chart* for *comparing nominal variables*
+    + Because line chart implies continuity (mostly over time), so we typically use it for continuous values of an entity (e.g. population of Sydney). But we don't use it for comparing two nominal entities (Sydney population vs Melbourne population).
 - Don't *change* the *ordering of ordinal variables*
 - careful about red-green color blindness
 - visually impaired people need HIGH contrast
@@ -770,7 +771,7 @@ Measuring Visualization Effectiveness
 - data density index(ddi)
     + the number of numbers plotted per square inch
 - data ink ratio (???)
-    + the ink used for **showing data** divided by the total ink used for the **whole graphic**
+    + $\text{ data ink ratio } = \frac{\text{ink used to decribe the data}}{\text{ink used to decribe everything else}}$ 
     + the proportion of ink used for non-erasable display of information
     + 1.0 - redundant ink
 
@@ -780,13 +781,13 @@ Visualization steps
 -----
 
 - Data Definition
-    + define the visualization goal and the supporting data variables
+    + define the visualization **goal** and the **supporting data variables**
 - Visualization selection
-    + select appropriate visual structure
+    + select **appropriate visual structure**
 - Data pre-processing
-    + preparing raw to visualization-ready data
+    + preparing raw to **visualization-ready data**
 - Visual transformation
-    + mapping data variables to visual elements
+    + **mapping data variables to visual elements**
 
 
 Matplotlib
@@ -809,13 +810,13 @@ W3schools says that for good web development you need to know "at least"
 MISC Synchronous & Asynchronous
 -----
 
-Synchronous = occurring in a specified sequence or at a sepcified time interval
-Asynchronous = time intervals/sequences are not specified
+Synchronous = occurring in a specified sequence or at a specified time interval
+Asynchronous = time intervals/sequences are *not specified*
 
 
 ### AJAX (Asynchronous Javascript and XML)
 
-Group of technologies used to communicate between client and server without *interfering with display or behavior of a page*
+**Group of technologies** used to communicate between client and server without *interfering with display or behavior of a page*
 
 - HTML/CSS for presentation
 - DOM for dynamic display
@@ -881,7 +882,7 @@ JavaScript
     + you don't have to declare the variable types
     + it will be firgued out at run-time
 - Basic types
-    + basic types - `number`, `string`, `boolean`, `null` and `undefined`
+    + basic types - `number`, `string`, `boolean` and `undefined`
     + everything else is an Object
 ```js
 var obj = {
@@ -925,17 +926,17 @@ Advantage
 
 - `selector` may match more than one elements
     + manipulating with `$(selector)` will let you do things with the first element
-    + `$(selector)[i]` will give you the *DOM object* of the $i_th$ element
-    + `$(selector).eq(i)` will give you the *jQuery object* of the $i_th$ element     
+    + `$(selector)[i]` will give you the *DOM object* of the $i_{th}$ element
+    + `$(selector).eq(i)` will give you the *jQuery object* of the $i_{th}$ element     
 
 ### Reason of using JavaScript to do interactivity
 
 - Client-side processing
-    + faster for non computational expensive calculations
+    + **faster** for non computational expensive calculations
 - Document Object Model (DOM)
-    + part of the content of the web-page can be changed without having to build the whole thing from scratch
+    + **part of the content of the web-page can be changed without having to build the whole thing from scratch**
 - Event-driven programming
-    + changes are being triggered by many events built into that page, rather than only the HTTP requests
+    + **changes are being triggered by many events built into that page, rather than only the HTTP requests**
 
 
 
@@ -945,7 +946,7 @@ Database
 =====
 
 NoSQL is an alternative to the traditional SQL databases.
-With SQL, you have a structure that has been optimized for navigation
+With SQL, you have a structure that has been optimized for **navigation**
 
 - structure and organization is high
 - speed of query is low
@@ -953,7 +954,7 @@ With SQL, you have a structure that has been optimized for navigation
 With NoSQL, the optimization is for storage
 
 - Speed is high (as long as data is ordered and regular)
-    + \*however, when the ordering matters or access is random, the speed slows significantly\*
+    + \*however, when the ordering matters or *access is random*, the speed slows significantly\*
 - Structure is low
 - *Good for highly regular and predictable data patterns*
 
@@ -997,9 +998,9 @@ Big infrastructure
 -----
 
 - cluster computing (90's and earlier)
-    + set of computers that work together and can be viewed at a single system
+    + set of computers that work together and can be **viewed at a single system**
 - grid computing (00's)
-    + collection of computer resources to achieve common goal
+    + collection of computer resources to **achieve common goal**
     + modeled on the electricity grid
     + process grids/information grids
     + SETI@home was one of the original concepts
@@ -1012,14 +1013,16 @@ Big infrastructure
 Big Data Details
 -----
 
+4Vs
+
 - Volume
-    + How big is the data?
+    + How *big* is the data?
 - Velocity
-    + How fast is the data generated?
+    + How *fast* is the *data generated*?
 - Variability
-    + how regular or varies is the data?
+    + how *regular or varies* is the data?
 - Veracity
-    + What is the quality/consistency of the data?
+    + What is the *quality/consistency of the data*?
 
 
 Three problems (What Big Data is trying to deal with)
@@ -1034,14 +1037,14 @@ Three problems (What Big Data is trying to deal with)
     + Structure
         * Structured database organized into tables
             - Query using SQL(Standard Query Language)
-            - organization allows optimization of speed to "finding useful stuff"
+            - organization allows optimization of *speed to "finding useful stuff"*
     + Size
         * No SQL
             - one big repository that follows a simple syntax and grows by simple addition
     + Can you store all that data in an organized and easily accessible way?
 
 
-These are the unsolved problems that Big Data tries to fix so that large volumes of data can be collected, stored and accessed easily.
+These are the unsolved problems that Big Data tries to fix so that large volumes of data can be *collected*, *stored* and *accessed* ***easily***.
 
 They *DO NOT* impact the science that you are trying to do.
 
@@ -1051,11 +1054,11 @@ Security
 
 Security philosophy - Three Categories of actions (sorted from least effective to most effective)
 
-- Prevention (gates, locks, etc..)
+- **Prevention** (gates, locks, etc..)
     + Username/passwords
-- Detection (alarms)
+- **Detection** (alarms)
     + Audit trails
-- Reaction (prosecution, payback, etc...)
+- **Reaction** (prosecution, payback, etc...)
     + Auditing and attribution
 
 
@@ -1078,9 +1081,9 @@ i18n & L10n
 Misc Definitions
 -----
 
-A locale is a collection of parameters that defined specific language, country, script, rules, and code character set
+A locale is a collection of parameters that **defined** ***specific*** *language, country, script, rules, and code character set*
 
-A character is a indivisible unit of text. A character set defines the range of a character collection.
+A character is a indivisible unit of text. A character set *defines the range of a character collection*.
 
 
 
@@ -1089,7 +1092,7 @@ A character is a indivisible unit of text. A character set defines the range of 
 Localization
 -----
 
-modifying or adapting an application to fit the requirements of a particular locale
+modifying or adapting an application to **fit the requirements of a particular locale**
 
 
 Internationalization
@@ -1285,7 +1288,7 @@ Definitions
 
 - variable type
     + continuous (*numerical*, *quantitative*)
-        * numbers or anything that can have a range
+        * numbers or anything that can *have a range*
         * examples
             - Temperature
             - Velocity
@@ -1310,17 +1313,18 @@ Definitions
     + nominal scale
     + ordinal scale
     + interval scale
-        * has no meaningful zero point (no origin)
+        * has **no meaningful zero point** (no origin)
         * express difference (interval) between two measurements
         * examples
             - dates, latitude
             - Celsius temperature
             - To say that "2 degree Celsius is twice as hot as 1 degree" is *NOT* meaningful
     + ratio scale
-        * has a meaningful, unique and non-arbitrary zero point
+        * has a **meaningful**, **unique** and **non-arbitrary zero point**
         * examples
             - mass, length, duration, angle
             - it's meaningful to say "2-meter object is twice as long as a 1-meter object"
+
 
 Steps of doing data analysis
 -----
@@ -1334,9 +1338,9 @@ Steps of doing data analysis
     + are there *errors* and is the data *valid*?
     + what was the original data collection purpose?
 4. **Transformation**
-    + Turn the data into something *presentable*
+    + Turn the data into something **presentable**
 5. **Feature selection**
-    + Pull out the relevant bits to *address* your *hypothesis*
+    + Pull out the *relevant bits to *address* your *hypothesis**
 
 
 Sourcing
@@ -1382,7 +1386,7 @@ Understanding
                     * split up the range equally
                 + Quantile
                     * the most commonly used method to define class boundaries
-                    * look at the data and break up the categories so that each one has equal member numbers
+                    * look at the data and break up the categories so that *each one has equal member numbers*
                     * First quantile $Q1$ - Lower Quantile (25<sup>th</sup> percentile)
                     * Second quantile $Q2$ - Median (50<sup>th</sup> percentile)
                     * Third quantile $Q3$ - Upper Quantile (75<sup>th</sup> percentile)
@@ -1398,7 +1402,7 @@ cleaning
 
 validation and tidying of the data
 
-**two problems**
+**three problems**
 
 - semantic similarities
     + example
@@ -1406,7 +1410,7 @@ validation and tidying of the data
         * "General Elec Co."
         * "GE"
         * "Gen. Electric Company"
-- Range problems (or wrong units)
+- Range problems (or *wrong units*)
     + example
         * Age - 150 years
         * Blood pressure - 250 mmHg
@@ -1489,9 +1493,9 @@ Contingency Table
 
 - A matrix that shows the *frequency distribution* of the two variables being correlated
 - cross tabulation
-- shows the number of observations for each combination of discrete values from two categorical variables
+- shows the number of observations for each combination of discrete values from **two categorical variables**
 - categorical values can be *ordinal* or *nominal*
-- continuous values must be made discrete (categorized)
+- **continuous values must be made discrete (categorized)**
 
 rank correlation
 -----
@@ -1503,25 +1507,27 @@ basically, calculate similarities between ranks
 $$p = 1 - \frac{6\sum{d^2}}{n(n^{2}-1)}$$
 $$\text{ where }d_i = x_i - y_i$$
 
-relatively high value (nearer + 1) suggests yes, there is a relationship
+**relatively high value (nearer + 1) suggests yes**, there is a relationship
 
 ### regression (regression line)
 
 the concept that in the long-term, extreme measurements of a continuous variable will converge on a single "average" relationship
 
-the idea is that there is a defined meaning of "normal" of this data-set, and in a good model the data points are never very far from "normal"
+the idea is that there is a **defined meaning of "normal"** of this data-set, and in a **good model the data points are never very far from "normal"**
 
 #### Linear regression
 
 The slope of the linear regression line is the *correlation co-efficient*
 
+
 $$ \text{(inverse correlation)} -1 <= r <= 1 \text{(positive correlation)} $$
-If $r$ = 0, means (no correlation)
+
+$|r|$ indicates how strong the relationship is. 0 is no correlation.
 
 
 ### Pearson correlation coefficient
 
-the degree of relationship between two continuous variables
+the **degree of relationship between two continuous variables**
 
 
 Data Mining
@@ -1531,14 +1537,14 @@ Unsupervised VS Supervised
 -----
 
 Unsupervised learning: provide broader view to get the "data landscape" or "interesting recurrent pattern"
-Supervised learning: some prior knowledge about what you want to find out (target variable)
+Supervised learning: some **prior knowledge about what you want to find out** (target variable)
 
 
 Unsupervised learning (???)
 -----
 
 - Association rule
-    + generate rules based on observations of the data-set
+    + **generate rules based on observations of the data-set**
     + good when
         * rule is easy to apply to other data points
         * rule can be generated by analyzing the data-set
@@ -1547,7 +1553,7 @@ Unsupervised learning (???)
         * actionable (something that can do)
         * good for large data
     + disadvantage
-        * categorical only
+        * **categorical only**
         * time-consuming to generate
         * many rules means priority to be worked out
 - Clustering
@@ -1555,7 +1561,7 @@ Unsupervised learning (???)
     + K-means clustering
     + advantage
         * flexible
-        * hierarchical approach possible
+        * **hierarchical approach possible**
     + disadvantage
         * setting initial cluster number
         * can be slow
@@ -1584,11 +1590,12 @@ Supervised
     + the confusion matrix
     
     | Actual/Predicted | Positive | Negative |
-    | True             | TP       | FN       |
-    | False            | FP       | TN       |
+    |------------------|----------|----------|
+    | True (actual)    | TP       | FN       |
+    | False (actual)   | FP       | TN       |
 
-    T/F indicates whether the predicted result is correct
-    P/N indicates whether the predicted result is positive or negative
+    T/F indicates whether the ***predicted result is correct***
+    P/N indicates whether the ***predicted result is positive or negative***
 
     + sensitivity = how well the model is able to predict **true** values
         * $Sensitivity = \frac{TP}{TP + FN}$
@@ -1616,7 +1623,7 @@ Graph
 - Acyclic
     + no loop/cycle
 - Degree of a node
-    + the number of edges of a node (indegree/outdegree)
+    + the number of edges of a node (it is called *in-degree* and *out-degree* in directed graph)
 - Path
     + A sequence of nodes that can be traversed by traveling through edges from a starting node to an ending node
 - Geodesic Path
@@ -1625,11 +1632,11 @@ Graph
 
 ### Properties
 
-- order of a graph
-    + the number of vertices
-- size of a graph
-    + the number of edges
-- degree of node $deg(v)$ 
+- **order** of a graph
+    + the number of **vertices**
+- **size** of a graph
+    + the number of **edges**
+- degree of node $deg(v)$ in undirected graph
     + the number of edges incident to it
 - geodesic distance between $v$ and $w$ -> $\delta(v, w)$
     + *number of edges in the geodesic path* between $v$ and $w$
@@ -1643,12 +1650,12 @@ Four categories
 
 - A = Degree centrality
     + how many neighbors
-    + $C_d = $the degree of a node (the number of edges attached to it) (???what if directed???)
+    + $C_d = $the degree of a node (the number of edges attached to it) (if directed, there's in-degree centrality and out-degree centrality)
     + $C_d(v) = deg(v)$
 - B = Closeness centrality
     + how close to other nodes
     + how close you are in general with other people in the network
-    + $C_s = $the reciprocal of the average length of geodesic paths between a node and all other nodes
+    + $C_s = $the reciprocal of the **average length of geodesic paths between a node and all other nodes**
     + $C_s(v) = \frac{1}{\sum \delta(v,w)} , w \in V$
 - C = Betweenness centrality
     + bridging nodes
@@ -1658,7 +1665,7 @@ Four categories
     + has example in slide
 - D = Eigenvector centrality
     + connect to well-connected nodes
-    + no only concern about the degree of the node but also the degree of the connected nodes
+    + not only **concern** about the degree of the node but also **the degree of the connected nodes**
     + Application: Google PageRank and SocialRank 
 
 
@@ -1878,6 +1885,26 @@ If someone had posted a photo of his electronic medical record id having details
 
 Last Lecture Practice Exam Questions
 =====
+
+Spreadsheet Questions
+-----
+
+### Q8 a)
+
+Return the names of the 2010/11 English Premier Leagues which didn't lost any game at all. One row per name.
+
+### Q8 b)
+
+The average of "For"(goals scored by the team) of all teams which had won more than lost and had drawn for less than twice. 
+
+### Q8 c)
+
+`=3*C2 + 1* D2`
+
+### Q8 d)
+
+`=sort($A2:$I21, $I2:$I21, FALSE, $H2:$H21, FALSE, $F2:$F21, FALSE)`
+
 
 A
 -----
