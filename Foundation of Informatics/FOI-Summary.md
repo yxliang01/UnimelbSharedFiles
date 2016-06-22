@@ -2,6 +2,8 @@ Author: Xiao Liang Yu
 
 Foundation of Informatics
 =====
+[TOC]
+
 
 File Formats
 =====
@@ -1642,7 +1644,7 @@ Graph
     + *number of edges in the geodesic path* between $v$ and $w$
     + Application: Bacon number
 - graph centrality
-    + see [Centrality](#Graph-Centrality)
+    + see [Centrality](#graph-centrality)
 
 ### Graph Centrality
 
