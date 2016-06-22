@@ -1850,6 +1850,11 @@ Why do we want client-side processing
 If we always need to send data to server in order to process, it will be too slow. As a result, we want to do some lightweight processing on client side. In the early 2000's, people send pre-compiled code to client browser to process. But, this approach lacked flexibility because we have to load the whole compiled application. Ajax is one of the solution for this. With Ajax,
 we can load the part that we need in real-time without having to load everything no matter whether we need it or not. So that, client browsers don't have to download large amount of data. 
 
+CSS specificity
+-----
+
+A very good article [click ME!](https://css-tricks.com/specifics-on-css-specificity/)
+
 
 
 Questions
@@ -1889,22 +1894,86 @@ Last Lecture Practice Exam Questions
 Spreadsheet Questions
 -----
 
-### Q8 a)
+### Q8 a) (CORRECT)
 
 Return the names of the 2010/11 English Premier Leagues which didn't lost any game at all. One row per name.
 
-### Q8 b)
+### Q8 b) (CORRECT)
 
 The average of "For"(goals scored by the team) of all teams which had won more than lost and had drawn for less than twice. 
 
-### Q8 c)
+### Q8 c) (CORRECT)
 
 `=3*C2 + 1* D2`
 
-### Q8 d)
+### Q8 d) (CORRECT)
 
 `=sort($A2:$I21, $I2:$I21, FALSE, $H2:$H21, FALSE, $F2:$F21, FALSE)`
 
+
+Flask Interactive Web Application Question (CORRECT)
+-----
+
+```python
+from flask import Flask, request
+import json
+app = Flask(__name__, static_folder='.', static_url_path='')
+
+template = '''<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="style-generator">
+  </head>
+  <body>
+    <form method="post" action="table-generator">
+      Row: <input type="text" name="row">    
+      Column: <input type="text" name="column">
+      <input type="submit"/>
+    </form>
+    <hr>
+    <div id="container">%s</div>
+  </body>
+</html>'''
+
+@app.route("/style-generator", methods=['GET'])
+def css_gen():
+    css_in_json = json.load(open('style.json'))
+    style = ''
+    # construct style here
+
+    for selector, properties in css_in_json.items():
+        style += (selector + "{")
+        for p, v in properties.items():
+            style += p + ':' + v + ';'
+        style += '}\n'
+
+    return style, 200, {'Content-Type': 'text/css'}
+
+
+@app.route("/table-generator", methods=['POST', 'GET'])
+def table_gen():
+    table = ''
+    # get user input here
+    row = int(request.form['row'] if 'row' in request.form else 0)
+    column = int(request.form['column'] if 'column' in request.form else 0)
+    # construct the table here
+    table = '<table>'
+    for r in range(row):
+        table += '<tr>'
+
+        for c in range(column):
+            table += '<td>&nbsp;</td>'
+
+        table += '</tr>'
+
+    table += '</table>'
+
+    body = template % (table)
+    return body, 200, {'Content-Type': 'text/html'}
+
+if __name__ == "__main__":
+    app.run(debug=True, host='127.0.0.1', port=9999)
+```
 
 A
 -----
