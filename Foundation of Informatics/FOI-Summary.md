@@ -1,3 +1,5 @@
+Author: Xiao Liang Yu
+
 Foundation of Informatics
 =====
 
@@ -7,6 +9,8 @@ File Formats
 Plain Text
 -----
 
+Disadvantage
+
 - No structure
 - hard to index
 - hard to organize
@@ -14,10 +18,16 @@ Plain Text
 CSV
 -----
 
+Advantage
+
 - easier to organize
 - semi-structured
+
+Disadvantage
+
 - no hierarchy
 - no relational structure
+
 
 HTML
 -----
@@ -46,44 +56,75 @@ XML
         * opening `<tag>`
         * closing `</tag>`
         * empty `<br />`
-    + an element may have one or more attributes, attributes must be in quotes
+    + an element may have one or more attributes, attributes must be in quotes (can be either double or single, for me, stick with double)
         * e.g. `<person title="Sir">Tony</person>`  
     + Comments
         * e.g. `<!-- comments -->`
+    + Element names must start with alphabetic character
 - Case-sensitive
     + `<title>` is not the same as `<Title>`
 - elements must be appropriately nested
     + wrong example `<author><firstname>James</author></firstname>`
 - Special characters
     + like `<` and `&` are strictly illegal inside an element
-    + we should use entity name or CDATA
+    + we should use *entity name* or *CDATA*
+    + Escape Characters
+        * `"`   `&quot;`
+        * `'`   `&apos;`
+        * `<`   `&lt;`
+        * `>`   `&gt;` (not necessary but recommended)
+        * `&`   `&amp;`
 - CDATA (character data) section may be used inside XML element to include large blocks of text, which may contain these special characters such as `&`, `>`
     + `<![CDATA [... ... ...]]>`
+    + the xml below is valid
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<hi><![CDATA[<>'"&]]></hi>
+```
 - Correctness Checklist
     + Declaration
     + One root element
-    + attributes in quotes
+    + attributes and strings in quotes
     + empty tag
     + opening/closing tags
     + tags correctly nested
 - DTD (Document Type Definition)
     + grammar for the application of XML
-    + DTD is a schema that creates a **consistent data structure**
+    + DTD is a *schema* that creates a **consistent data structure**
+    + Once you used DTD, you must have **every element defined**
     + define what element it can contain
         * `<!ELEMENT element_name (element types)>`
         * e.g. `<!ELEMENT customers(customer+)>`
     + define what content it can contain
         * `<!ELEMENT name (#PCDATA)>`
+        * Example #1
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hi [
+<!ELEMENT hi (#PCDATA)>
+]>
+<hi>123</hi>
+```
+        * Example #2
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hi [
+<!ELEMENT hi (#PCDATA)>
+]>
+<hi><![CDATA[<>'"&]]></hi>
+```
+
     + Element Types
         * `(#PCDATA)` - Parsed character (text) only
-        * `(child1, child2, child3, ...)` - Declare order of child elements
+        * `(child1, child2, child3, ...)` - Declare **order** of child elements
+            - ***order matters***
         * `EMPTY` - it must be an empty tag
         * `(child1 | child2 | child3 | ...)` - Declare choice of child elements
         * `ANY` - any type of content (**no restrictions**)
     + Symbols
-        * `?` - Allow zero or one of the item
-        * `+` - Allow one or more of the item
-        * `*` - Allow zero or more of the item
+        * `?` - Allow **zero or one** of the item
+        * `+` - Allow **one or more** of the item
+        * `*` - Allow **zero or more** of the item
     + define attributes
         * `<!ATTLIST element attribute_name attribute_type default>`
             - e.g. `<!ATTLIST customer custID ID #REQUIRED>`
@@ -92,8 +133,10 @@ XML
             - `(value1 | value2 | ...)` allowed values (numerated list)
             - `ID` used to create a unique identifier for an attribute
             - `IDREF` allows an attribute to reference the ID attribute from another element
-            - `NMTOKEN` a name token whose value is restricted to a valid XML name
-            - `ENTITY` a reference to an external file, usually one containing non-XML data
+                + if points to ID which doesn't exist, the validator will give a warning
+            - `NMTOKEN` a name token whose value is restricted to a **valid XML name**(???)
+                + can't have special characters(like white-space)
+            - `ENTITY` a **reference to an external file**, usually one containing *non-XML data*
         * Attribute Default
             - `#REQUIRED`
                 + must appear with every occurrence of the element
@@ -102,29 +145,29 @@ XML
             - "default value"
                 + attribute is optional, but if not specified, XML paraser supplies default value
             - `#FIXED "default"`
-                + attribute is optional, but if value is specified it must match the default value
+                + attribute is optional, but if value is specified it **must match the default value**
     + Can be declared *internally* or *externally*
         * internal
             - DTD is declared within the same XML file
-            ```xml
-            <?xml version="1.0"?>
-            <!DOCTYPE root 
-            [
-                declarations
-            ]>
-            <root>
-            </root>
-            ```
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE root 
+[
+    declarations
+]>
+<root>
+</root>
+```
         * external
             - SYSTEM
-                + specifies location of an external DTD
+                + *specifies location of an external DTD*
                 + e.g. `<!DOCTYPE root SYSTEM "url">`
             - PUBLIC
-                + where DTD appears in publicly available location
+                + where DTD appears in *publicly available* location
                 + xml parser will try to locate DTD by `id` first, if it can't find by the `id`, it will try to retrieve by the `url`
                 + e.g. `<!DOCTYPE root PUBLIC "id" "url">`
     + XML parser may ignore the DTD declaration (not validate the XML)
-- A XML document can be well-formed and NOT valid if it didn't follow the rule defined by the DTD (If DTD is defined)
+- A XML document can be *well-formed and NOT valid* if it didn't follow the rule defined by the DTD (If DTD is defined)
 - namespaces
     + define collections of elements
     + declared as an attribute of element
@@ -141,24 +184,24 @@ XML
 - Comparison between attribute and element
     + attribute
         * can't contain other elements
-            - as a result no explicit structure
-        * used for small, simple, unstructured "extra"/secondary information
-        * can be specified only once and in any order
-        * represents properties of objects
+            - as a result *no explicit structure*
+        * used for **small, simple, unstructured "extra"/secondary** information
+        * can be specified *only once* and *in any order*
+        * represents *properties of objects*
             - elements represent parts of objects
 - Parsing XML
     + Document Object Model
         * most useful way of parsing XML
         * Parsing calls load the document into a **tree structure** with different nodes that can be navigated by the program
     + Simple API for XML (SAX)
-        * Stream-based way of reading XML
-        * Fast and efficient if you don't need random access    
+        * *Stream-based* way of reading XML
+        * Fast and efficient if you don't need *random access*    
 - Criticism
-    + XML is verbose and overly complex
-        * large overhead
+    + XML is *verbose* and *overly complex*
+        * large *overhead*
     + it's strictly ***hierarchical***
         * as a result, some structures are difficult to model
-        * e.g. relational information
+        * e.g. *relational* information
     + nowadays JSON is taking its place
 - XML adds meaning to the formatting of other markup languages (like HTML)
 - XML allows a standard method of data exchange
@@ -178,7 +221,7 @@ As a result, this just seems like a shortcut to mixing program code and data
 Designed to speed up client/server interactions
 Widely used in Big Data database
 
-However, lacks context and schema definitions
+However, *lacks context and schema definitions*
 
 
 
@@ -228,17 +271,17 @@ HTML (hypertext markup language)
     + can't be modified to meet specific domain knowledge
     + browsers have developed their own tags
         * but not *portable*
-- can be inconsistently applied
+- can be *inconsistently applied*
     + almost everything is rendered
     + normally, browsers can render incorrect written HTML pages
         * tolerance of errors
 - Three broad categories of body markup
     + **structural**
-        * defines *document and layout structure*
+        * defines *document* and ***layout structure***
     + **stylistic**
-        * modifies the *appearance of text*
+        * modifies the ***appearance*** of text
     + **semantic**
-        * *identifies specific types* of information
+        * *identifies specific types* of ***information***
 - structural markup
     + headings `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`  
     + paragraphs `<p>`
@@ -262,9 +305,9 @@ HTML (hypertext markup language)
     + block-level elements may contain inline elements and other block-level elements
     + inline elements may contain only data and other inline elements
 - HTML entity
-    + < `&lt;`
-    + > `&gt;`
-    + & `&amp;`
+    + `<` `&lt;`
+    + `>` `&gt;`
+    + `&` `&amp;`
 - markup tags details
     + Anchor `<a href="URL">`
     + `<form method="post or get" action="the submission link">`
@@ -315,13 +358,13 @@ CSS (cascading style sheets)
 =====
 
 
-- declarative language for specifying HTML presentation
-- separates content from presentation
+- declarative language for *specifying HTML presentation*
+- **separates content from presentation**
 - reduces the amount of effort required to style a document or web site
 - can use both single quote and double quote for string
 - three use method
     + inline style (specify as properties)
-        * specifying CSS by the `style` attribute of a single element
+        * specifying CSS by the *`style` attribute* of a single element
     + embedded style (specify as rules)
         * specified as rules that tell the browser that styles to apple and to which elements
         * declared in a `<style>` block inside the document `<head>`
@@ -375,64 +418,64 @@ CSS (cascading style sheets)
         * select elements that are a child of another element
         * e.g. `parent_ele descendant_ele {property: value}`
     + child selector
-        * select children
+        * **select children**
         ```css
         selector1 > selector2 {property: value;}
         ```
     + adjacent selector (next-sibling selector)
         * select *"only"* the **right next element matching the selector**
         * although you had specified the previous element, but you don't select it 
-        ```css
-        previousElement + nextElement {property: value;}
-        /* example */
-        img + span.caption {font-style: italic;}
-        ```
-        ```html
-        <!DOCTYPE html>
+```css
+previousElement + nextElement {property: value;}
+/* example */
+img + span.caption {font-style: italic;}
+```
+```html
+<!DOCTYPE html>
 <html>
 <head>
-    <style>
-        span.big {color:red;}
-        .big {color:green; font-size: 100px;}
-        *.big {color:yellow;}
+<style>
+span.big {color:red;}
+.big {color:green; font-size: 100px;}
+*.big {color:yellow;}
 
-        .parent > .child {color: orange;}
-        .parent > span {border:1px solid;}
+.parent > .child {color: orange;}
+.parent > span {border:1px solid;}
 
-        .child + .spec {color: purple;}
-    </style>
+.child + .spec {color: purple;}
+</style>
 </head>
 <body><span class="big">span</span>
 <div class="big">div</div>
 <div class="parent">
-    <span class="child">0</span>
-    <span class="spec">hellow hi</span>
-    <span class="spec">hellow hi</span>
-    <span class="child">1</span>
-    <span class="spec">hellow hi</span>
-    <span class="spec">hellow hi</span>
-    <span class="child">2</span>
-    <span class="spec">hellow hi</span>
-    <span class="spec">hellow hi</span>
-    <span class="child">3</span>
-    <span class="spec">hellow hi</span>
-    <span class="spec">hellow hi</span>
-    <span class="child">4</span>
-    <span class="spec">hellow hi</span>
-    <span class="spec">hellow hi</span>
-    <span class="child">5</span>
-    <span class="spec">hellow hi</span>
-    <span class="spec">hellow hi</span>
-    <span class="child">6</span>
-    <span class="spec">hellow hi</span>
-    <span class="spec">hellow hi</span>
-    <span class="child">7</span>
-    <span class="spec2">hellow hi</span>
-    <span class="spec">hellow hi (won't be selected)</span>
+<span class="child">0</span>
+<span class="spec">hellow hi</span>
+<span class="spec">hellow hi</span>
+<span class="child">1</span>
+<span class="spec">hellow hi</span>
+<span class="spec">hellow hi</span>
+<span class="child">2</span>
+<span class="spec">hellow hi</span>
+<span class="spec">hellow hi</span>
+<span class="child">3</span>
+<span class="spec">hellow hi</span>
+<span class="spec">hellow hi</span>
+<span class="child">4</span>
+<span class="spec">hellow hi</span>
+<span class="spec">hellow hi</span>
+<span class="child">5</span>
+<span class="spec">hellow hi</span>
+<span class="spec">hellow hi</span>
+<span class="child">6</span>
+<span class="spec">hellow hi</span>
+<span class="spec">hellow hi</span>
+<span class="child">7</span>
+<span class="spec2">hellow hi</span>
+<span class="spec">hellow hi (won't be selected)</span>
 </div>
 </body>
 </html>
-        ```
+```
         the last `.spec` won't be selected 
 - Color
     + named `red`, `green`, `blue`
@@ -725,7 +768,7 @@ Measuring Visualization Effectiveness
 - data density index(ddi)
     + the number of numbers plotted per square inch
 - data ink ratio (???)
-    + the ink used for data divided by the total ink used for the graphic
+    + the ink used for **showing data** divided by the total ink used for the **whole graphic**
     + the proportion of ink used for non-erasable display of information
     + 1.0 - redundant ink
 
@@ -1017,7 +1060,7 @@ Security philosophy - Three Categories of actions (sorted from least effective t
 Security Layers
 -----
 
-![Layers]() (TODO)
+![Layers](https://raw.githubusercontent.com/yxliang01/UnimelbSharedFiles/master/Foundation%20of%20Informatics/Summary%20Resource/Security%20Layers.PNG)
 
 
 
@@ -1658,7 +1701,7 @@ Oxford's definition
     + A pragmatic definition defines the topic as the most valuable form of content in a continuum starting at *data*, encompassing *information*, and ending at *knowledge*
     + we will stick to this one
 
-![Information Triangle]() (TODO)
+![Information Triangle](https://raw.githubusercontent.com/yxliang01/UnimelbSharedFiles/master/Foundation%20of%20Informatics/Summary%20Resource/Information%20Triangle.PNG)
 
 - Data
     + know nothing (symbols)
@@ -1733,7 +1776,7 @@ Two-symbol language: two alphabets "0" and "1"
 
 Information quantity depends on the number of alternative message choices encoded in the binary system
 
-![flags required]() (TODO)
+![flags required](https://raw.githubusercontent.com/yxliang01/UnimelbSharedFiles/master/Foundation%20of%20Informatics/Summary%20Resource/flags.PNG)
 
 
 ### Hartley function (Hartley uncertainty measure)
@@ -1838,3 +1881,40 @@ A
 -----
 
 A and G have the highest betweenness centrality. Since for A, All geodesic paths from {B,C,D,E} to nodes other than {A} are having A in them and for G, All geodesic paths from {H, I, J, K} to nodes other than {G} are having G in them. Betweenness centrality of A and G is $1/1 * 9 * 4 = 36$ with A and G in between. You may think that F has the highest betweenness centrality since it connects up the nodes connected to A and G together. However, F has the betweenness centrality of $1/1 * 5 * 5 = 25$ which is less than $36$.
+
+GET and POST are two methods of passing information through the HTTP protocol. Describe both of these methods, emphasising similarities and differences, and their implications for privacy
+-----
+
+
+Describe two differences between the ASCII character system and the Unicode character system, including the difference in how they can be represented in Python
+-----
+
+
+In the field of social network analysis, closeness centrality and eigenvector centrality are two of the numerous measures of centrality of a vertex in a graph (or a network). Briefly (5-10 lines) describe these two notions of centrality
+-----
+
+
+
+
+Checklist
+=====
+
+- [] Review this note
+- [] Workshops
+    + [] Week2
+    + [] Week3
+    + [] Week4
+    + [] Week5
+    + [] Week6
+    + [] Week7
+    + [] Week8
+    + [] Week9
+    + [] Week10
+    + [] Week11
+- [] Questions
+    + [] Last lecture
+    + [] Sample Set 1
+    + [] Sample Set 2
+    + [] Network of data
+    + [] Spreadsheet
+    + [] Interactive Web Application
