@@ -488,12 +488,12 @@ span.big {color:red;}
         * it's good to specify more than one font, so that, when the first is not available, it can attempt to show the second, third... ones.
     + we can add fonts using `<link>`
 - media queries
-    + media queries are filters that enable the browser to change styles depending on the device rendering the document or its state
-    + queries can be specified either on the stylesheet link or in the CSS itself
+    + media queries are filters that enable the browser to change styles depending on the device rendering the document or its ***state***
+    + queries can be specified either on the *stylesheet link* or in the *CSS itself*
     + examples
         * `<link rel="stylesheet" type="text/css" media="screen" href="screen.css">`
-        * `<link rel="stylesheet" type="text/css" media="handheld" href="screen.css">`
-        * `<link rel="stylesheet" type="text/css" media="print" href="screen.css">`
+        * `<link rel="stylesheet" type="text/css" media="handheld" href="handheld.css">`
+        * `<link rel="stylesheet" type="text/css" media="print" href="print.css">`
         * defined in CSS
 ```css
 @media (min-width: 500px) and (max-width: 600px) {
@@ -510,15 +510,15 @@ span.big {color:red;}
 - cascading styles
     + HTML elements *inherit* some or all presentation properties from their parent elements
 - limitation of CSS
-    + can't target specific text without markup tags.
+    + *can't target specific text without markup tags.*
     + The exception is `:first-letter` pseudo-element
-    + can't *name rules*
+    + can't *name rules* (no variable)
     + *no expressions*
-    + very easy to overwrite other rules in a complex CSS file
+    + *very easy to overwrite other rules in a complex CSS file*
 - Common Properties
     + `color: red`
     + `border`
-        * can specify thickness, line style and link color
+        * can specify *thickness*, *line style* and *link color*
         * you can select exactly which side you want to change
             - `top`, `right`, `bottom`, `left`
         * `border: 1px solid red`
@@ -530,13 +530,15 @@ span.big {color:red;}
             - `padding: 1px 2px 3px 4px;`
     + `background-color: red`
     + `height` and `width`
-        * specified in either absolute or relative length
+        * specified in either *absolute* or *relative length*
         * absolute lengths are specified in pixels (px)
-        * relative lengths are specified as a percentage of the parent element's dimension
+        * relative lengths are specified as a *percentage of the **parent** element's dimension*
     + `position`
-        * `relative` - relative to the *top left corner of parent*
+        * `relative` - relative to the *top left corner of **parent***
         * `absolute` - *document* coordinate position
         * `fixed` - *screen* coordinate position
+            - relative to the *top left corner of **viewpoint***
+
 
 Spreadsheet
 =====
@@ -579,16 +581,16 @@ The number of arguments is at most 30 for the functions below.
 - `MAX`
 - `MIN`
 - `COUNT(value_1, value_2, ... value_30)`
-    + count how many numbers are in the list of arguments. ***Text entries are ignored***. Values could also be ranges.
+    + count how many **numbers** are in the list of arguments. ***Text entries are ignored***. Values could also be ranges.
 - `COUNTA(value_1, value_2, ... value_30)`
-    + count how many values are in the list of arguments. ***Text entries are also counted***, *even when they contain an empty string of length 0*.
+    + count how many **values** are in the list of arguments. ***Text entries are also counted***, *even when they contain an empty string of length 0*.
 
 ### Conditional functions
 
 - `COUNTIF(range, criteria)`
     + return the number of elements that meet certain criteria within a cell range.
     + `criteria` is *a number or a text* used for the search criteria.
-- \*`SUMIF(range, criteria, sum_range)`
+- `SUMIF(range, criteria, sum_range)`\*
     + sum the cells specified by a given criteria. `sum_range` is the range from which values are summed.
 
 
@@ -606,25 +608,25 @@ if `otherwise_value` is not specified, it will be FALSE
 
 ### Array formula
 
-with arrayformula, we can pass arrays(ranges) to functions and operators that typically only take non-array arguments. Those functions and operators will be applied to each member of the arrays one at a time. These results of these operation will be presented as a new array.
+with arrayformula, we can pass arrays(ranges) to functions and operators that typically only *take non-array arguments*. Those functions and operators will be *applied to each member of the arrays one at a time*. These *results of these operation will be presented as a new array*.
 
 
 ### Index and offset
 
-- `INDEX(reference, row, column)`
-    + return the content of a cell, specified by rows and columns from a starting cell reference
+- `INDEX(range, row, column)`
+    + return the *content of a cell*, specified by rows and columns from a starting cell reference
 - `OFFSET(cell_reference, offset_rows, offset_columns, [height], [width])`
-    + return a range reference shifted a specified number of rows and columns from a starting cell reference
+    + return a *range reference* shifted a specified number of rows and columns from a starting cell reference
 
 ### filtering and sorting functions
 
 - `UNIQUE(sourceArray)`
-    + returns only the unique rows in the source array, discarding duplicates, in the order in which those rows first appears.
+    + returns only the *unique rows in the source array*, *discarding duplicates*, in the order in which those rows first appears.
 - `FILTER(sourceArray, arrayCondition_1, arrayCondition_2, ... arrayCondition_30)`
-    + return a filtered version of the given source array
-    + each condition should be a column(row) of boolean values
+    + return a *filtered version of the given source array*
+    + each condition should be a *column(row) of boolean values*
     + only rows (columns) from the source array corresponding to the true values of the condition array will be returned
-    + If there are multiple conditions, all of them must be true in order to output the specific rows(columns)
+    + If there are multiple conditions, *all of them must be true in order to output the specific rows(columns)*
 - `SORT(data, keyColumn_1, ascOrDesc_1, keyColumn_2, ascOrDesc_2, ... keyColumn_30, ascOrDesc_30)`
     + return the rows in the given data range sorted according to key columns
     + Key columns might be part of the data range, or as another column outside the range
@@ -640,9 +642,9 @@ finds `key_value` in the first column of `range` and returns the value in the ma
 
 `is_sorted` (optional): TRUE or FALSE Indicates whether the column to be searched (the first column of the specified range) is sorted (default: TRUE)
 
-If that's TRUE, when searching for a key, it will return the nearest match (less than or equal to the search key). If all values in the search column are greater than the search key, #N/A is returned. But, if the first column is not in sorted order, an incorrect value might be returned.
+If that's TRUE, when searching for a key, it will return the *nearest match (less than or equal to the search key)*. *If all values in the search column are greater than the search key, #N/A is returned*. But, if the first column is not in sorted order, an incorrect value might be returned.
 
-If that's FALSE, only the first exact match is returned. If not found, #N/A will be returned.
+If that's FALSE, only the first *exact match* is returned. If not found, #N/A will be returned.
 
 
 
@@ -662,17 +664,17 @@ Pivot Table (Crosstab / OLAP Cube)
 -----
 
 - it has Dimensions and Measurements
-- it provides data summarization (aggregation) over selected dimensions (typically subset of all dimensions).
-- provide sorting and ranking function
+- it *provides data summarization (aggregation) over selected dimensions* (typically subset of all dimensions).
+- provide *sorting* and *ranking* function
 
 Visualization
 =====
 
 - way of seeing meaning/relationships in data
 - amplifies cognition
-- provides a space for exploring data
+- provides a space for *exploring data*
 - exploratory and explanatory
-    + discover the unexpected; describe and explain the expected
+    + exploratory:discover the unexpected; explanatory:describe and explain the expected
 - a mapping from data variables to visual variables
     + example
         * temperature -> brightness of color
@@ -682,22 +684,22 @@ Visualization
 Why Visualization
 -----
 
-- pre-attentive attention (???)
+- pre-attentive processing is done quickly, effortlessly and in parallel without any attention being focused on the display
 
 Functions of Visualization
 -----
 
 - Associative function
-    *grouping* of all correspondences differentiated by a variable
+    *grouping* of all correspondences **differentiated by a variable**
     perceived as *similar*
 - selective function
-    *isolation* of correspondences differentiated by a variable
+    *isolation* of correspondences **differentiated by a variable**
     perceived as *different*, forming families
 - ordering function
     a spontaneous visual perception of rank
     perceived as *ordered*
 - quantitative function
-    a visual difference between two categories expressed as a numerical ratio
+    a visual difference between *two categories expressed* as a **numerical ratio**
     perceived as *proportional*
 
 ![variable vs function](https://raw.githubusercontent.com/yxliang01/UnimelbSharedFiles/master/Foundation%20of%20Informatics/Summary%20Resource/visualization-variable-vs-function.PNG)
@@ -710,18 +712,18 @@ Visualization for Univariate
 -----
 
 - Boxplot
-    + display variability of a data variable
-    + five-number summary
+    + display **variability** of a data variable
+    + **five-number summary**
     ![boxplot example](https://raw.githubusercontent.com/yxliang01/UnimelbSharedFiles/master/Foundation%20of%20Informatics/Summary%20Resource/visualization-boxplot.PNG)
 - Histogram
-    + display the distribution of a data variable
+    + display the **distribution** of a data variable
 
 
 *!important* Visualization for Bivariate
 -----
 
 - Pie chart
-    + a *small number of nominal values over a single continuous variable*
+    + a *small number of nominal values* over a single continuous variable
     + communicating the *rough proportions*
 - Bar chart
     + *continuous values vs nominal values*
@@ -730,7 +732,7 @@ Visualization for Univariate
     + **relationship between two continuous variables**
 - Line chart
     + used to **compare two or more continuous variable**
-    + can be used to display a trend of a continuous variable over time
+    + can be used to display a *trend of a continuous variable* over time
 
 Visualization for multivariate
 -----
@@ -752,7 +754,7 @@ Guidelines
 -----
 
 - Don't change the scale across charts which are intended to be contrasted (rubber scaling)
-- Don't leave out the origin for ratio variables unless necessary
+- Don't leave out the origin for *ratio variables* unless necessary
 - Don't use *line chart* for *comparing nominal variables* (is that possible??)
 - Don't *change* the *ordering of ordinal variables*
 - careful about red-green color blindness
