@@ -688,8 +688,10 @@ Why Visualization
 
 - pre-attentive processing is done quickly, effortlessly and in parallel without any attention being focused on the display
 
-Functions of Visualization
+Bertin's Semiology
 -----
+
+### Functions of Visualization
 
 - Associative function
     *grouping* of all correspondences **differentiated by a variable**
@@ -705,6 +707,10 @@ Functions of Visualization
     perceived as *proportional*
 
 ![variable vs function](https://raw.githubusercontent.com/yxliang01/UnimelbSharedFiles/master/Foundation%20of%20Informatics/Summary%20Resource/visualization-variable-vs-function.PNG)
+
+
+Mackinlay's semiology
+-----
 
 ![accuracy of visual variables](https://raw.githubusercontent.com/yxliang01/UnimelbSharedFiles/master/Foundation%20of%20Informatics/Summary%20Resource/visualization-accuracy-of-visual-variables.PNG)
 
@@ -1703,25 +1709,26 @@ Oxford's definition
 - As a mathematically defined quantity divorced from any concept of news or meaning... One which represents the degree of choice exercised in the selection or formation of one particular symbol, message, etc... out of a number of possible ones, and which is defined logarithmically in terms of the statistical probabilities of occurrence of the symbol or the elements of the message
     + information as a fact
     + out-of-context
-    + according to them, the following has the same information
+    + only care about quantity
+    + according to them, the following has the same information because the number of characters is the same
         * "4566 7450 2344 1935 AMEX 08/17"
         * "I am floating like a butterfly"
 - contrasted with data: that which is obtained by the processing of data
-    + information as a subjective entity
-    + data is raw facts, information is processed data, within organizations, in a social context
+    + information as a **subjective entity**
+    + data is raw facts, information is *processed data*, within organizations, in a social context
     + A pragmatic definition defines the topic as the most valuable form of content in a continuum starting at *data*, encompassing *information*, and ending at *knowledge*
     + we will stick to this one
 
 ![Information Triangle](https://raw.githubusercontent.com/yxliang01/UnimelbSharedFiles/master/Foundation%20of%20Informatics/Summary%20Resource/Information%20Triangle.PNG)
 
 - Data
-    + know nothing (symbols)
+    + know **nothing** (symbols)
 - Information
-    + know what, who, when, where (processed data)
+    + know **what, who, when, where** (processed data)
 - Knowledge
-    + Know how (actionable information)
+    + Know **how** (actionable information)
 - Wisdom
-    + know why (evaluated understanding)
+    + know **why** (evaluated understanding)
 
 Data as signals *ignores the meaning of its content*
 Information in context considers observers (subject) and *what the information means to them*
@@ -1733,8 +1740,10 @@ Information as signs
 
 - *syntactics* (rules)
     + formal structures of signs, grammar/rules, of *signs construction and relation*
+    + tells you how to form a sign
 - *semantics* (meaning)
     + *relation between signs and objects* (the things to which they refer) *in the mind of the observers*
+    + what's it all about
 - *pragmatics* (what you can do with that)
     + *relation between signs and their context* (of *the observers that interact with the things*)
 
@@ -1758,7 +1767,7 @@ Peirce's typology of signs
         * smoke and fire 
 - Symbols
     + Imputed character
-    + arbitrary representations of objects
+    + **arbitrary representations of objects**
     + a social convention should be established to understand the representation
     + things actually don't imply other things but, we **force them to imply** something  
     + my examples
@@ -1768,7 +1777,7 @@ From [Indiana University](http://www.cs.indiana.edu/~port/teach/103/sign.symbol.
 
 - **Icons** have a physical resemblance between the signal and the meaning
 - **Indices** have a correlation in space and time with its meaning.
-- **Symbols** (content words like nouns, verbs and adjectives) are (sound)patterns) that get meaning:
+- **Symbols** (content words like nouns, verbs and adjectives) are (sound)patterns that get meaning:
     + primarily from its mental association with other symbols and
     + secondarily from its correlation with environmental patterns.
 
@@ -1817,11 +1826,11 @@ Entropy of selecting a symbol from $X$ is:
 
 $$H(X) = -\sum_{i=1}^{n} p(x_i) \log p(x_i)$$
 
-$H$ is maximum when *all* $p(x_i)$ are equal
-$H$ is minimum when *any of* $p(x_i)$ is 1 (since the information is fixed(certain to be the thing))
+$H$ is **maximum** when *all* $p(x_i)$ are equal
+$H$ is **minimum** when *any of* $p(x_i)$ is 1 (since the information is fixed(certain to be the thing))
 
-$H$ indicates the *theoretical bounds for the average bits needed to
-represent/compress the symbols*
+$H$ indicates the **theoretical bounds for the average bits needed to
+represent/compress the symbols**
 
 
 Not Examinable
@@ -1890,10 +1899,10 @@ The harvesting of personal information for Big Data projects has ramifications f
 If someone had posted a photo of his electronic medical record id having details related to the illness he has at the moment accidentally, salesmen selling medicines may try to get his electronic medical record by the id and try to know what illness he has now, then try to promote medicines to him which may disturbing his life badly. The curators of the social information and the medical records can set an appropriate privacy setting on the data (e.g. for social information, only viewable by his friends; for medical record, only viewable by himself and doctors curing him).
 
 
-Last Lecture Practice Exam Questions
+Extra Practice Exam Questions (released two days before exam)
 =====
 
-Spreadsheet Questions
+Spreadsheet Questions (CORRECT)
 -----
 
 ### Q8 a) (CORRECT)
@@ -1977,21 +1986,187 @@ if __name__ == "__main__":
     app.run(debug=True, host='127.0.0.1', port=9999)
 ```
 
+
+Network
+-----
+
+### 5. a)
+
+closeness centrality is measuring how close the vertex to all other vertices is while eigenvector centrality concerns how high the degrees are for all vertices connected to the vertex. Eigenvector centrality gives you an idea of how important the vertex is by checking how important the vertices connected to the vertex are.
+
+### 5. b)
+
+Vertex E has the highest betweenness centrality since it's bridging vertices A,B,C and D to vertices E,F,G,H and I. In order to go from vertices A,B,C and D to vertices E,F,G,H and I, you must pass through E.
+
+### 5. c)
+
+D and H have lowest centrality since they are not bridging any vertex. They are not part of any geodesic path for which the destination and the source vertex are not D nor H.
+
+### 5. d)
+
+B, C, D and E has lowest centrality since they are not bridging any vertex. They are part of any geodesic path for which the destination and the source vertex are not B,C,D nor E.
+
+### 5. e)
+
+A has the highest closeness centrality since the geodesic distance of it to any other vertex is 1 while the maximum geodesic distance of all other vertices v (v not equal to A) to all other vertices u for which v is not equal to u is 2.   
+
+
+
+
 A
 -----
 
 A and G have the highest betweenness centrality. Since for A, All geodesic paths from {B,C,D,E} to nodes other than {A} are having A in them and for G, All geodesic paths from {H, I, J, K} to nodes other than {G} are having G in them. Betweenness centrality of A and G is $1/1 * 9 * 4 = 36$ with A and G in between. You may think that F has the highest betweenness centrality since it connects up the nodes connected to A and G together. However, F has the betweenness centrality of $1/1 * 5 * 5 = 25$ which is less than $36$.
 
-GET and POST are two methods of passing information through the HTTP protocol. Describe both of these methods, emphasising similarities and differences, and their implications for privacy
+Sample set 1
 -----
 
+### GET and POST are two methods of passing information through the HTTP protocol. Describe both of these methods, emphasizing similarities and differences, and their implications for privacy
 
-Describe two differences between the ASCII character system and the Unicode character system, including the difference in how they can be represented in Python
+Similarity: Both GET and POST can pass user input to the server. 
+Difference:
+|                POST               |             GET             |
+|-----------------------------------|-----------------------------|
+| stores the data in HTTP body/data | stores the data in the URL  |
+|                                   |                             |
+| the data can be very large        | the length is limited since |
+|                                   | it's in the URL             |
+
+If you want to transfer a sensitive message, you should use POST since it will not be shown in the URL although attackers can still capture your data.  
+
+
+### Describe two differences between the ASCII character system and the Unicode character system, including the difference in how they can be represented in Python
+
+|             ASCII             |                  Unicode                   |
+|-------------------------------|--------------------------------------------|
+| can only store 128 characters | can store most of the documented languages |
+|                               | in the world                               |
+|                               |                                            |
+| the physical representation   | the physical representation is             |
+| is same as the code points    | different from the code points             |
+|                               |                                            |
+| In python, they are byte      | In python, they are Unicode strings        |
+| strings                       |                                            |
+
+
+### In the field of social network analysis, closeness centrality and eigenvector centrality are two of the numerous measures of centrality of a vertex in a graph (or a network). Briefly (5-10 lines) describe these two notions of centrality
+
+Redundant with the network question set.
+
+
+Sample Set 2
 -----
 
+### 1.
 
-In the field of social network analysis, closeness centrality and eigenvector centrality are two of the numerous measures of centrality of a vertex in a graph (or a network). Briefly (5-10 lines) describe these two notions of centrality
------
+#### a)
+
+Line 13, `<title>Using XML for Science</title>`
+Line 19, `</book>`
+Line 4, `<book genre="fiction">`
+Line 5, `<title>The Clouds and Beyond</title>`
+Line 15 and 16, simply make line 16 becomes line 15 and the original line 15 becomes line 16
+Line 14, `<author>`
+
+#### b) (correct)
+
+|      XML       |     JSON    |
+|----------------|-------------|
+| large overhead | lightweight |
+| verbose        | streamlined |
+
+#### c) (correct)
+
+```json
+{
+    "catalog":[
+        {
+            "genre":"fiction",
+            "title":"The Clouds and Beyond",
+            "author":{
+                "firstname":"Rebecca",
+                "surname":"Skye"
+            },
+            "isbn":"1-23456-789-0"
+        },
+        {
+            "genre":"non-fiction",
+            "title":"Using XML for Science",
+            "author":{
+                "firstname":"James",
+                "surname":"Bean"
+            },
+            "isbn":"0-98765-432-1"
+        }
+    ]
+}
+```
+
+
+### 7.
+
+#### a)
+
+1. Asynchronous
+
+data can be processed in background without interfering users' viewing -> good user experience
+
+2. Portable
+
+it can be executed on lots of platforms and browsers -> can be widely used
+
+3. Event-Driven
+
+Javascript can respond to events whenever events are created -> responsiveness
+
+#### b)
+
+the content will be "Text B". Only when we click on the button "Change text" on the HTML page, the function `fn()` will be called
+
+### 8.
+
+#### a)
+
+They can remove the names from those medical information and use ID to identify who the subjects were. The mapping from ID to subjects' personal details can be stored in physical files in order to avoid leakage of the relationship between medical information and the physical subjects.
+
+
+#### b)
+
+If you are to pose a post which is viewable to the public saying that you are having a fever, medication selling companies may see it on Facebook and get your phone number on your profile page. Then, they can just keep promoting medication which can cure fever in order to get profit.
+
+
+#### c)
+
+1. data consistency
+
+how to deal data from different sources
+
+2. size vs structure
+
+based on the usage, decide whether to use NOSql or relational database
+
+3. Network
+
+Comparing the speed of processing on individual node with the time taken to get data from other nodes 
+
+
+### 9.
+
+#### a)
+
+80% of all nodes have low closeness centrality means distribution points are normally far from each other. To distribute the products from a distribution point to the others may spend quite a lot of money on transportation.
+
+
+#### b)
+
+B and F have the highest closeness centrality since to all other vertices, the geodesic distance is at most 2.
+
+#### c)
+
+E has the highest closeness centrality since if A,B or C wants to travel to F,I or G, you must go through the E. As a result, it indicates that you if go directly from E, the geodesic distance is shorter. Same thing goes to situation where going from F,I or G to A,B or C.
+
+#### d)
+
 
 
 
@@ -1999,22 +2174,22 @@ In the field of social network analysis, closeness centrality and eigenvector ce
 Checklist
 =====
 
-- [] Review this note
-- [] Workshops
-    + [] Week2
-    + [] Week3
-    + [] Week4
-    + [] Week5
-    + [] Week6
-    + [] Week7
-    + [] Week8
-    + [] Week9
-    + [] Week10
-    + [] Week11
-- [] Questions
-    + [] Last lecture
-    + [] Sample Set 1
-    + [] Sample Set 2
-    + [] Network of data
-    + [] Spreadsheet
-    + [] Interactive Web Application
+- [ ] Review this note
+- [ ] Workshops
+    + [ ] Week2
+    + [ ] Week3
+    + [ ] Week4
+    + [ ] Week5
+    + [ ] Week6
+    + [ ] Week7
+    + [ ] Week8
+    + [ ] Week9
+    + [ ] Week10
+    + [ ] Week11
+- [ ] Questions
+    + [ ] Last lecture
+    + [X] Sample Set 1
+    + [ ] Sample Set 2
+    + [X] Network of data
+    + [X] Spreadsheet
+    + [X] Interactive Web Application
