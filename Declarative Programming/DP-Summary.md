@@ -1,9 +1,9 @@
+
 Author: Xiao Liang Yu
 
 This document may contain some subjective opinions 
 
 Declarative Programming 2016s2
-
 =====
 
 Why Declarative Language
