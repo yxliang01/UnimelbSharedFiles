@@ -72,7 +72,7 @@ Java and Object-oriented programming
             - identifiers that are defined in libraries required by the Java language standard packages
     + In theory, it can be of any length
 - types
-![The Data Type Image](Summary_Images/The_Data_Type_Image.PNG)
+![The Data Type Image](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/The_Data_Type%20Image.PNG)
 - integer and float type
     + When you have a decimal constant like `21.02`, by default, it will be treated as `double`. If you want it to be `float`, add `F` or `f` at the end of the number like `21.02F`.
     + **Integer division occurs**
@@ -186,7 +186,7 @@ public class Sample<T, T2> {
     + e.g.
         * `discountVariable = (DiscountSale) saleVariable;` causes runtime error
         * `discountVariable = saleVariable;` causes compile time error
-- ![](Assignment Compatibility)
+- ![Assignment Compatibility](Assignment_Compatibility.PNG)
 - relational operators returns `boolean` and `boolean` is not a number type
 - constants are defined `final`
 - variables are classified into three categories
@@ -270,7 +270,8 @@ a[1] = new int [4];
 a[2] = new int [2];
 ```
     + it's a container
-    + it will only create an array object when you 'new' an array without having elements inside instantiated to that type 
+    + it will only create an array object when you 'new' an array without having elements inside instantiated to that type
+    + We can ignore `new` keyword when initialization while we can't when assignments e.g. can do `int[][] a = {{1,2,3},{4,5},{6}};` and `a = new int[][] {{1,2,3},{4,5},{6}};`
 - bindings
     + binding is the process of associating a method definition with a method invocation
     + static/static binding = compile time binding = decide which definition is used at where at compile time
@@ -510,6 +511,25 @@ Software Design Pattern
         * these two techniques are for solving the problem of separating a generic algorithm from a detailed design
         * "Template Method" uses **Inheritance**
         * "Strategy" uses **Delegation**
+        * Category: Behavioral
+        * Template Method
+            - Intent
+                + To define a skeleton of an algorithm in a method, **deferring some steps to subclass**, thus **allowing the subclasses to redefine certain steps of the algorithm**
+            - Applicability
+                + to **implement the invariant parts of an algorithm once** and **leave it to the subclasses to implement the behavior that can vary**
+                + to **refactor and localize the common behavior among subclasses** and **avoid code duplication**
+            - Using inheritance as a mechanism for re-use
+                + generic algorithm is placed in the base class
+                + specific implementation is deferred to the sub class
+            - However, it's creating strong dependency to the base class
+        * Strategy
+            - Intent
+                + To define **a family of algorithms**, encapsulate each one, and **make them interchangeable**
+            - Applicability
+                + Many related classes differ only in their behavior
+                + Different variants of an algorithm are needed
+                + An algorithm uses data that clients should not know about
+                + **A class defines many behaviors, which appear as multiple conditional statement in its methods**
     + Reactor Design Patterns
         * "Command Pattern" and "Observer Pattern" are two commonly used reactor design patterns
         * assist in event-driven design
@@ -638,7 +658,7 @@ UML Class/Object diagram
     + Initial Values
         * e.g. `- height : float = 10`
         * additionally, can add `{readOnly}` after the initial value
-        * ![Read Only Attribute Example](Read_Only_Attribute_Example.png)
+        * ![Read Only Attribute Example](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/Read_Only_Attribute_Example.png)
     + Multiplicity
         * indicates how many attributes of the type is associated
         * e.g. `- height[1] : float = 10`
@@ -653,14 +673,14 @@ UML Class/Object diagram
     + Class Multiplicity
         * A multiplicity in a class specifies the number of instances (object) of that class that can exist simultaneously
         * Default is 0 or more (if not specified)
-        * e.g. ![Singleton Example](Singleton_Example.png)
+        * e.g. ![Singleton Example](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/Singleton_Example.PNG)
 - Class diagram specific
     + consists of several classes connected with relationships 
 - Object diagram specific
     + Object diagram shows the relationship between objects
     + Unlike classes objects - it has a state
-    + ![Object Diagram Examples](Object_Diagram_Examples.PNG)
-    + ![Object Diagram Example2](Object_Diagram_Example2.PNG)
+    + ![Object Diagram Examples](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/Object_Diagram_Examples.PNG)
+    + ![Object Diagram Example2](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/Object_Diagram_Example2.PNG)
 - Package
     + package is a way of grouping classes into common categories
     + e.g. `PackageName::ClassName`
@@ -677,7 +697,7 @@ UML Class/Object diagram
             - Multiplicity
                 + specifies the number of links that can exist between instances (objects) of the associated classes
                 + must be integers
-                + ![Multiplicity Example](Multiplicity_Example.png)
+                + ![Multiplicity Example](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/Multiplicity_Example.png)
             - Type
                 + Plain Association
                 + Aggregation
@@ -692,7 +712,7 @@ UML Class/Object diagram
                 + bidirectional
                     * both objects know about each other and messages can be passed *in either direction*
         * Self association
-            - ![Self Association Example](Self_Association_Exampe.png)
+            - ![Self Association Example](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/Self_Association_Exampe.png)
     + Generalization (Inheritance)
         * solid line
         * when if you override a method in a deviated class, you should show the method inside the box of the deviated class]
@@ -704,12 +724,13 @@ UML Class/Object diagram
     + Dependency
         * Situation 1: Change in specification of one class can change the other class. This can happen when one class is using another class.
         * Situation 2: `<<instanceOf>>`
-          ![Dependency Situation2 Example](Dependency_Situation2_Example.png)
+          ![Dependency Situation2 Example](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/Dependency_Situation2_Example.png)
 
 
 MISC
 =====
 - we can initialize array `int[] a = {1,2,3};`
+- initialize 2D Array `int[][] a = {{1,2,3},{4,5},{6}};`
 
 For Exam
 =====
@@ -718,5 +739,7 @@ For Exam
 - remember to add `private` for attributes
 - remember the keyword `class`
 - when you are asked to write a class, remember to add all `import` statements needed
-- must write `static` before the type
 - there is no `String.compare`, use `"SOME STRING".compareTo(ANOTHER_STRING)` instead
+- must write `static` before the type
+- `@Override`(O is uppercase) can be ignored
+- we don't need to disable the default initializer
