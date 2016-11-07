@@ -32,7 +32,7 @@ public class Circle {
         this(centreX_, centreY_);
         if(radius_ <= 0)
         {
-            throw new InvalidValueException<Double>(radius_); // Assume my answer to subquestion 3 has been imported
+            throw new <Double>InvalidValueException(radius_); // Assume my answer to subquestion 3 has been imported
         }
         
         radius = radius_;
@@ -71,7 +71,6 @@ public class Employee implements Comparable {
 
     private String ID, name;
 
-    private Employee() {}
     public Employee(String ID_, String name_) {
         ID = ID_;
         name = name_;
@@ -121,7 +120,6 @@ public class Pair<K,V> {
     private K key;
     private V value;
 
-    private Pair() {}
     public Pair(K key_, V value_) {
         key = key_;
         value = value_;
