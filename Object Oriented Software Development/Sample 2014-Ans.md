@@ -30,7 +30,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         
         int N = 0;
-        
+
         try {
             N = getN(sc);
         }
@@ -83,5 +83,45 @@ public class Main {
         
     }
 
+}
+```
+
+Question 6
+=====
+```java
+public void wages(int[] hours, int standardHours, int standardRate) {
+
+    // Assumes hours.length will always be 7
+
+    int total = 0;
+
+    for(int i=0;i<hours.length;i++)
+    {
+        String day = "";
+        switch(i) {
+            case 0: day = "Sunday"; break;
+            case 1: day = "Monday"; break;
+            case 2: day = "Tuesday"; break;
+            case 3: day = "Wednesday"; break;
+            case 4: day = "Thursday"; break;
+            case 5: day = "Friday"; break;
+            case 6: day = "Saturday"; break;
+        }
+
+        int wage;
+
+        wage = hours[i] * standardRate;
+
+        if(hours[i] - standardHours > 0)
+        {
+            wage += (hours[i] - standardHours) * standardRate;
+        }
+
+        total += wage;
+        System.out.println(day + " " + wage);
+        
+    }
+
+    System.out.println("Total " + total);
 }
 ```
