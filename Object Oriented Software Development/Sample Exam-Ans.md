@@ -3,7 +3,7 @@ Question 1
 
 1.
 -----
-An exception is an object indicating a situation occurred (normally a runtime error). We must `catch` or `throws` all checked exceptions. For unchecked exceptions, we can just `throw` them without declaring them for the throwing methods (thus, no `catch` for them is needed), thus, it is possible for us to use `if` statements to prevent those exceptions from being thrown without using any `catch` blocks while this is not possible for checked exceptions.
+An exception is an object indicating a situation occurred (normally a runtime error). We must either handle(using `catch` block) or declare all the checked exceptions while for unchecked exceptions, this is not required (therefore, it's possible for us to avoid them using `if` statements). 
 
 2.
 -----
@@ -83,7 +83,10 @@ public class Employee implements Comparable {
     public void setName(String name_) {name = name_;}
 
     public int compareTo(Object o) {
-        return String.compare(ID, ((Employee)o).ID);
+        if(o instanceof Employee)
+            return ID.compareTo(((Employee)o).ID);
+        else
+            throw new Error("Type error for argument o (not Employee)")
     }
 }
 ```
@@ -171,3 +174,7 @@ Design pattern is a solution for solving recurring problems. Using them can crea
 2.
 -----
 Event driven programming is asynchronous - instead of writing code for sequential execution(the commonly used sequential programming style), we write code for responding to certain events fired (We mainly write event listeners which are registered to certain events).
+
+4.
+-----
+Basically, the client registers event listeners(commands) to the invokers, when there is an event, just call the invoker, and the invoker will execute the appropriate registered event handlers (which are in event listeners). e.g. Initially, register event listener `EL` which is for handling button clicks to the event system. Then, when we click a button, the event system will invoke the appropriate event handler in `EL`.
