@@ -86,7 +86,7 @@ public class Employee implements Comparable {
         if(o instanceof Employee)
             return ID.compareTo(((Employee)o).ID);
         else
-            throw new Error("Type error for argument o (not Employee)")
+            throw new RuntimeException("Type error for argument o (not Employee)");
     }
 }
 ```
@@ -148,10 +148,10 @@ public static ArrayList<Pair<String, Integer>> countOccurances(String[] words) {
         Pair<String, Integer> pair = map.get(word);
         if(pair == null) {
             pair = new Pair<>(word, 0);
+            map.put(word, pair);
         }
 
         pair.setValue(pair.getValue() + 1);
-        map.put(word, pair); // have to put because pair might be newly created
 
     }
 
