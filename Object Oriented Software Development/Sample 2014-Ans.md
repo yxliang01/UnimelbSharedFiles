@@ -72,7 +72,7 @@ public class Main {
 
         while(true) {
             try {
-                System.out.println(prompt);
+                System.out.print(prompt);
                 return sc.nextInt();
             }
             catch(Exception e) {

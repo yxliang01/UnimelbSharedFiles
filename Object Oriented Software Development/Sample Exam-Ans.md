@@ -32,7 +32,7 @@ public class Circle {
         this(centreX_, centreY_);
         if(radius_ <= 0)
         {
-            throw new <Double>InvalidValueException(radius_); // Assume my answer to subquestion 3 has been imported
+            throw new InvalidValueException(radius_); // Assume my answer to subquestion 3 has been imported
         }
         
         radius = radius_;

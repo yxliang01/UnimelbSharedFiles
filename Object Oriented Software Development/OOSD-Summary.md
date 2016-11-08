@@ -137,6 +137,7 @@ Java and Object-oriented programming
             - useful method
                 + `add(ELEMENT)`
                 + `add(int index, ELEMENT)`
+                    * Inserts the specified element at the specified position in this list. Shifts the element currently at that position (if any) and any subsequent elements to the right (adds one to their indices).
                 + `size()`
                 + `set(int index, ELEMENT)`
                 + `get(int index)`
@@ -150,14 +151,19 @@ Java and Object-oriented programming
     + allows code for different types to be re-used
     + classes that have type parameters are called **parameterized classes** or **generic definitions**
     + type parameter can't be used in simple expressions e.g. `new T()` or `new T[10]`
+    + **when the type parameter is not specified, it's `Object` by default**
+    + All type variables will be replaced with the class types **at compile-time** -> no runtime overhead
     + we can limit the types that are able to be plugged in for a type parameter
         * once we defined the must-be-extended types, we can use the attributes and methods of them
         * e.g. `public class RClass<T extends Comparable & Cloneable & A_CLASS>`
     + `TYPE Obj = new <A> TYPE<B>()`
         * `A` is the type for generic method 
         * `B` is the type for generic class 
+        * an instance (say `a`) of class `A<T>` will have `a instanceof A` always returns `true`
+            - in face, you can do things like `instanceof A<SOME_TYPE>` - can only do `instanceof A`
     + we can even have type parameters for methods
-        * when invoking generic method, the type should be specify before the method name e.g. `CLASS.<TYPE>METHOD_NAME()`
+        * when invoking **generic method**, the type should be specify before the method name e.g. `CLASS.<TYPE>METHOD_NAME()`
+        * the type parameter must be **placed after all the modifiers, and before the returned type**
     + Type Inference
         * when you constrained the generic type in some way for a generic method, you don't have to specify the generic type by angle brackets(`<>`), it will be inferred automatically (`<>` can be ignored)
         * for generic class constructor, we can `ArrayList<Integer> arr = new ArrayList<>();` - just put `<>` to let it be inferred 
@@ -186,7 +192,7 @@ public class Sample<T, T2> {
     + e.g.
         * `discountVariable = (DiscountSale) saleVariable;` causes runtime error
         * `discountVariable = saleVariable;` causes compile time error
-- ![Assignment Compatibility](Assignment_Compatibility.PNG)
+- ![Assignment Compatibility](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/AssignmentCompatibility.png)
 - relational operators returns `boolean` and `boolean` is not a number type
 - constants are defined `final`
 - variables are classified into three categories
@@ -194,6 +200,51 @@ public class Sample<T, T2> {
     + *class* variables
     + *local* variable
 - ![Redefining Variable]()
+- `enum`
+    + can be inside method, class or outside class (normally in class level)
+    + Example
+```java
+public enum Planet {
+    MERCURY (3.303e+23, 2.4397e6),
+    VENUS   (4.869e+24, 6.0518e6),
+    EARTH   (5.976e+24, 6.37814e6),
+    MARS    (6.421e+23, 3.3972e6),
+    JUPITER (1.9e+27,   7.1492e7),
+    SATURN  (5.688e+26, 6.0268e7),
+    URANUS  (8.686e+25, 2.5559e7),
+    NEPTUNE (1.024e+26, 2.4746e7);
+
+    private final double mass;   // in kilograms
+    private final double radius; // in meters
+    Planet(double mass, double radius) {
+        this.mass = mass;
+        this.radius = radius;
+    }
+    private double mass() { return mass; }
+    private double radius() { return radius; }
+
+    // universal gravitational constant  (m3 kg-1 s-2)
+    public static final double G = 6.67300E-11;
+
+    double surfaceGravity() {
+        return G * mass / (radius * radius);
+    }
+    double surfaceWeight(double otherMass) {
+        return otherMass * surfaceGravity();
+    }
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.err.println("Usage: java Planet <earth_weight>");
+            System.exit(-1);
+        }
+        double earthWeight = Double.parseDouble(args[0]);
+        double mass = earthWeight/EARTH.surfaceGravity();
+        for (Planet p : Planet.values())
+           System.out.printf("Your weight on %s is %f%n",
+                             p, p.surfaceWeight(mass));
+    }
+}
+```
 - bitwise operators
     + `&` Bitwise AND
     + `!` Bitwise OR
@@ -219,17 +270,20 @@ public class Sample<T, T2> {
         * `new Scanner(Stream)`
         * `hasNext()`
         * `nextLine()`
-            - be careful! Sometimes, it will give you a string with only "\n"  
+            - be careful! Sometimes, it will give you a string with only "\n"
 - Popular class
     + `java.text.NumberFormat`
     + `java.text.DecimalFormat`
         * `DecimalFormat pattern00dot000 = new DecimalFormat("00.000");`
+        * `#'` formats `123` to `#123`
         * `0` means a digit while `#` means a digit but zero shows as absent
+        * ![Special Pattern Characters](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/Special_Pattern_Characters.PNG)
+        * ![DecimalFormat Demo](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/DecimalFormat_Demo.png)
+
 - Popular methods
     + `System.out.println`
     + `System.out.print`
     + `System.out.printf`
-    + 
 - Operators
     + unary operators of equal precedence are grouped right-to-left
         * `+-+rate` = `+(-(+rate))`
@@ -263,6 +317,13 @@ public class Main {
     + array types are class types
     + fixed length
         * maximum length is `Integer.MAX_VALUE` since the index is of type `int`
+    + length can be determined dynamically. e.g.
+```java
+int s = 100;
+int[] c;
+c = new int[s];
+```
+
     + it's possible to define array like
 ```java
 int[][] a = new int[3][];
@@ -316,6 +377,7 @@ a[2] = new int [2];
         * statements in `finally` will be executed no matter what happened in the `try` block - will execute after all exceptions are handled unless the program exits before that 
             - if you throw another exception in `catch` block, the `finally` block will be executed before terminating the program due to the non-handled exception
         * it's particularly useful for putting cleanup code inside since **it will be executed even there are `return` statements in `try` or `catch` blocks**
+        * However, **if `System.exit` had been called, `finally` will be skipped** 
     + `throws` for indicating the method might throw specific exceptions
         * `Exception`s that are explicitly thrown by the method must be in the `throws` list and handled by the caller
         * when we have specific exceptions declared in `throws`, we can call methods that throws part of the declared exceptions outside of a `try` block. When they throw, it will be passed to our method, and, our method will throw it to the calling method.
@@ -336,6 +398,8 @@ a[2] = new int [2];
         * for `switch`, there is an exception -> we can still `switch("abc")` with `case "STRING"`
     + when string is concatenating with non-string objects, the `toString` method of the objects will be invoked automatically
     + `toString()` is defined as `public String toString()`
+    + `format(FORMATTING_STRING, ...)`
+        * just like `sprintf`
     + `StringBuffer`
         * `setCharAt(index,ch)`
         * `setLength(n)`
@@ -518,10 +582,10 @@ Software Design Pattern
             - Applicability
                 + to **implement the invariant parts of an algorithm once** and **leave it to the subclasses to implement the behavior that can vary**
                 + to **refactor and localize the common behavior among subclasses** and **avoid code duplication**
-            - Using inheritance as a mechanism for re-use
+            - Using inheritance as a mechanism for *re-use*
                 + generic algorithm is placed in the base class
                 + specific implementation is deferred to the sub class
-            - However, it's creating strong dependency to the base class
+            - However, it's **creating strong dependency to the base class**
         * Strategy
             - Intent
                 + To define **a family of algorithms**, encapsulate each one, and **make them interchangeable**
@@ -546,9 +610,17 @@ Software Design Pattern
             - Low reactor and target coupling
                 + The target only knows that the reactor is a receiver of event notifications
             - Client decomposition
-                + The reactor takes over client responsibilities for reacting to target events
+                + The **reactor takes over client responsibilities for reacting to target events**
             - Operation encapsulation
-                + The event handler in a reactor is an encapsulated operation that can be invoked in other ways for other reasons
+                + The **event handler in a reactor is an encapsulated operation that can be invoked in other ways for other reasons**
+        * Command Pattern
+            - ![Command Pattern Class Diagram](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/Command_Pattern_Class_Diagram.png)
+            - ![Command Pattern Sequence Diagram](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/Command_Pattern_Sequence_Diagram.png)
+        * Observer Pattern
+            - ![Observer Pattern Class Diagram](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/Observer_Pattern_Class_Diagram.png)
+            - ![Observer Sequence Diagram](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/Observer_Pattern_Sequence_Diagram.png)
+            - Use whenever one object must react to changes in another object, especially if the objects must be loosely coupled
+            - The one we learn is pull mode - subject sends its reference to the observer and the observer has to send a message to the subject to get the state
 - Patterns are 
     + solutions to problems that recur with variations
         * no need to reuse if the problem occurs only once
@@ -706,10 +778,10 @@ UML Class/Object diagram
                 + Composition
                     * stronger form of aggregation where the part objects can't exist without the whole object
             - Direction
-                + unidirectional
+                + Unidirectional
                     * one object can send messages to the other, but this other object can't send messages back and has *no knowledge about the object referring to it*
                     * we should draw an arrow to indicate the direction
-                + bidirectional
+                + Bidirectional
                     * both objects know about each other and messages can be passed *in either direction*
         * Self association
             - ![Self Association Example](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Object%20Oriented%20Software%20Development/Summary-Image/Self_Association_Exampe.png)
@@ -731,6 +803,11 @@ MISC
 =====
 - we can initialize array `int[] a = {1,2,3};`
 - initialize 2D Array `int[][] a = {{1,2,3},{4,5},{6}};`
+- `RuntimeException` indicates there is an error with the program (e.g. `NullPointerException`) while `Error` that is fatal but out of the program's control(e.g.`OutOfMemorryError`)
+- `extends` and `implements` are having `s` at the end
+- casting has lower precedence than `.`
+- If you want a method changes multiple primitive values at the time it is executed, just box them all, so that, the reference to them can be passed instead of just their values
+- Array of objects of different kind can't be casted directly (i.e. can't do `Object[] a = new int[] {1,2,3};`)
 
 For Exam
 =====
@@ -743,3 +820,10 @@ For Exam
 - must write `static` before the type
 - `@Override`(O is uppercase) can be ignored
 - we don't need to disable the default initializer
+- Initialize every attribute used if they might not be initialized
+- Import everything used
+- Don't over use floating point numbers!!!
+- For array, it's `.length` while for collections, it's `.size()`
+- careful of brackets
+- don't always use `println`
+- Sometimes we need to use `Scanner.next()` to remove the unwanted input which prevents new inputs from coming in
