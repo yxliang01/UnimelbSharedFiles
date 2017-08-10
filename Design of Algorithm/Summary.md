@@ -389,7 +389,7 @@ lead to neither descendant nor ancestor (a node that has already been completely
 when we *enter* a node, we assign the current time to the *"pre"* attribute of that node.   
 when we *leave* a node, we assign the current time to the *"post"* attribute of that node.   
 
-![relationship between pre/post numbering and DFS tree edges types](https://raw.githubusercontent.com/yxliang01/UnimelbSharedFiles/master/Design%20of%20Algorithm/Summary%20Resource/Algorithms%20DFS%20tree%20edges%20types%20and%20pre%20post%20numbering%20relationship.PNG)
+![relationship between pre/post numbering and DFS tree edges types](Summary%20Resource/Algorithms%20DFS%20tree%20edges%20types%20and%20pre%20post%20numbering%20relationship.PNG)
 
 ### Check cyclicity in a directed graph
 
@@ -1476,7 +1476,7 @@ Basically, trying to convert a problem into other problem type, use an existing 
 $f$ maps the input of $A$ to the input of $B$
 $h$ maps the output of $B$ to the output of $A$
 
-![Reduction](https://raw.githubusercontent.com/yxliang01/UnimelbSharedFiles/master/Design%20of%20Algorithm/Summary%20Resource/Reduction.PNG)
+![Reduction](Summary%20Resource/Reduction.PNG)
 
 
 NP-complete

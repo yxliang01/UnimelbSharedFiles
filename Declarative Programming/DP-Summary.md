@@ -553,7 +553,7 @@ something2 (Something 1 "Str") -- "Str"
             - group elements two by two then apply the function on each group then group groups two by two then apply the function one each newly create group
             - the reason why the balance fold definition in the slide needs the return type of `f` must be in the same type with the elements in the list is because when list has only one element, the function will return *the element itself*
             - 
-        * ![The folds](https://github.com/yxliang01/UnimelbSharedFiles/raw/master/Declarative%20Programming/Summary_Img/The_folds.PNG)
+        * ![The folds](Summary_Img/The_folds.PNG)
     + `concatMap f list = (concat . (map f)) list`
     + `any FUNCTION LST`
         * returns `True` if **one of** the element in `LST` is `True`
