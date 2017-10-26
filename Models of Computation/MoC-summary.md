@@ -18,6 +18,10 @@ Prelude code: https://www.haskell.org/onlinereport/haskell2010/haskellch9.html
 `<=>`:**if and only if**
 `<+>`:**exclusive or**
 
+### Useful functions for this subject
+- `all :: (a -> Bool) -> [a] -> Bool`
+    + `all` is similar to `and.map`
+
 ## Propositional Logic
 
 ### General Terminology
@@ -416,6 +420,14 @@ $R$ is **linear** iff $R(x,y) \lor R(y,x) \lor x = y$ for all $x,y$ in $A$.
 A **linear partial order** is called a **total order**.
 In a *total order*, every two elements from $A$ are **comparable**.
 
+#### Function
+
+##### Image and co-image
+
+Let $A \subseteq X, B \subseteq Y$, and consider $f : X \rightarrow Y$.
+$f[A] = \\{f(x) \mid x \in A\\}$ is the **image** of $A$ under $f$.
+$f^{-1}[B] = \\{x \in X \mid f(x) \in B\\}$ is the **co-image** of $B$ under $f$.
+
 ## Extra Stuff
 
 ### Terminology
@@ -430,8 +442,11 @@ Otherwise, it is *refutable*.
 ## Exam specific
 - Natural number $\mathbb{N}$ in this subject ***contains*** $0$
 - There's no induction proof in the exam
+- Wang's algorithm is non-examinable
+- When drawing DFA, **must check whether the transition function is total**.
+- When doing subset construction, **must check whether I have checked all the outgoing edges**.
 
 ## Todolist
 - Relation property closure
 - Full relation
-- Wang's algorithm is non-examinable
+- Definition for function
