@@ -360,15 +360,61 @@ A relation from $A$ to $A$ is a relation ***on $A$***.
 
 *Being unifiable* is a relation on *Term*.
 
-$\delta_A = \\{(x,x) \mid x \in A\\}$
+##### Identity relation
 
+$\delta_A = \\{(x,x) \mid x \in A\\}$ is a relation on $A$ - *the identity relation*.
+ 
 ##### Inverse of relation
 
 If $R$ is a relation from $A$ to $B$, then $R^{-1} = \\{(b,a) \mid R(a,b)\\}$ is a relation from $B$ to $A$, called the **inverse** of $R$.
 
 $$(R^{-1})^{-1} = R$$
 
+##### Reflexive Relation
 
+$$R \text{ is reflexive iff } R(x,x) \text{ for all } x \in A$$
+
+##### Irreflexive Relation
+
+$$R \text{ is irreflexive iff } R(x,x) \text{ for no } x \in A$$
+
+##### Symmetric Relation
+
+$$R \text{ is symmetric iff } R(x,y) \implies R(y,x) \text{ for all x,y in A}$$
+
+##### Asymmetric Relation
+
+$$R \text{ is asymmetric iff } R(x,y) \implies \not R(y,x) \text{ for all x,y in A}$$
+
+##### Antisymmetric Relation
+
+$$R \text{ is antisymmetric iff } R(x,y) \land R(y,x) \implies x = y \text{ for all x,y in A}$$
+
+##### Transitive Relation
+
+$$R \text{ is transitive iff } R(x,y) \land R(y,z) \implies R(x,z) \text{ for all x,y,z in A}$$
+
+##### Composing Relation
+
+Let $R_1 \text{ and } R_2$ are relations on $A$. The composition $R_1 \circ R_2$ is the relation on $A$ defined by $(x,z) \in (R_1 \circ R_2) \iff \exists y (R_1(x,y) \land R_2(y,z))$.
+
+The n-fold composition $R^n$ is defined by
+$$R^1 = R$$
+$$R^{n+1} = R^n \circ R$$
+
+##### Equivalence Relation
+
+A binary relation is reflexive, symmetric and transitive is an *equivalence relation*.
+
+#### Partial orders
+
+$R$ is a **pre-order** iff $R$ is **transitive** and **reflexive**.
+$R$ is a **strict partial order** iff $R$ is **transitive** and **irreflexive**.
+$R$ is a **partial order** iff $R$ is an antisymmetric preorder.
+$R$ is **linear** iff $R(x,y) \lor R(y,x) \lor x = y$ for all $x,y$ in $A$.
+
+A **linear partial order** is called a **total order**.
+In a *total order*, every two elements from $A$ are **comparable**.
 
 ## Extra Stuff
 
@@ -383,3 +429,9 @@ Otherwise, it is *refutable*.
 
 ## Exam specific
 - Natural number $\mathbb{N}$ in this subject ***contains*** $0$
+- There's no induction proof in the exam
+
+## Todolist
+- Relation property closure
+- Full relation
+- Wang's algorithm is non-examinable
