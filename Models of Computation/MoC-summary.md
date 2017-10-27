@@ -190,7 +190,7 @@ A finite automation is a 5-tuple $(Q, \Sigma, \delta, q_0, F)$
 
 $Q$ is a finite set of states
 $\Sigma$ is a finite alphabet
-$\delta: Q X \Sigma \rightarrow Q$ is the transition function; For DFA, this should be a *total function*
+$\delta: Q \times \Sigma \rightarrow Q$ is the transition function; For DFA, this should be a *total function*
 $q_0 \in Q$ is the start state
 $F \subseteq Q$ are the accept states (it's a set)
 
@@ -237,7 +237,7 @@ A 6-tuple $(Q, \sigma, \Gamma, \delta, q_0, F)$ where
 $Q$ is a finite set of **states**
 $\sigma$ is the finite **input alphabet**
 $\Gamma$ is the finite **stack alphabet**
-$\delta : Q X \sigma_{\epsilon} X \Gamma_{\epsilon} \rightarrow P(Q X \Gamma_{\epsilon})$
+$\delta : Q \times \sigma_{\epsilon} \times \Gamma_{\epsilon} \rightarrow P(Q \times \Gamma_{\epsilon})$
 $q_0 \in Q$ is the *start state*
 $F \subseteq Q$ are the accept states
 
@@ -285,6 +285,61 @@ $S$ is the *start variable*
 
 A grammar that has different parse tree for some sentence is **ambiguous**.
 
+## Regular expression
+
+The regular expressions over an alphabet $\sigma = \\{a_1, ..., a_n\\}$ is given by the grammar $regexp \rightarrow a_1 | ... | a_n | \epsilon | \emptyset | regexp \union regexp | regexp regexp | regexp^*$.
+
+Language recognized by regular express $R$ is expressed as $L(R)$.
+
+Semantics: 
+$$L(a) = \\{a\\}$$
+$$L(\epsilon) = \\{\epsilon\\}$$
+$$L(\emptyset) = \epsilon$$
+$$L(R_1 \union R_2) = L(R_1) \union L(R_2)$$
+$$L(R_1 R_2) = L(R_1) \circ L(R_2)$$
+$$L(R^*) = L(R)^*$$
+
+$L$ is regular iff $L$ can be described by a regular expression.
+
+## Function
+
+### Surjective (or Onto)
+
+A function $f \colon X \to Y$ is **surjective** iff $f[X] = Y$.
+
+### Injective (or One-to-one)
+
+A function $f \colon X \to Y$ is **injective** iff $f(x) = f(y) \Rightarrow x = y$.
+
+### Bijective
+
+A function $f \colon X \to Y$ is **bijective** iff $f$ is both surjective and injective.
+
+### Composition
+
+$f \colon X \to Y$ and $g \colon Y \to Z$ is the function $g \circ f \colon X \to Z$ defined by $(g \circ f)(x) = g(f(x))$. Composition makes sense as long as $ran(f) \subseteq dom(g)$. For function composition $g \circ f$, it's best read as "$g$ after $f$".
+
+
+***Memorize***
+Let $f \colon X \to Y$ and $g \colon Y \to Z$.
+$$g \circ f \text{ is injective } \implies f \text{ is injective}$$ (Harder to memorize)
+$$g \circ f \text{ is surjective } \implies g \text{ is surjective}$$ (Harder to memorize)
+$$g, f \text{ are injective } \implies g \circ f \text{ is injective}$$
+$$g, f \text{ are surjective} \implies g \circ f \text{ is surjective}$$
+
+$\circ$ is associative. For $f \colon X \to Y$, $f \circ 1_x = 1_y \circ f = f$.
+
+### Identity function
+
+For a set $X$, $1_{X} \colon X \to X$ is the identity function on $X$.
+
+### Partial function
+
+We write $f \colon X \hookrightarrow Y$ to say that $f$ has a domain which is a ***subset*** of $X$($f(x)$ might be undefined for some $x \in X$).
+
+#### Total function
+
+A total function $f \colon X \to Y$ is a special case of partial function which has $f(x)$ defined for each $x \in X$.
 
 ## Set
 
@@ -393,13 +448,13 @@ TODO
 
 ### Cartesian product
 
-The Cartesian product of $A$ and $B$ is defined $A X B = \\{ (a,b) \mid a \in A \land b \in B \\}$.
+The Cartesian product of $A$ and $B$ is defined $A \times B = \\{ (a,b) \mid a \in A \land b \in B \\}$.
 
-We define the set $A^n$ of **n-tuples** over $A$ as $A^0 = \\{\emptyset\\}$ and $A^{n+1} = A X A^n$.
+We define the set $A^n$ of **n-tuples** over $A$ as $A^0 = \\{\emptyset\\}$ and $A^{n+1} = A \times A^n$.
 
 ### Relation
 
-An n-ary **relation** is a set of n-tuples. A relation is a subset of some Cartesian product $A_1 X A_2 X A_3 X ... X A_n$. Or, we can think of a relation as a function from $A_1 X A_2 X ... X A_n$ to $\\{0, 1\\}$.
+An n-ary **relation** is a set of n-tuples. A relation is a subset of some Cartesian product $A_1 \times A_2 \times A_3 \times ... \times A_n$. Or, we can think of a relation as a function from $A_1 \times A_2 \times ... \times A_n$ to $\\{0, 1\\}$.
 
 #### Binary relation
 
@@ -444,7 +499,9 @@ $$R \text{ is asymmetric iff } R(x,y) \implies \not R(y,x) \text{ for all x,y in
 
 $$R \text{ is antisymmetric iff } R(x,y) \land R(y,x) \implies x = y \text{ for all x,y in A}$$
 
-##### Transitive Relation
+In other word, for all $x, y \in A$, if $R(x,y)$ holds, $R(y,x)$ must not hold.
+
+##### Transitive Relation*
 
 $$R \text{ is transitive iff } R(x,y) \land R(y,z) \implies R(x,z) \text{ for all x,y,z in A}$$
 
@@ -484,7 +541,7 @@ A 7-tuple $M = (Q, \sigma, \Gamma, \delta, q_0, q_a, q_r)$ where
 $Q$ is a finite set of states.
 $\Gamma$ is a finite tape alphabet, ***which includes the blank character $\sqcup$***.
 $\sigma \subseteq \Gamma \\ \\{\sqcup\\}$ is the input alphabet.
-$\delta : Q X \Gamma X \\{ L, R\\}$ is the transition function.
+$\delta : Q \times \Gamma \times \\{ L, R\\}$ is the transition function.
 $q_0$ is the initial state.
 $q_a$ is the accept state.
 $q_r (\ne q_a)$ is the reject state.  
@@ -497,6 +554,13 @@ Turing recognizable(recursively enumerable or r.e.) languages: Those that have a
 
 A Turing machine has an **unbounded tape** through which it takes its input and performs its computations. It can read from and write to the tape. It can move either left or right over the tape.
 
+A Turing machine can not only recognize some languages but also produce output through its tape. 
+
+A Turing machine can also be an **enumerator** which can generate all strings $w \in L$ where $L$ is a language. $L$ is Turing recognizable iff some enumerator enumerates $L$.
+
+Turing machine is capable of simulating other Turing machines and DFA.
+A halting Turing machine can translate an NFA to an equivalent DFA.
+
 ### Graph representation
 
 On an arrow from $q_i$ to $q_j$, we write:
@@ -504,11 +568,24 @@ On an arrow from $q_i$ to $q_j$, we write:
 $x \rightarrow d$ when $\delta(q_i, x) = (q_j, x, d)$
 $x \rightarrow y,d$ when $\delta(q_i, x) = (q_j, y, d), y \ne x$
 
+### Multitape Turing machine
+
+A multitape Turing machine has $k$ tapes. The transition function will then be 
+$\delta \colon Q \times \Gamma^k \to Q \times \Gamma^k \times \\{L, R\\}^k$.
+
+For example, $\delta(q_i, a_1, ..., a_k) = (q_j, (b_1, ..., b_k), (d_1, ..., d_k))$.
+
+### Nondeterministic Turing machine
+
+A nondeterministic Turing machine has transition function $\delta \colon Q \times \Gamma \to P(Q \times \Gamma \times \\{L, R\\})$.
+
 ### Decidability
 
-Decidable languages: Languages that are recognized by a Turing machine which halts for all input.
+Decidable languages: **Languages that are recognized by a Turing machine which halts for all input**.
 
 A language is decidable iff some Turing machine decides it.
+
+![Turing languages](Summary-Image/Turing-languages.png)
 
 ### Computability
 
@@ -535,6 +612,13 @@ Otherwise, it is *refutable*.
 - Wang's algorithm is non-examinable
 - When drawing DFA, **must check whether the transition function is total**.
 - When doing subset construction, **must check whether I have checked all the outgoing edges**.
+- For DFA, remember to add outgoing edges for the fail state
+- The "complement trick" only works for DFA
+- When trying to find a complement of a regular expression
+    + 1. convert to NFA
+    + 2. convert to DFA
+    + 3. complement the DFA
+    + 4. convert to regular expression
 
 ## Todolist
 - Relation property closure
@@ -545,3 +629,4 @@ Otherwise, it is *refutable*.
 - Push down automata
 - Context-free language
 - Pumping lemma
+- Turing machine configuration
