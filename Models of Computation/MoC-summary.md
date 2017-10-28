@@ -20,7 +20,7 @@ $$
 
 ## Haskell
 
-This section is meant to be a complimentary to my [DP-Summary](https://github.com/yxliang01/UnimelbSharedFiles/blob/master/Declarative%20Programming/DP-Summary.md).
+This section is meant to be a complement to my [DP-Summary](https://github.com/yxliang01/UnimelbSharedFiles/blob/master/Declarative%20Programming/DP-Summary.md).
 
 Prelude code: https://www.haskell.org/onlinereport/haskell2010/haskellch9.html
 
