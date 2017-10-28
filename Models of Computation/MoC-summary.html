@@ -1,39 +1,41 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
-  max-width: 980px;
-  border: 1px solid #ddd;
-  outline: 1300px solid #fff;
-  margin: 16px auto;
-}
-
-body .markdown-body
-{
-  padding: 45px;
-}
-
-@font-face {
-  font-family: fontawesome-mini;
-  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAzUABAAAAAAFNgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABbAAAABwAAAAcZMzaOEdERUYAAAGIAAAAHQAAACAAOQAET1MvMgAAAagAAAA+AAAAYHqhde9jbWFwAAAB6AAAAFIAAAFa4azkLWN2dCAAAAI8AAAAKAAAACgFgwioZnBnbQAAAmQAAAGxAAACZVO0L6dnYXNwAAAEGAAAAAgAAAAIAAAAEGdseWYAAAQgAAAFDgAACMz7eroHaGVhZAAACTAAAAAwAAAANgWEOEloaGVhAAAJYAAAAB0AAAAkDGEGa2htdHgAAAmAAAAAEwAAADBEgAAQbG9jYQAACZQAAAAaAAAAGgsICJBtYXhwAAAJsAAAACAAAAAgASgBD25hbWUAAAnQAAACZwAABOD4no+3cG9zdAAADDgAAABsAAAAmF+yXM9wcmVwAAAMpAAAAC4AAAAusPIrFAAAAAEAAAAAyYlvMQAAAADLVHQgAAAAAM/u9uZ4nGNgZGBg4ANiCQYQYGJgBEJuIGYB8xgABMMAPgAAAHicY2Bm42OcwMDKwMLSw2LMwMDQBqGZihmiwHycoKCyqJjB4YPDh4NsDP+BfNb3DIuAFCOSEgUGRgAKDgt4AAB4nGNgYGBmgGAZBkYGEAgB8hjBfBYGCyDNxcDBwMTA9MHhQ9SHrA8H//9nYACyQyFs/sP86/kX8HtB9UIBIxsDXICRCUgwMaACRoZhDwA3fxKSAAAAAAHyAHABJQB/AIEAdAFGAOsBIwC/ALgAxACGAGYAugBNACcA/wCIeJxdUbtOW0EQ3Q0PA4HE2CA52hSzmZDGe6EFCcTVjWJkO4XlCGk3cpGLcQEfQIFEDdqvGaChpEibBiEXSHxCPiESM2uIojQ7O7NzzpkzS8qRqnfpa89T5ySQwt0GzTb9Tki1swD3pOvrjYy0gwdabGb0ynX7/gsGm9GUO2oA5T1vKQ8ZTTuBWrSn/tH8Cob7/B/zOxi0NNP01DoJ6SEE5ptxS4PvGc26yw/6gtXhYjAwpJim4i4/plL+tzTnasuwtZHRvIMzEfnJNEBTa20Emv7UIdXzcRRLkMumsTaYmLL+JBPBhcl0VVO1zPjawV2ys+hggyrNgQfYw1Z5DB4ODyYU0rckyiwNEfZiq8QIEZMcCjnl3Mn+pED5SBLGvElKO+OGtQbGkdfAoDZPs/88m01tbx3C+FkcwXe/GUs6+MiG2hgRYjtiKYAJREJGVfmGGs+9LAbkUvvPQJSA5fGPf50ItO7YRDyXtXUOMVYIen7b3PLLirtWuc6LQndvqmqo0inN+17OvscDnh4Lw0FjwZvP+/5Kgfo8LK40aA4EQ3o3ev+iteqIq7wXPrIn07+xWgAAAAABAAH//wAPeJyFlctvG1UUh+/12DPN1B7P3JnYjj2Ox4/MuDHxJH5N3UdaEUQLqBIkfQQioJWQ6AMEQkIqsPGCPwA1otuWSmTBhjtps2ADWbJg3EpIXbGouqSbCraJw7kzNo2dRN1cnXN1ZvT7zuuiMEI7ncizyA0URofRBJpCdbQuIFShYY+GZRrxMDVtih5TwQPHtXDFFSIKoWIbuREBjLH27Ny4MsbVx+uOJThavebgVrNRLAiYx06rXsvhxLgWx9xpfHdrs/ekc2Pl2cpPCVEITQpwbj8VQhfXSq2m+Wxqaq2D73Kne5e3NjHqQNj3CRYlJlgUl/jRNP+2Gs2pNYRQiOnmUaQDqm30KqKiTTWPWjboxnTWpvgxjXo0KrtZXAHt7hwIz0YVcj88JnKlJKi3NPAwLyDwZudSmJSMMJFDYaOkaol6XtESx3Gt1VTytdZJ3DCLeaVhVnCBH1fycHTxFXwPX+l2e3d6H/TufGGmMTLTnbSJUdo00zuBswMO/nl3YLeL/wnu9/limCuD3vC54h5NBVz6Li414AI8Vx3iiosKcQXUbrvhFFiYb++HN4DaF4XzFW0fIN4XDWJ3a3XQoq9V8WiyRmdsatV9xUcHims1JloH0YUa090G3Tro3mC6c01f+YwCPquINr1PTaCP6rVTOOmf0GE2dBc7zWIhji3/5MchSuBHgDbU99RMWt3YUNMZMJmx92YP6NsHx/5/M1yvInpnkIOM3Z8fA3JQ2lW1RFC1KaBPDFXNAHYYvGy73aYZZZ3HifbeuiVZCpwA3oQBs0wGPYJbJfg60xrKEbKiNtTe1adwrpBRwlAuQ3q3VRaX0QmQ9a49BTSCuF1MLfQ6+tinOubRBZuWPNoMevGMT+V41KitO1is3D/tpMcq1JHZqDHGs8DoYGDkxJgKjHROeTCmhZvzPm9pod+ltKm4PN7Dyvvldlpsg8D+4AUJZ3F/JBstZz7cbFRxsaAGV6yX/dkcycWf8eS3QlQea+YLjdm3yrOnrhFpUyKVvFE4lpv4bO3Svx/6F/4xmiDu/RT5iI++lko18mY1oX+5UGKR6kmVjM/Zb76yfHtxy+h/SyQ0lLdpdKy/lWB6szatetQJ8nZ80A2Qt6ift6gJeavU3BO4gtxs/KCtNPVibCtYCWY3SIlSBPKXZALXiIR9oZeJ1AuMyxLpHIy/yO7vSiSE+kZvk0ihJ30HgHfzZtEMmvV58x6dtqns0XTAW7Vdm4HJ04OCp/crOO7rd9SGxQAE/mVA9xRN+kVSMRFF6S9JFGUtthkjBA5tFCWc2l4V43Ex9GmUP3SI37Jjmir9KqlaDJ4S4JB3vuM/jzyH1+8MuoZ+QGzfnvPoJb96cZlWjMcKLfgDwB7E634JTY+asjsPzS5CiVnEWY+KsrsIN5rn3mAPjqmQBxGjcGKB9f9ZxY3mYC2L85CJ2FXIxKKyHk+dg0FHbuEc7D5NzWUX32WxFcWNGRAbvwSx0RmIXVDuYySafluQBmzA/ssqJAMLnli+WIC90Gw4lm85wcp0qjArEDPJJV/sSx4P9ungTpgMw5gVC1XO4uULq0s3v1rqLi0vX/z65vlH50f8T/RHmSPTk5xxWBWOluMT6WiOy+tdvWxlV/XQb3o3c6Ssr+r6I708GsX9/nzp1tKFh0s3v7m4vAy/Hnb/KMOvc1wump6Il48K6mGDy02X9Yd65pa+nQIjk76lWxCkG8NBCP0HQS9IpAAAeJxjYGRgYGBhcCrq214Qz2/zlUGenQEEzr/77oug/zewFbB+AHI5GJhAogBwKQ0qeJxjYGRgYH3/P46BgZ0BBNgKGBgZUAEPAE/7At0AAAB4nGNngAB2IGYjhBsYBAAIYADVAAAAAAAAAAAAAFwAyAEeAaACCgKmAx4DggRmAAAAAQAAAAwAagAEAAAAAAACAAEAAgAWAAABAAChAAAAAHiclZI7bxQxFIWPd/JkUYQChEhIyAVKgdBMskm1QkKrRETpQiLRUczueB/K7HhlOxttg8LvoKPgP9DxFxANDR0tHRWi4NjrPIBEgh1p/dm+vufcawNYFWsQmP6e4jSyQB2fI9cwj++RE9wTjyPP4LYoI89iWbyLPIe6+Bh5Hs9rryMv4GbtW+RF3EhuRa7jbrIbeQkPkjdUETOLnL0Kip4FVvAhco1RXyMnSPEz8gzWxE7kWTwUp5HnsCLeR57HW/El8gJWa58iL+JO7UfkOh4l9yMv4UnyEtvQGGECgwF66MNBooF1bGCL1ELB/TYU+ZBRlvsKQ44Se6jQ4a7hef+fh72Crv25kp+8lNWGmeKoOI5jJLb1aGIGvb6TjfWNLdkqdFvJw4l1amjlXtXRZqRN7lSRylZZyhBqpVFWmTEXgWfUrpi/hZOQXdOd4rKuXOtEWT3k5IArPRzTUU5tHKjecZkTpnVbNOnt6jzN8240GD4xtikvZW56043rPMg/dS+dlOceXoR+WPbJ55Dsekq1lJpnypsMUsYOdCW30o103Ytu/lvh+5RWFLfBjm9/N8hJntPhvx92rnoE/kyHdGasGy754kw36vsVf/lFeBi+0COu+cfgQr42G3CRpeLoZ53gmfe3X6rcKt5oVxnptHR9JS8ehVUd5wvvahN2uqxOOpMXapibI5k7Zwbt4xBSaTfoKBufhAnO/uqNcfK8OTs0OQ6l7JIqFjDhYj5WcjevCnI/1DDiI8j4ndWb/5YzDZWh79yomWXeXj7Nnw70/2TIeFPTrlSh89k1ObOSRVZWZfgF0r/zJQB4nG2JUQuCQBCEd07TTg36fb2IyBaLd3vWaUh/vmSJnvpgmG8YcmS8X3Shf3R7QA4OBUocUKHGER5NNbOOEvwc1txnuWkTRb/aPjimJ5vXabI+3VfOiyS15UWvyezM2xiGOPyuMohOH8O8JiO4Af+FsAGNAEuwCFBYsQEBjlmxRgYrWCGwEFlLsBRSWCGwgFkdsAYrXFhZsBQrAAA=) format('woff');
-}
-
-@font-face {
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>@font-face {
   font-family: octicons-anchor;
   src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
 }
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+pre {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
 .markdown-body {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: #333333;
-  overflow: hidden;
-  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 16px;
   line-height: 1.6;
   word-wrap: break-word;
 }
 
 .markdown-body a {
-  background: transparent;
+  background-color: transparent;
 }
 
 .markdown-body a:active,
@@ -41,30 +43,8 @@ body .markdown-body
   outline: 0;
 }
 
-.markdown-body b,
 .markdown-body strong {
   font-weight: bold;
-}
-
-.markdown-body mark {
-  background: #ff0;
-  color: #000;
-  font-style: italic;
-  font-weight: bold;
-}
-
-.markdown-body sub,
-.markdown-body sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-.markdown-body sup {
-  top: -0.5em;
-}
-.markdown-body sub {
-  bottom: -0.25em;
 }
 
 .markdown-body h1 {
@@ -77,7 +57,6 @@ body .markdown-body
 }
 
 .markdown-body hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -88,8 +67,7 @@ body .markdown-body
 
 .markdown-body code,
 .markdown-body kbd,
-.markdown-body pre,
-.markdown-body samp {
+.markdown-body pre {
   font-family: monospace, monospace;
   font-size: 1em;
 }
@@ -123,81 +101,16 @@ body .markdown-body
   padding: 0;
 }
 
-.markdown-body .codehilitetable {
-  border: 0;
-  border-spacing: 0;
-}
-
-.markdown-body .codehilitetable tr {
-  border: 0;
-}
-
-.markdown-body .codehilitetable pre,
-.markdown-body .codehilitetable div.codehilite {
-  margin: 0;
-}
-
-.markdown-body .linenos,
-.markdown-body .code,
-.markdown-body .codehilitetable td {
-  border: 0;
-  padding: 0;
-}
-
-.markdown-body td:not(.linenos) .linenodiv {
-  padding: 0 !important;
-}
-
-.markdown-body .code {
-  width: 100%;
-}
-
-.markdown-body .linenos div pre,
-.markdown-body .linenodiv pre,
-.markdown-body .linenodiv {
-  border: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-border-top-left-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-
-.markdown-body .code div pre,
-.markdown-body .code div {
-  border: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-border-top-right-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  -moz-border-radius-topright: 3px;
-  -moz-border-radius-bottomright: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-
-.markdown-body * {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 .markdown-body input {
-  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-  line-height: 1.4;
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .markdown-body a {
-  color: #4183c4;
+  color: #4078c0;
   text-decoration: none;
 }
 
 .markdown-body a:hover,
-.markdown-body a:focus,
 .markdown-body a:active {
   text-decoration: underline;
 }
@@ -211,14 +124,15 @@ body .markdown-body
   border-bottom: 1px solid #ddd;
 }
 
-.markdown-body hr:before,
-.markdown-body hr:after {
+.markdown-body hr:before {
   display: table;
-  content: " ";
+  content: "";
 }
 
 .markdown-body hr:after {
+  display: table;
   clear: both;
+  content: "";
 }
 
 .markdown-body h1,
@@ -283,9 +197,7 @@ body .markdown-body
   margin-left: 0;
 }
 
-.markdown-body code,
-.markdown-body pre,
-.markdown-body samp {
+.markdown-body code {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 12px;
 }
@@ -293,21 +205,39 @@ body .markdown-body
 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
-.markdown-body kbd {
-  background-color: #e7e7e7;
-  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
-  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
-  background-image: linear-gradient(#fefefe, #e7e7e7);
-  background-repeat: repeat-x;
-  border-radius: 2px;
-  border: 1px solid #cfcfcf;
-  color: #000;
-  padding: 3px 5px;
-  line-height: 10px;
-  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+.markdown-body .select::-ms-expand {
+  opacity: 0;
+}
+
+.markdown-body .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
   display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  display: table;
+  clear: both;
+  content: "";
 }
 
 .markdown-body>*:first-child {
@@ -318,18 +248,18 @@ body .markdown-body
   margin-bottom: 0 !important;
 }
 
-.markdown-body .headeranchor-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  display: block;
-  padding-right: 6px;
-  padding-left: 30px;
-  margin-left: -30px;
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
 }
 
-.markdown-body .headeranchor-link:focus {
+.markdown-body .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+.markdown-body .anchor:focus {
   outline: none;
 }
 
@@ -339,44 +269,39 @@ body .markdown-body
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  position: relative;
   margin-top: 1em;
   margin-bottom: 16px;
   font-weight: bold;
   line-height: 1.4;
 }
 
-.markdown-body h1 .headeranchor,
-.markdown-body h2 .headeranchor,
-.markdown-body h3 .headeranchor,
-.markdown-body h4 .headeranchor,
-.markdown-body h5 .headeranchor,
-.markdown-body h6 .headeranchor {
-  display: none;
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
   color: #000;
   vertical-align: middle;
+  visibility: hidden;
 }
 
-.markdown-body h1:hover .headeranchor-link,
-.markdown-body h2:hover .headeranchor-link,
-.markdown-body h3:hover .headeranchor-link,
-.markdown-body h4:hover .headeranchor-link,
-.markdown-body h5:hover .headeranchor-link,
-.markdown-body h6:hover .headeranchor-link {
-  height: 1em;
-  padding-left: 8px;
-  margin-left: -30px;
-  line-height: 1;
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
   text-decoration: none;
 }
 
-.markdown-body h1:hover .headeranchor-link .headeranchor,
-.markdown-body h2:hover .headeranchor-link .headeranchor,
-.markdown-body h3:hover .headeranchor-link .headeranchor,
-.markdown-body h4:hover .headeranchor-link .headeranchor,
-.markdown-body h5:hover .headeranchor-link .headeranchor,
-.markdown-body h6:hover .headeranchor-link .headeranchor {
-  display: inline-block;
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
 }
 
 .markdown-body h1 {
@@ -386,6 +311,10 @@ body .markdown-body
   border-bottom: 1px solid #eee;
 }
 
+.markdown-body h1 .anchor {
+  line-height: 1;
+}
+
 .markdown-body h2 {
   padding-bottom: 0.3em;
   font-size: 1.75em;
@@ -393,22 +322,42 @@ body .markdown-body
   border-bottom: 1px solid #eee;
 }
 
+.markdown-body h2 .anchor {
+  line-height: 1;
+}
+
 .markdown-body h3 {
   font-size: 1.5em;
   line-height: 1.43;
+}
+
+.markdown-body h3 .anchor {
+  line-height: 1.2;
 }
 
 .markdown-body h4 {
   font-size: 1.25em;
 }
 
+.markdown-body h4 .anchor {
+  line-height: 1.2;
+}
+
 .markdown-body h5 {
   font-size: 1em;
+}
+
+.markdown-body h5 .anchor {
+  line-height: 1.1;
 }
 
 .markdown-body h6 {
   font-size: 1em;
   color: #777;
+}
+
+.markdown-body h6 .anchor {
+  line-height: 1.1;
 }
 
 .markdown-body p,
@@ -417,8 +366,7 @@ body .markdown-body
 .markdown-body ol,
 .markdown-body dl,
 .markdown-body table,
-.markdown-body pre,
-.markdown-body .admonition {
+.markdown-body pre {
   margin-top: 0;
   margin-bottom: 16px;
 }
@@ -508,12 +456,11 @@ body .markdown-body
 
 .markdown-body img {
   max-width: 100%;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  box-sizing: content-box;
+  background-color: #fff;
 }
 
-.markdown-body code,
-.markdown-body samp {
+.markdown-body code {
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
@@ -539,11 +486,11 @@ body .markdown-body
   border: 0;
 }
 
-.markdown-body .codehilite {
+.markdown-body .highlight {
   margin-bottom: 16px;
 }
 
-.markdown-body .codehilite pre,
+.markdown-body .highlight pre,
 .markdown-body pre {
   padding: 16px;
   overflow: auto;
@@ -553,7 +500,7 @@ body .markdown-body
   border-radius: 3px;
 }
 
-.markdown-body .codehilite pre {
+.markdown-body .highlight pre {
   margin-bottom: 0;
   word-break: normal;
 }
@@ -579,325 +526,136 @@ body .markdown-body
   content: normal;
 }
 
-/* Admonition */
-.markdown-body .admonition {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  position: relative;
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
   border-radius: 3px;
-  border: 1px solid #e0e0e0;
-  border-left: 6px solid #333;
-  padding: 10px 10px 10px 30px;
+  box-shadow: inset 0 -1px 0 #bbb;
 }
 
-.markdown-body .admonition table {
+.markdown-body .pl-c {
+  color: #969896;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #0086b3;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
   color: #333;
 }
 
-.markdown-body .admonition p {
-  padding: 0;
+.markdown-body .pl-ent {
+  color: #63a35c;
 }
 
-.markdown-body .admonition-title {
+.markdown-body .pl-k {
+  color: #a71d5d;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #183691;
+}
+
+.markdown-body .pl-v {
+  color: #ed6a43;
+}
+
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
   font-weight: bold;
-  margin: 0;
 }
 
-.markdown-body .admonition>.admonition-title {
-  color: #333;
+.markdown-body .pl-ml {
+  color: #693a17;
 }
 
-.markdown-body .attention>.admonition-title {
-  color: #a6d796;
-}
-
-.markdown-body .caution>.admonition-title {
-  color: #d7a796;
-}
-
-.markdown-body .hint>.admonition-title {
-  color: #96c6d7;
-}
-
-.markdown-body .danger>.admonition-title {
-  color: #c25f77;
-}
-
-.markdown-body .question>.admonition-title {
-  color: #96a6d7;
-}
-
-.markdown-body .note>.admonition-title {
-  color: #d7c896;
-}
-
-.markdown-body .admonition:before,
-.markdown-body .attention:before,
-.markdown-body .caution:before,
-.markdown-body .hint:before,
-.markdown-body .danger:before,
-.markdown-body .question:before,
-.markdown-body .note:before {
-  font: normal normal 16px fontawesome-mini;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  line-height: 1.5;
-  color: #333;
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding-top: 10px;
-  padding-left: 10px;
-}
-
-.markdown-body .admonition:before {
-  content: "\f056\00a0";
-  color: 333;
-}
-
-.markdown-body .attention:before {
-  content: "\f058\00a0";
-  color: #a6d796;
-}
-
-.markdown-body .caution:before {
-  content: "\f06a\00a0";
-  color: #d7a796;
-}
-
-.markdown-body .hint:before {
-  content: "\f05a\00a0";
-  color: #96c6d7;
-}
-
-.markdown-body .danger:before {
-  content: "\f057\00a0";
-  color: #c25f77;
-}
-
-.markdown-body .question:before {
-  content: "\f059\00a0";
-  color: #96a6d7;
-}
-
-.markdown-body .note:before {
-  content: "\f040\00a0";
-  color: #d7c896;
-}
-
-.markdown-body .admonition::after {
-  content: normal;
-}
-
-.markdown-body .attention {
-  border-left: 6px solid #a6d796;
-}
-
-.markdown-body .caution {
-  border-left: 6px solid #d7a796;
-}
-
-.markdown-body .hint {
-  border-left: 6px solid #96c6d7;
-}
-
-.markdown-body .danger {
-  border-left: 6px solid #c25f77;
-}
-
-.markdown-body .question {
-  border-left: 6px solid #96a6d7;
-}
-
-.markdown-body .note {
-  border-left: 6px solid #d7c896;
-}
-
-.markdown-body .admonition>*:first-child {
-  margin-top: 0 !important;
-}
-
-.markdown-body .admonition>*:last-child {
-  margin-bottom: 0 !important;
-}
-
-/* progress bar*/
-.markdown-body .progress {
-  display: block;
-  width: 300px;
-  margin: 10px 0;
-  height: 24px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #ededed;
-  position: relative;
-  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
-}
-
-.markdown-body .progress-label {
-  position: absolute;
-  text-align: center;
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
   font-weight: bold;
-  width: 100%; margin: 0;
-  line-height: 24px;
+}
+
+.markdown-body .pl-mq {
+  color: #008080;
+}
+
+.markdown-body .pl-mi {
   color: #333;
-  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
-  -webkit-font-smoothing: antialiased !important;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.markdown-body .progress-bar {
-  height: 24px;
-  float: left;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #96c6d7;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
-  background-size: 30px 30px;
-  background-image: -webkit-linear-gradient(
-    135deg, rgba(255, 255, 255, .4) 27%,
-    transparent 27%,
-    transparent 52%, rgba(255, 255, 255, .4) 52%,
-    rgba(255, 255, 255, .4) 77%,
-    transparent 77%, transparent
-  );
-  background-image: -moz-linear-gradient(
-    135deg,
-    rgba(255, 255, 255, .4) 27%, transparent 27%,
-    transparent 52%, rgba(255, 255, 255, .4) 52%,
-    rgba(255, 255, 255, .4) 77%, transparent 77%,
-    transparent
-  );
-  background-image: -ms-linear-gradient(
-    135deg,
-    rgba(255, 255, 255, .4) 27%, transparent 27%,
-    transparent 52%, rgba(255, 255, 255, .4) 52%,
-    rgba(255, 255, 255, .4) 77%, transparent 77%,
-    transparent
-  );
-  background-image: -o-linear-gradient(
-    135deg,
-    rgba(255, 255, 255, .4) 27%, transparent 27%,
-    transparent 52%, rgba(255, 255, 255, .4) 52%,
-    rgba(255, 255, 255, .4) 77%, transparent 77%,
-    transparent
-  );
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, .4) 27%, transparent 27%,
-    transparent 52%, rgba(255, 255, 255, .4) 52%,
-    rgba(255, 255, 255, .4) 77%, transparent 77%,
-    transparent
-  );
-}
-
-.markdown-body .progress-100plus .progress-bar {
-  background-color: #a6d796;
-}
-
-.markdown-body .progress-80plus .progress-bar {
-  background-color: #c6d796;
-}
-
-.markdown-body .progress-60plus .progress-bar {
-  background-color: #d7c896;
-}
-
-.markdown-body .progress-40plus .progress-bar {
-  background-color: #d7a796;
-}
-
-.markdown-body .progress-20plus .progress-bar {
-  background-color: #d796a6;
-}
-
-.markdown-body .progress-0plus .progress-bar {
-  background-color: #c25f77;
-}
-
-.markdown-body .candystripe-animate .progress-bar{
-  -webkit-animation: animate-stripes 3s linear infinite;
-  -moz-animation: animate-stripes 3s linear infinite;
-  animation: animate-stripes 3s linear infinite;
-}
-
-@-webkit-keyframes animate-stripes {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 60px 0;
-  }
-}
-
-@-moz-keyframes animate-stripes {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 60px 0;
-  }
-}
-
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 60px 0;
-  }
-}
-
-.markdown-body .gloss .progress-bar {
-  box-shadow:
-    inset 0 4px 12px rgba(255, 255, 255, .7),
-    inset 0 -12px 0 rgba(0, 0, 0, .05);
-}
-
-/* Multimarkdown Critic Blocks */
-.markdown-body .critic_mark {
-  background: #ff0;
-}
-
-.markdown-body .critic_delete {
-  color: #c82829;
-  text-decoration: line-through;
-}
-
-.markdown-body .critic_insert {
-  color: #718c00 ;
-  text-decoration: underline;
-}
-
-.markdown-body .critic_comment {
-  color: #8e908c;
   font-style: italic;
 }
 
-.markdown-body .headeranchor {
-  font: normal normal 16px octicons-anchor;
-  line-height: 1;
-  display: inline-block;
-  text-decoration: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
 }
 
-.headeranchor:before {
-  content: '\f05c';
+.markdown-body .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .plan-price-unit {
+  color: #767676;
+  font-weight: normal;
 }
 
 .markdown-body .task-list-item {
@@ -909,174 +667,60 @@ body .markdown-body
 }
 
 .markdown-body .task-list-item input {
-  margin: 0 4px 0.25em -20px;
+  margin: 0 0.35em 0.25em -1.6em;
   vertical-align: middle;
 }
 
-/* Media */
-@media only screen and (min-width: 480px) {
-  .markdown-body {
-    font-size:14px;
-  }
+.markdown-body .plan-choice {
+  padding: 15px;
+  padding-left: 40px;
+  display: block;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  font-weight: normal;
+  background-color: #fafafa;
 }
 
-@media only screen and (min-width: 768px) {
-  .markdown-body {
-    font-size:16px;
-  }
+.markdown-body .plan-choice.open {
+  background-color: #fff;
 }
 
-@media print {
-  .markdown-body * {
-    background: transparent !important;
-    color: black !important;
-    filter:none !important;
-    -ms-filter: none !important;
-  }
-
-  .markdown-body {
-    font-size:12pt;
-    max-width:100%;
-    outline:none;
-    border: 0;
-  }
-
-  .markdown-body a,
-  .markdown-body a:visited {
-    text-decoration: underline;
-  }
-
-  .markdown-body .headeranchor-link {
-    display: none;
-  }
-
-  .markdown-body a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-  .markdown-body abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
-  .markdown-body .ir a:after,
-  .markdown-body a[href^="javascript:"]:after,
-  .markdown-body a[href^="#"]:after {
-    content: "";
-  }
-
-  .markdown-body pre {
-    white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-
-  .markdown-body pre,
-  .markdown-body blockquote {
-    border: 1px solid #999;
-    padding-right: 1em;
-    page-break-inside: avoid;
-  }
-
-  .markdown-body .progress,
-  .markdown-body .progress-bar {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-
-  .markdown-body .progress {
-    border: 1px solid #ddd;
-  }
-
-  .markdown-body .progress-bar {
-    height: 22px;
-    border-right: 1px solid #ddd;
-  }
-
-  .markdown-body tr,
-  .markdown-body img {
-    page-break-inside: avoid;
-  }
-
-  .markdown-body img {
-    max-width: 100% !important;
-  }
-
-  .markdown-body p,
-  .markdown-body h2,
-  .markdown-body h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  .markdown-body h2,
-  .markdown-body h3 {
-    page-break-after: avoid;
-  }
+.markdown-body .plan-choice.open .plan-choice-seat-breakdown {
+  display: block;
 }
-</style><style>/*github*/
-.codehilite {background-color:#fff;color:#333333;}
-.codehilite .hll {background-color:#ffffcc;}
-.codehilite .c{color:#999988;font-style:italic}
-.codehilite .err{color:#a61717;background-color:#e3d2d2}
-.codehilite .k{font-weight:bold}
-.codehilite .o{font-weight:bold}
-.codehilite .cm{color:#999988;font-style:italic}
-.codehilite .cp{color:#999999;font-weight:bold}
-.codehilite .c1{color:#999988;font-style:italic}
-.codehilite .cs{color:#999999;font-weight:bold;font-style:italic}
-.codehilite .gd{color:#000000;background-color:#ffdddd}
-.codehilite .ge{font-style:italic}
-.codehilite .gr{color:#aa0000}
-.codehilite .gh{color:#999999}
-.codehilite .gi{color:#000000;background-color:#ddffdd}
-.codehilite .go{color:#888888}
-.codehilite .gp{color:#555555}
-.codehilite .gs{font-weight:bold}
-.codehilite .gu{color:#800080;font-weight:bold}
-.codehilite .gt{color:#aa0000}
-.codehilite .kc{font-weight:bold}
-.codehilite .kd{font-weight:bold}
-.codehilite .kn{font-weight:bold}
-.codehilite .kp{font-weight:bold}
-.codehilite .kr{font-weight:bold}
-.codehilite .kt{color:#445588;font-weight:bold}
-.codehilite .m{color:#009999}
-.codehilite .s{color:#dd1144}
-.codehilite .n{color:#333333}
-.codehilite .na{color:teal}
-.codehilite .nb{color:#0086b3}
-.codehilite .nc{color:#445588;font-weight:bold}
-.codehilite .no{color:teal}
-.codehilite .ni{color:purple}
-.codehilite .ne{color:#990000;font-weight:bold}
-.codehilite .nf{color:#990000;font-weight:bold}
-.codehilite .nn{color:#555555}
-.codehilite .nt{color:navy}
-.codehilite .nv{color:teal}
-.codehilite .ow{font-weight:bold}
-.codehilite .w{color:#bbbbbb}
-.codehilite .mf{color:#009999}
-.codehilite .mh{color:#009999}
-.codehilite .mi{color:#009999}
-.codehilite .mo{color:#009999}
-.codehilite .sb{color:#dd1144}
-.codehilite .sc{color:#dd1144}
-.codehilite .sd{color:#dd1144}
-.codehilite .s2{color:#dd1144}
-.codehilite .se{color:#dd1144}
-.codehilite .sh{color:#dd1144}
-.codehilite .si{color:#dd1144}
-.codehilite .sx{color:#dd1144}
-.codehilite .sr{color:#009926}
-.codehilite .s1{color:#dd1144}
-.codehilite .ss{color:#990073}
-.codehilite .bp{color:#999999}
-.codehilite .vc{color:teal}
-.codehilite .vg{color:teal}
-.codehilite .vi{color:teal}
-.codehilite .il{color:#009999}
-.codehilite .gc{color:#999;background-color:#EAF2F5}
+
+.markdown-body .plan-choice-free {
+  border-radius: 3px 3px 0 0;
+}
+
+.markdown-body .plan-choice-paid {
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+.markdown-body .plan-choice-radio {
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+
+.markdown-body .plan-choice-exp {
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.markdown-body .plan-choice-seat-breakdown {
+  margin-top: 10px;
+  display: none;
+}
+
+.markdown-body :checked+.radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
 </style><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
 MathJax.Hub.Config({
@@ -1166,190 +810,727 @@ MathJax.Hub.Config({
   onReady(function(){convertUML('uml-sequence-diagram', Diagram, {theme: 'simple'});});
 })(window, document)
 </script>
-<title>MoC-summary</title></head><body><article class="markdown-body"><h1 id="models-of-computations"><a name="user-content-models-of-computations" href="#models-of-computations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Models of Computations</h1>
-<h2 id="haskell"><a name="user-content-haskell" href="#haskell" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Haskell</h2>
-<p>This section is meant to be a complimentary to my DP-Summary.</p>
+<title>MoC-summary</title></head><body><article class="markdown-body"><h1 id="models-of-computations">
+<a id="user-content-models-of-computations" class="anchor" href="#models-of-computations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Models of Computations</h1>
+<p>Summary is written by Xiao Liang Yu.
+This summary includes material that was created by my dear lecturer Harald Søndergaard.
+This document might contain some personal but controversial opinions (might be mine or Harald's).</p>
+<p>[TOC]</p>
+
+<p>$$
+\newcommand{\union}{\cup}
+\newcommand{\inter}{\cap}
+\newcommand{\natural}{\mathbb{N}}
+\newcommand{\powerset}{\mathcal{P}}
+\newcommand{\integer}{\mathcal{Z}}
+$$</p>
+<h2 id="haskell">
+<a id="user-content-haskell" class="anchor" href="#haskell" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Haskell</h2>
+<p>This section is meant to be a complimentary to my <a href="https://github.com/yxliang01/UnimelbSharedFiles/blob/master/Declarative%20Programming/DP-Summary.md">DP-Summary</a>.</p>
 <p>Prelude code: <a href="https://www.haskell.org/onlinereport/haskell2010/haskellch9.html">https://www.haskell.org/onlinereport/haskell2010/haskellch9.html</a></p>
-<p><code>==&gt;</code>:<strong>implies/only if</strong><br />
-<code>&lt;=&gt;</code>:<strong>if and only if</strong><br />
+<p><code>==&gt;</code>:<strong>implies/only if</strong>
+<code>&lt;=&gt;</code>:<strong>if and only if</strong>
 <code>&lt;+&gt;</code>:<strong>exclusive or</strong></p>
-<h2 id="propositional-logic"><a name="user-content-propositional-logic" href="#propositional-logic" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Propositional Logic</h2>
-<h3 id="general-terminology"><a name="user-content-general-terminology" href="#general-terminology" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>General Terminology</h3>
+<h3 id="useful-functions-for-this-subject">
+<a id="user-content-useful-functions-for-this-subject" class="anchor" href="#useful-functions-for-this-subject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Useful functions for this subject</h3>
 <ul>
-<li>conjunction : $ P \land Q $</li>
-<li>disjunction : $ P \lor Q $</li>
-<li>connectives : $ \neg, \lor, \land, \implies, \iff, \oplus $</li>
-<li>propositional letters : $ A, B, C, &hellip; Z $ (upper case)- nand : $ \uparrow $</li>
-<li>nor : $ \downarrow $</li>
-<li>valid : <strong>no truth assignment</strong> makes it <code>false</code></li>
-<li>non-valid : there exists <strong>at least one truth assignment</strong> to make it <code>false</code></li>
-<li>unsatisfiable : <strong>no truth assignment</strong> makes it <code>true</code></li>
-<li>satisfiable : there exists <strong>at least one truth assignment</strong> to make it <code>true</code></li>
-<li>tautology : a <strong>valid propositional formula</strong></li>
-<li>contradiction : a <strong>unsatisfiable propositional formula</strong></li>
+<li>
+<code>all :: (a -&gt; Bool) -&gt; [a] -&gt; Bool</code>
+<ul>
+<li>
+<code>all</code> is similar to <code>and.map</code>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="propositional-logic">
+<a id="user-content-propositional-logic" class="anchor" href="#propositional-logic" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Propositional Logic</h2>
+<h3 id="general-terminology">
+<a id="user-content-general-terminology" class="anchor" href="#general-terminology" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General Terminology</h3>
+<ul>
+<li>conjunction : $P \land Q$</li>
+<li>disjunction : $P \lor Q$</li>
+<li>connectives : $\neg, \lor, \land, \implies, \iff, \oplus$</li>
+<li>propositional letters : $A, B, C, ... Z$ (upper case)- nand : $\uparrow$</li>
+<li>nor : $\downarrow$</li>
+<li>valid : <strong>no truth assignment</strong> makes it <code>false</code>
+</li>
+<li>non-valid : there exists <strong>at least one truth assignment</strong> to make it <code>false</code>
+</li>
+<li>unsatisfiable : <strong>no truth assignment</strong> makes it <code>true</code>
+</li>
+<li>satisfiable : there exists <strong>at least one truth assignment</strong> to make it <code>true</code>
+</li>
+<li>tautology : a <strong>valid propositional formula</strong>
+</li>
+<li>contradiction : a <strong>unsatisfiable propositional formula</strong>
+</li>
 <li>substitution : replace propositional letters by formulas</li>
 <li>interchange of equivalents : replace a formula with another formula</li>
-<li>decidability : </li>
+<li>decidability :</li>
 <li>clause : a <strong>set</strong> (disjunction) of literals</li>
 <li>clausal form : TODO</li>
 <li>conjunctive normal form (CNF) : a conjunction of disjunctions of literals (a conjunction of <em>clauses</em>)</li>
 <li>reduced CNF (RCNF) : CNF formula that is in RCNF if for each of its clauses, no propositional letter occurs twice</li>
 <li>disjunctive normal form (DNF) : a disjunction of conjunctions of literals</li>
 <li>canonical form : a normal form leads to a <em>unique representation</em> for every Boolean function called canonical.</li>
-<li>Bottom : $ \bot $ - any unsatisfiable formula</li>
-<li>Top : $ \top $ - anby valid formula</li>
+<li>Bottom : $\bot$- any unsatisfiable formula</li>
+<li>Top :$\top$- anby valid formula</li>
 </ul>
-<h3 id="concepts"><a name="user-content-concepts" href="#concepts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Concepts</h3>
+<h3 id="concepts">
+<a id="user-content-concepts" class="anchor" href="#concepts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Concepts</h3>
 <ul>
-<li>model<ul>
-<li>Let $ \theta $ be a truth assignment and $ \phi $ be a propositional formula. If $ \theta $ makes $ \phi $ <code>true</code> then $ \theta $ is a <strong>model</strong> of $ \phi $.</li>
+<li>model
+<ul>
+<li>Let $\theta$ be a truth assignment and $\phi$ be a propositional formula. If $\theta$ makes $\phi$ <code>true</code> then $\theta$ is a <strong>model</strong> of $\phi$.</li>
 </ul>
 </li>
-<li>Logical consequence<ul>
-<li>$ \Psi $ is a logical consequence of $ \phi $ iff every model of $ \phi $ is a model of $ \Psi $ as well -&gt; $ \phi \vDash \Psi $</li>
-<li>If $ \phi \vDash \Psi $ and $ \Psi \vDash \phi $ both hold, that is, $ \phi $ and $ \Psi $ have exactly the same models, then $ \phi $ and $ \Psi $ are (logically) <strong>equivalent</strong>. -&gt; $ \phi \equiv \Psi $</li>
+<li>Logical consequence
+<ul>
+<li>$\Psi$ is a logical consequence of $\phi$ iff every model of $\phi$ is a model of $\Psi$ as well -&gt; $\phi \vDash \Psi$</li>
+<li>If $\phi \vDash \Psi$ and $\Psi \vDash \phi$ both hold, that is, $\phi$ and $\Psi$ have exactly the same models, then $\phi$ and $\Psi$ are (logically) <strong>equivalent</strong>. -&gt; $\phi \equiv \Psi$</li>
 </ul>
 </li>
-<li>every propositional formula can be expressed in <em>CNF</em> and <em>DNF</em></li>
-<li>A clause $left {A,B} $ represents $ A \lor B $</li>
-<li>Empty <em>clause</em> $ \varnothing $ represent $ \bot $</li>
-<li>Formula $left {C_1, C_2} $ represents $ C_1 \land C_2 $</li>
-<li>Empty <em>formula</em> $ \varnothing $ represents $ \top $</li>
-<li><em>Xor normal form</em> is <em>canonical</em> which presents the function in a sum-of-products form using <em>exclusive or</em> and <em>conjunction</em></li>
-<li>Binary decision diagrams (BDD) gives canonical form when we enforce maximal sharing of subgraphs (and agree on an ordering of variables) - called <em>ROBDD</em> - a reduced, ordered BDD <img alt="Binary decision diagrams" src="/home/good/Documents/Development/UnimelbSharedFiles/Models%20of%20Computation/Summary-Image/Binary-decision-diagrams.png" /><ul>
-<li>A propositional formula is valid $ \iff $ its ROBDD is the single-leaf graph $ t $</li>
-<li>A propositional formula is unsatisfiable $ \iff $ its ROBDD is the single-leaf graph $ f $</li>
+<li>every propositional formula can be expressed in <em>CNF</em> and <em>DNF</em>
+</li>
+<li>A clause $\{A,B\}$ represents $A \lor B$</li>
+<li>Empty <em>clause</em> $\varnothing$ represent $\bot$</li>
+<li>Formula $\{C_1, C_2\}$ represents $C_1 \land C_2$</li>
+<li>Empty <em>formula</em> $\varnothing$ represents $\top$</li>
+<li>
+<em>Xor normal form</em> is <em>canonical</em> which presents the function in a sum-of-products form using <em>exclusive or</em> and <em>conjunction</em>
+</li>
+<li>Binary decision diagrams (BDD) gives canonical form when we enforce maximal sharing of subgraphs (and agree on an ordering of variables) - called <em>ROBDD</em> - a reduced, ordered BDD <a href="Summary-Image/Binary-decision-diagrams.png" target="_blank"><img src="Summary-Image/Binary-decision-diagrams.png" alt="Binary decision diagrams" style="max-width:100%;"></a>
+<ul>
+<li>A propositional formula is valid $\iff$ its ROBDD is the single-leaf graph $t$</li>
+<li>A propositional formula is unsatisfiable $\iff$ its ROBDD is the single-leaf graph $f$</li>
 </ul>
 </li>
 <li>An empty set of clauses is valid, because it is trivial to satisfy all of the set’s clauses—there is nothing to do</li>
 <li>a (non-empty) set that contains an empty clause cannot be satisfied, because nothing satisfies that empty clause</li>
-<li>$ \phi \vDash \Psi $ iff $ \phi \land \neg \Psi $ is unsatisfiable</li>
-<li>A formula is <strong>unsatisfiable</strong> $ \iff $ its negation is <strong>valid</strong></li>
+<li>$\phi \vDash \Psi$ iff $\phi \land \neg \Psi$ is unsatisfiable</li>
+<li>A formula is <strong>unsatisfiable</strong> $\iff$ its negation is <strong>valid</strong>
+</li>
 </ul>
-<h4 id="resolution"><a name="user-content-resolution" href="#resolution" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Resolution</h4>
-<h5 id="resolvent"><a name="user-content-resolvent" href="#resolvent" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Resolvent</h5>
-<p>Let $ C_1 $ and $ C_2 $ be clauses such that $ P \in C_1 $ and $ \neg P \in C_2 $.<br />
-$ (C_1 {P}) \cup (C_2 {\neg P}) $ is a resolvent of $ C_1 $ and $ C_2 $.</p>
-<p>Theorem : If $ R $ is a resolvent of $ C_1 $ and $ C_2 $ then $ C_1 \land C_2 \vDash R $.</p>
-<h5 id="as-a-way-to-verify-that-a-cnf-formula-is-unsatisfiable"><a name="user-content-as-a-way-to-verify-that-a-cnf-formula-is-unsatisfiable" href="#as-a-way-to-verify-that-a-cnf-formula-is-unsatisfiable" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>As a way to verify that a CNF formula is <strong>unsatisfiable</strong></h5>
-<p>If we derive the empty clause $ \bot $, then the original set of clauses were unsatisfiable.</p>
-<h5 id="as-a-way-to-verify-that-a-cnf-formula-is-valid"><a name="user-content-as-a-way-to-verify-that-a-cnf-formula-is-valid" href="#as-a-way-to-verify-that-a-cnf-formula-is-valid" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>As a way to verify that a CNF formula is <strong>valid</strong></h5>
-<p>We first negative the formula, then use resolution to try deriving $ \bot $. If the negated formula is unsatisfiable, then the original formula is valid.</p>
-<h5 id="resolution-deduction"><a name="user-content-resolution-deduction" href="#resolution-deduction" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Resolution deduction</h5>
-<p>A <em>resolution deduction</em> of clause $ C $ from a set $ S $ of clauses is a finite sequence $ C_1, C_2, &hellip; , C_n $ of clauses such that $ C_n = C $ and for each $ i, 1 \ge i \ge n $, $ C_i $ is either a member of $ S $ or a resolvent of $ C_j $ and $ C_k $, for some $ j,k &lt; 1 $.</p>
-<p>A <em>resolution refutation</em> of a set $ S $ of clauses is a resolution deduction of $ \bot $ from $ S $.</p>
-<h3 id="converting-formula"><a name="user-content-converting-formula" href="#converting-formula" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Converting formula</h3>
-<h4 id="to-cnf-or-to-dnf"><a name="user-content-to-cnf-or-to-dnf" href="#to-cnf-or-to-dnf" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>to CNF or to DNF</h4>
+<h4 id="resolution">
+<a id="user-content-resolution" class="anchor" href="#resolution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Resolution</h4>
+<h5 id="resolvent">
+<a id="user-content-resolvent" class="anchor" href="#resolvent" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Resolvent</h5>
+<p>Let $C_1$ and $C_2$ be clauses such that $P \in C_1$ and $\neg P \in C_2$.
+$(C_1 \{P\}) \cup (C_2 \{\neg P\})$ is a resolvent of $C_1$ and $C_2$.</p>
+<p>Theorem : If $R$ is a resolvent of $C_1$ and $C_2$ then $C_1 \land C_2 \vDash R$.</p>
+<h5 id="as-a-way-to-verify-that-a-cnf-formula-is-unsatisfiable">
+<a id="user-content-as-a-way-to-verify-that-a-cnf-formula-is-unsatisfiable" class="anchor" href="#as-a-way-to-verify-that-a-cnf-formula-is-unsatisfiable" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>As a way to verify that a CNF formula is <strong>unsatisfiable</strong>
+</h5>
+<p>If we derive the empty clause $\bot$, then the original set of clauses were unsatisfiable.</p>
+<h5 id="as-a-way-to-verify-that-a-cnf-formula-is-valid">
+<a id="user-content-as-a-way-to-verify-that-a-cnf-formula-is-valid" class="anchor" href="#as-a-way-to-verify-that-a-cnf-formula-is-valid" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>As a way to verify that a CNF formula is <strong>valid</strong>
+</h5>
+<p>We first negative the formula, then use resolution to try deriving $\bot$. If the negated formula is unsatisfiable, then the original formula is valid.</p>
+<h5 id="resolution-deduction">
+<a id="user-content-resolution-deduction" class="anchor" href="#resolution-deduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Resolution deduction</h5>
+<p>A <em>resolution deduction</em> of clause $C$ from a set $S$ of clauses is a finite sequence $C_1, C_2, ... , C_n$ of clauses such that $C_n = C$ and for each $i, 1 \ge i \ge n$, $C_i$ is either a member of $S$ or a resolvent of $C_j$ and $C_k$, for some $j,k &lt; 1$.</p>
+<p>A <em>resolution refutation</em> of a set $S$ of clauses is a resolution deduction of $\bot$ from $S$.</p>
+<h3 id="converting-formula">
+<a id="user-content-converting-formula" class="anchor" href="#converting-formula" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Converting formula</h3>
+<h4 id="to-cnf-or-to-dnf">
+<a id="user-content-to-cnf-or-to-dnf" class="anchor" href="#to-cnf-or-to-dnf" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>to CNF or to DNF</h4>
 <ol>
-<li>Eliminate all occurrences of $ \oplus $ using $ A \oplus B \equiv (A \lor B) \land (\neg A \lor =neg B) $</li>
-<li>Eliminate all occurrences of $ \iff $ using $ A \iff B \equiv (A \implies B) \land (B \implies A) $</li>
-<li>Eliminate all occurrences of $ \implies $ using $ A \implies \equiv \neg A \lor B $</li>
-<li>Use De Morgan&rsquo;s Laws to push $ \neg $ inward over $ \lor $ and $ \land $</li>
-<li>Eliminate double negations using $ \neg\neg A \equiv A $</li>
+<li>Eliminate all occurrences of $\oplus$ using $A \oplus B \equiv (A \lor B) \land (\neg A \lor =neg B)$</li>
+<li>Eliminate all occurrences of $\iff$ using $A \iff B \equiv (A \implies B) \land (B \implies A)$</li>
+<li>Eliminate all occurrences of $\implies$ using $A \implies \equiv \neg A \lor B$</li>
+<li>Use De Morgan's Laws to push $\neg$ inward over $\lor$ and $\land$</li>
+<li>Eliminate double negations using $\neg\neg A \equiv A$</li>
 <li>Use the distributive laws to get the required form</li>
 </ol>
-<h3 id="equivalences"><a name="user-content-equivalences" href="#equivalences" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Equivalences</h3>
+<h3 id="equivalences">
+<a id="user-content-equivalences" class="anchor" href="#equivalences" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Equivalences</h3>
 <ul>
-<li>Absorption<ul>
-<li>$$ P \land P \equiv P $$</li>
-<li>$$ P \lor P \equiv P $$</li>
-</ul>
-</li>
-<li>Commutativity<ul>
-<li>$$ P \land Q \equiv Q \land P $$</li>
-<li>$$ P \lor Q \equiv Q \lor P $$</li>
-</ul>
-</li>
-<li>Associativity<ul>
-<li>$$ P \land (Q \land R) \equiv (P \land Q) \land R $$</li>
-<li>$$ P \lor (Q \lor R) \equiv (P \lor Q) \lor R $$</li>
-</ul>
-</li>
-<li>Distributivity<ul>
-<li>$$ P \land (Q \lor R) \equiv (P \land Q) \lor (P \land R) $$</li>
-<li>$$ P \lor (Q \land R) \equiv (P \lor Q) \land (P \lor R) $$</li>
-</ul>
-</li>
-<li>Double negation<ul>
-<li>$$ P \equiv \neg\neg P $$</li>
-</ul>
-</li>
-<li>De Morgan<ul>
-<li>$$ \neg (P \land Q) \equiv \neg P \lor \neg Q $$</li>
-<li>$$ \neg (P \lor Q) \equiv \neg P \land \neg Q $$</li>
-</ul>
-</li>
-<li>Implication<ul>
-<li>$$ P \implies Q \equiv \neg P \lor Q $$</li>
-</ul>
-</li>
-<li>Contraposition<ul>
-<li>$$ \neg P \implies \neg Q \equiv Q \implies P $$</li>
-<li>$$ P \implies \neg Q \equiv Q \implies \neg Q $$</li>
-<li>$$ \neg P \implies Q \equiv \neg Q \implies P $$ </li>
-</ul>
-</li>
-<li>Biimplication<ul>
-<li>$$ P \iff Q \equiv (P \land Q) \lor (\neg P \land \neg Q) $$</li>
-</ul>
-</li>
-</ul>
-<h3 id="priority"><a name="user-content-priority" href="#priority" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Priority</h3>
-<p>$ \neg $ binds tighter than $ \land $ and $ \lor $.<br />
-These bind tighter than $ \oplus $, which binds tighter than $ \implies $ and $ \iff $.</p>
-<h3 id="side-points"><a name="user-content-side-points" href="#side-points" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Side points</h3>
+<li>Absorption
 <ul>
-<li>In logic, <em>valid</em> means <em>vacuous (void of information)</em></li>
+<li>$$P \land P \equiv P$$</li>
+<li>$$P \lor P \equiv P$$</li>
 </ul>
-<h3 id="predicate-logic"><a name="user-content-predicate-logic" href="#predicate-logic" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Predicate logic</h3>
-<h4 id="general-terminology_1"><a name="user-content-general-terminology_1" href="#general-terminology_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>General Terminology</h4>
+</li>
+<li>Commutativity
 <ul>
-<li>Existential quantification (there exists) : $ \exists $</li>
-<li>Universal quantification (for all) : $ \forall $</li>
+<li>$$P \land Q \equiv Q \land P$$</li>
+<li>$$P \lor Q \equiv Q \lor P$$</li>
+</ul>
+</li>
+<li>Associativity
+<ul>
+<li>$$P \land (Q \land R) \equiv (P \land Q) \land R$$</li>
+<li>$$P \lor (Q \lor R) \equiv (P \lor Q) \lor R$$</li>
+</ul>
+</li>
+<li>Distributivity
+<ul>
+<li>$$P \land (Q \lor R) \equiv (P \land Q) \lor (P \land R)$$</li>
+<li>$$P \lor (Q \land R) \equiv (P \lor Q) \land (P \lor R)$$</li>
+</ul>
+</li>
+<li>Double negation
+<ul>
+<li>$$P \equiv \neg\neg P$$</li>
+</ul>
+</li>
+<li>De Morgan
+<ul>
+<li>$$\neg (P \land Q) \equiv \neg P \lor \neg Q$$</li>
+<li>$$\neg (P \lor Q) \equiv \neg P \land \neg Q$$</li>
+</ul>
+</li>
+<li>Implication
+<ul>
+<li>$$P \implies Q \equiv \neg P \lor Q$$</li>
+</ul>
+</li>
+<li>Contraposition
+<ul>
+<li>$$\neg P \implies \neg Q \equiv Q \implies P$$</li>
+<li>$$P \implies \neg Q \equiv Q \implies \neg Q$$</li>
+<li>$$\neg P \implies Q \equiv \neg Q \implies P$$</li>
+</ul>
+</li>
+<li>Biimplication
++$$P \iff Q \equiv (P \land Q) \lor (\neg P \land \neg Q)$$</li>
+</ul>
+<h3 id="priority">
+<a id="user-content-priority" class="anchor" href="#priority" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Priority</h3>
+<p>$\neg$ binds tighter than $\land$ and $\lor$.
+These bind tighter than $\oplus$, which binds tighter than $\implies$ and $\iff$.</p>
+<h3 id="side-points">
+<a id="user-content-side-points" class="anchor" href="#side-points" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Side points</h3>
+<ul>
+<li>In logic, <em>valid</em> means <em>vacuous (void of information)</em>
+</li>
+<li>$A$ if $B$ means that $B \implies A$</li>
+<li>$A$ only if $B$ means that $A \implies B$</li>
+<li>$A$ if and only if $B$ means that $A \equiv B$</li>
+</ul>
+<h2 id="predicate-logic">
+<a id="user-content-predicate-logic" class="anchor" href="#predicate-logic" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Predicate logic</h2>
+<h4 id="general-terminology-1">
+<a id="user-content-general-terminology-1" class="anchor" href="#general-terminology-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General Terminology</h4>
+<ul>
+<li>Existential quantification (there exists) : $\exists$</li>
+<li>Universal quantification (for all) : $\forall$</li>
 <li>the arity of a function/predicate : a number that says how many arguments the function takes</li>
 <li>literal : an atomic formula or its negation</li>
+<li>valuation : a function which maps truth value to variables</li>
 </ul>
-<h4 id="concept"><a name="user-content-concept" href="#concept" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Concept</h4>
+<h4 id="concept">
+<a id="user-content-concept" class="anchor" href="#concept" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Concept</h4>
 <ul>
-<li>term - $ f(t_1, &hellip;, t_n) $<ul>
+<li>term - $f(t_1, ..., t_n)$
+<ul>
 <li>definition : a variable or a constant or a construction</li>
-<li>when $ n &gt; 0 $, $ f $ is a function symbol of arity $ n $, and each $ t_i $ is a term</li>
+<li>when $n &gt; 0$, $f$ is a function symbol of arity $n$, and each $t_i$ is a term</li>
 <li>a term is an individual or object</li>
 </ul>
 </li>
-<li>atomic formula (or atom)<ul>
-<li>a construction $ P(t_1, &hellip;, t_n) $ where $ n \ge 0 $ and $ P $ is a predicate symbol of arity $ n $</li>
-<li>an atom is an assertion ($ true $ or $ false $)</li>
-</ul>
-</li>
-<li>variable<ul>
-<li>a variable which is in the scope of a quantifier is bound. Otherwise, it&rsquo;s free</li>
-<li>TODO variable that is both free and bound in a formula</li>
-<li>a formula with no free variable occurrences is <em>closed</em></li>
-</ul>
-</li>
-<li>interpretation<ul>
-<li>Consists of<ul>
-<li>Non-empty set $ D $ (the domain, or universe)</li>
-<li>An assignment to each n-ary predicate symbol $ P $ of an n-place function $ p : D^n \rightarrow {f, t} $</li>
-<li>An assignment to each n-ary function symbol $ g $, of an n-place function $ g : D^n \rightarrow D $</li>
-<li>An assignment to each constant $ a $ of some fixed element of $ D $</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="side-points_1"><a name="user-content-side-points_1" href="#side-points_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Side points</h4>
+<li>atomic formula (or atom)
 <ul>
-<li>Usually use $ \implies $ with $ \forall $ and $ \land $ with $ \exists $</li>
-<li>$ \forall x \exists y $ is <strong>not same</strong> as $ \exists y \forall x $</li>
-<li>$ \forall x \forall y $ is same as $ \forall y \forall x $ and $ \exists x \exists y $ is same as $ \exists y \exists x $</li>
+<li>a construction $P(t_1, ..., t_n)$ where $n \ge 0$ and $P$ is a predicate symbol of arity $n$</li>
+<li>an atom is an assertion ($true$ or $false$)</li>
 </ul>
-<h2 id="extra-stuff"><a name="user-content-extra-stuff" href="#extra-stuff" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Extra Stuff</h2>
-<h3 id="terminology"><a name="user-content-terminology" href="#terminology" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Terminology</h3>
+</li>
+<li>variable
+<ul>
+<li>a variable which is in the scope of a quantifier is bound. Otherwise, it's free</li>
+<li>TODO variable that is both free and bound in a formula</li>
+<li>a formula with no free variable occurrences is <em>closed</em>
+</li>
+</ul>
+</li>
+<li>interpretation
+<ul>
+<li>Consists of
+<ul>
+<li>Non-empty set $D$ (the domain, or universe)</li>
+<li>An assignment to each n-ary predicate symbol $P$ of an n-place function $p : D^n \rightarrow \{f, t\}$</li>
+<li>An assignment to each n-ary function symbol $g$, of an n-place function $g : D^n \rightarrow D$</li>
+<li>An assignment to each constant $a$ of some fixed element of $D$</li>
+</ul>
+</li>
+<li>A wff $F$ is true interpretation I iff every valuation makes $F$ true. If not true then it is false in interpretation $I$</li>
+<li>A model for F is an interpretation I such that F is true in I. We write $I \vDash F$.</li>
+<li>A wff $F$ is logically valid iff every interpretation is a model for $F$. In that case, we write $\vDash F$</li>
+<li>$F_2$ is a logical consequence of $F_1$ iff $I \vDash F_2$ whenever $I \vDash F_1$. We write $F_1 \vDash F_2$</li>
+<li>$F_1$ and $F_2$ are logically equivalent iff $F_1 \vDash F_2$ and $F_2 \vDash F_1$. We write $F_1 \equiv F_2$</li>
+</ul>
+</li>
+<li>Satisfiability and Validity
+<ul>
+<li>A closed wff $F$ is:
+<ul>
+<li>
+<em>satisfiable</em> iff $I \vDash F$ for some interpretation $I$</li>
+<li>
+<em>valid</em> iff $I \vDash F$ for every interpretation $I$</li>
+<li>
+<em>unsatisfiable</em> iff $I \nvDash F$ for every interpretation $I$</li>
+<li>
+<em>non-valid</em> iff $I \nvDash F$ for some interpretation $I$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="side-points-1">
+<a id="user-content-side-points-1" class="anchor" href="#side-points-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Side points</h4>
+<ul>
+<li>Usually use $\implies$ with $\forall$ and $\land$ with $\exists$</li>
+<li>$\forall x \exists y$ is <strong>not same</strong> as $\exists y \forall x$</li>
+<li>$\forall x \forall y$ is same as $\forall y \forall x$ and $\exists x \exists y$ is same as $\exists y \exists x$</li>
+<li>$\exists x F \equiv \neg \forall x \neg F$</li>
+</ul>
+<h2 id="finite-state-machine">
+<a id="user-content-finite-state-machine" class="anchor" href="#finite-state-machine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Finite State Machine</h2>
+<p>A finite automation is a 5-tuple $(Q, \Sigma, \delta, q_0, F)$</p>
+<p>$Q$ is a finite set of states
+$\Sigma$ is a finite alphabet
+$\delta: Q \times \Sigma \rightarrow Q$ is the transition function; For DFA, this should be a <em>total function</em>
+$q_0 \in Q$ is the start state
+$F \subseteq Q$ are the accept states (it's a set)</p>
+<p>An alphabet $\Sigma$ can be any non-empty finite set.
+The elements of $\Sigma$ are the <em>symbols</em> of the alphabet.
+A string over $\Sigma$ is a finite sequence of symbols from $\Sigma$.
+Concatenation of a string $y$ to a string $x$ is represented by $xy$.
+The empty string is denoted by $\epsilon$.</p>
+<h3 id="deterministic-finite-automation-dfa">
+<a id="user-content-deterministic-finite-automation-dfa" class="anchor" href="#deterministic-finite-automation-dfa" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deterministic Finite Automation (DFA)</h3>
+<h4 id="properties">
+<a id="user-content-properties" class="anchor" href="#properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Properties</h4>
+<ul>
+<li>We can test whether two DFAs are equivalent by minimizing them</li>
+</ul>
+<h3 id="non-deterministic-finite-automation-nfa">
+<a id="user-content-non-deterministic-finite-automation-nfa" class="anchor" href="#non-deterministic-finite-automation-nfa" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Non-deterministic Finite Automation (NFA)</h3>
+<h4 id="properties-1">
+<a id="user-content-properties-1" class="anchor" href="#properties-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Properties</h4>
+<ul>
+<li>Every NFA has an equivalent DFA</li>
+<li>DFA corresponding to a NFA having $n$ states has at most $2^n$ states</li>
+</ul>
+<h4 id="epsilon-transition">
+<a id="user-content-epsilon-transition" class="anchor" href="#epsilon-transition" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>$\epsilon$ transition</h4>
+<p>Used to move from one state to another <em>without consuming input</em>.
+Useful to represent <strong>Union</strong> of two languages</p>
+<h4 id="convert-to-minimal-dfa">
+<a id="user-content-convert-to-minimal-dfa" class="anchor" href="#convert-to-minimal-dfa" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Convert to minimal DFA</h4>
+<p>TODO</p>
+<p><em><strong>Steps</strong></em>:</p>
+<ol>
+<li>
+<p>Reverse the NFA
+If NFA starts</p>
+</li>
+<li>
+<p>Determinize the result</p>
+</li>
+<li>
+<p>Reverse again</p>
+</li>
+<li>
+<p>Determinize</p>
+</li>
+</ol>
+<h3 id="pushdown-automata">
+<a id="user-content-pushdown-automata" class="anchor" href="#pushdown-automata" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pushdown Automata</h3>
+<p>A pushdown automata is a finite-state automation, equipped with a <strong>stack</strong>.</p>
+<p>A 6-tuple $(Q, \sigma, \Gamma, \delta, q_0, F)$ where
+$Q$ is a finite set of <strong>states</strong>
+$\sigma$ is the finite <strong>input alphabet</strong>
+$\Gamma$ is the finite <strong>stack alphabet</strong>
+$\delta : Q \times \sigma_{\epsilon} \times \Gamma_{\epsilon} \rightarrow P(Q \times \Gamma_{\epsilon})$
+$q_0 \in Q$ is the <em>start state</em>
+$F \subseteq Q$ are the accept states</p>
+<p>When the machine stops, the stack can be non-empty no matter it accepts.
+Trying to pop an empty stack leads to rejection of input.</p>
+<p>The <em>stack</em> and <em>input</em> are <em>separated</em>.</p>
+<p><em><strong>When the PDA accepts, the input must be empty.</strong></em></p>
+<h2 id="language">
+<a id="user-content-language" class="anchor" href="#language" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Language</h2>
+<p>A language over alphabet $\Sigma$ is a set of finite strings over $\Sigma$.
+$\Sigma^*$ denotes the set of all finite strings over $\Sigma$.</p>
+<p>Let say $M_1$ is an automation. $L(M_1)$ is the language recognized by $M_1$.</p>
+<h3 id="regular-language">
+<a id="user-content-regular-language" class="anchor" href="#regular-language" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Regular language</h3>
+<p>A language is <em>regular</em> iff there is a <strong>finite automation that recognizes it</strong>.</p>
+<h4 id="regular-operation">
+<a id="user-content-regular-operation" class="anchor" href="#regular-operation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Regular operation</h4>
+<ul>
+<li>Union $A \cup B$</li>
+<li>Concatenation $A \circ B = \{xy \mid x \in A, y \in B\}$</li>
+<li>Kleene Star $A^* = \{x_1x_2...x_k \mid k \ge 0, \text{ each } x_i \in A\}$
+<ul>
+<li>empty string $\epsilon$ is always in $A$</li>
+</ul>
+</li>
+</ul>
+<p>The regular languages are closed under the regular operations.</p>
+<h4 id="pumping-lemma-for-proving-non-regular">
+<a id="user-content-pumping-lemma-for-proving-non-regular" class="anchor" href="#pumping-lemma-for-proving-non-regular" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pumping lemma for proving <strong>non-regular</strong>
+</h4>
+<p>If $A$ is regular then there is a number $p$ such that for any string $s \in A$ with $|s| \ge p$, $s$ can be written as $s = xyz$ satisfying:
+$$xy^iz \in A \text{ for all } i \ge 0$$
+$$y \ne \epsilon$$
+$$|xy| \le p$$</p>
+<p>We call $p$ the <strong>pumping length</strong>.</p>
+<p><a href="Summary-Image/Regular-Language-Pumping-Lemma-Example1.png" target="_blank"><img src="Summary-Image/Regular-Language-Pumping-Lemma-Example1.png" alt="Regular-Language-Pumping-Lemma-Example1" style="max-width:100%;"></a>
+<a href="Summary-Image/Regular-Language-Pumping-Lemma-Example2.png" target="_blank"><img src="Summary-Image/Regular-Language-Pumping-Lemma-Example2.png" alt="Regular-Language-Pumping-Lemma-Example2" style="max-width:100%;"></a>
+<a href="Summary-Image/Regular-Language-Pumping-Lemma-Example3.png" target="_blank"><img src="Summary-Image/Regular-Language-Pumping-Lemma-Example3.png" alt="Regular-Language-Pumping-Lemma-Example3" style="max-width:100%;"></a>
+<a href="Summary-Image/Regular-Language-Pumping-Lemma-Example4.png" target="_blank"><img src="Summary-Image/Regular-Language-Pumping-Lemma-Example4.png" alt="Regular-Language-Pumping-Lemma-Example4" style="max-width:100%;"></a></p>
+<h3 id="context-free-languages">
+<a id="user-content-context-free-languages" class="anchor" href="#context-free-languages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Context-Free Languages</h3>
+<p>A language which can be generated by some context-free grammar is a context-free language(CFL).</p>
+<h4 id="context-free-grammar">
+<a id="user-content-context-free-grammar" class="anchor" href="#context-free-grammar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Context-Free Grammar</h4>
+<p>The language of Grammar $G$ is written as $L(G)$.</p>
+<p>A 4-tuple $(V, \sigma, R, S)$ where
+$V$ is a finite set of <em>variables</em>
+$\sigma$ is a finite of <em>terminals</em>
+$R$ is a finite set of <em>rules</em>, each consisting of a variable and a sentential form
+$S$ is the <em>start variable</em></p>
+<h4 id="parse-tree">
+<a id="user-content-parse-tree" class="anchor" href="#parse-tree" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parse Tree</h4>
+<p>A grammar that has different parse tree for some sentence is <strong>ambiguous</strong>.</p>
+<p>Sometimes we can find a better grammar which is not ambiguous and generates the same language. But, it's not always possible, some context-free languages are <strong>inherently ambiguous</strong>.</p>
+<p><a href="Summary-Image/Context-Free_Grammar-Parse-Tree-Example1.png" target="_blank"><img src="Summary-Image/Context-Free_Grammar-Parse-Tree-Example1.png" alt="Context-Free_Grammar-Parse-Tree-Example1" style="max-width:100%;"></a><a href="Summary-Image/Context-Free_Grammar-Parse-Tree-Example2.png" target="_blank"><img src="Summary-Image/Context-Free_Grammar-Parse-Tree-Example2.png" alt="Context-Free_Grammar-Parse-Tree-Example2" style="max-width:100%;"></a></p>
+<h4 id="pumping-lemma-for-proving-non-context-free">
+<a id="user-content-pumping-lemma-for-proving-non-context-free" class="anchor" href="#pumping-lemma-for-proving-non-context-free" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pumping lemma for proving non-context-free</h4>
+<p>If $A$ is context-free then there is a number $p$ such that for any string $s \in A$ with $|s| \ge p$ , $s$ can be written as $s = uvxyz$ satisfying:</p>
+<p>$$uv^ixy^iz \in A \text{ for all } i \ge 0$$
+$$|vy| &gt; 0$$
+$$|vxy| \le p$$</p>
+<p><a href="Summary-Image/Content-Free-Language-Pumping-Lemma-Example1.PNG" target="_blank"><img src="Summary-Image/Content-Free-Language-Pumping-Lemma-Example1.PNG" alt="Content-Free-Language-Pumping-Lemma-Example1" style="max-width:100%;"></a>
+<a href="Summary-Image/Content-Free-Language-Pumping-Lemma-Example2.PNG" target="_blank"><img src="Summary-Image/Content-Free-Language-Pumping-Lemma-Example2.PNG" alt="Content-Free-Language-Pumping-Lemma-Example2" style="max-width:100%;"></a></p>
+<h2 id="regular-expression">
+<a id="user-content-regular-expression" class="anchor" href="#regular-expression" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Regular expression</h2>
+<p>The regular expressions over an alphabet $\sigma = \{a_1, ..., a_n\}$ is given by the grammar $regexp \rightarrow a_1 | ... | a_n | \epsilon | \emptyset | regexp \union regexp | regexp regexp | regexp^*$.</p>
+<p>Language recognized by regular express $R$ is expressed as $L(R)$.</p>
+<p>Semantics:
+$$L(a) = \{a\}$$
+$$L(\epsilon) = \{\epsilon\}$$
+$$L(\emptyset) = \epsilon$$
+$$L(R_1 \union R_2) = L(R_1) \union L(R_2)$$
+$$L(R_1 R_2) = L(R_1) \circ L(R_2)$$
+$$L(R^<em>) = L(R)^</em>$$</p>
+<p>$L$ is regular iff $L$ can be described by a regular expression.</p>
+<h3 id="regular-expressions-from-nfas">
+<a id="user-content-regular-expressions-from-nfas" class="anchor" href="#regular-expressions-from-nfas" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Regular expressions from NFAs</h3>
+<p>Make the NFA to have only one accept state.
+You can add one more state, and make current accepting states have an $\epsilon$ transition to it.</p>
+<p><a href="Summary-Image/NFA-to-regular-expression-example.PNG" target="_blank"><img src="Summary-Image/NFA-to-regular-expression-example.PNG" alt="NFA-to-regular-expression-example" style="max-width:100%;"></a>
+<a href="Summary-Image/Regular-Expression-Law.PNG" target="_blank"><img src="Summary-Image/Regular-Expression-Law.PNG" alt="Regular-Expression-Law" style="max-width:100%;"></a>
+<a href="Summary-Image/Regular-Expression-Law2.PNG" target="_blank"><img src="Summary-Image/Regular-Expression-Law2.PNG" alt="Regular-Expression-Law2" style="max-width:100%;"></a></p>
+<h2 id="function">
+<a id="user-content-function" class="anchor" href="#function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Function</h2>
+<h3 id="surjective-or-onto">
+<a id="user-content-surjective-or-onto" class="anchor" href="#surjective-or-onto" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Surjective (or Onto)</h3>
+<p>A function $f \colon X \to Y$ is <strong>surjective</strong> iff $f[X] = Y$.</p>
+<h3 id="injective-or-one-to-one">
+<a id="user-content-injective-or-one-to-one" class="anchor" href="#injective-or-one-to-one" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Injective (or One-to-one)</h3>
+<p>A function $f \colon X \to Y$ is <strong>injective</strong> iff $f(x) = f(y) \Rightarrow x = y$.</p>
+<h3 id="bijective">
+<a id="user-content-bijective" class="anchor" href="#bijective" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bijective</h3>
+<p>A function $f \colon X \to Y$ is <strong>bijective</strong> iff $f$ is both surjective and injective.</p>
+<h3 id="composition">
+<a id="user-content-composition" class="anchor" href="#composition" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Composition</h3>
+<p>$f \colon X \to Y$ and $g \colon Y \to Z$ is the function $g \circ f \colon X \to Z$ defined by $(g \circ f)(x) = g(f(x))$. Composition makes sense as long as $ran(f) \subseteq dom(g)$. For function composition $g \circ f$, it's best read as "$g$ after $f$".</p>
+<p><em><strong>Memorize</strong></em>
+Let $f \colon X \to Y$ and $g \colon Y \to Z$.
+$$g \circ f \text{ is injective } \implies f \text{ is injective}$$ (Harder to memorize)
+$$g \circ f \text{ is surjective } \implies g \text{ is surjective}$$ (Harder to memorize)
+$$g, f \text{ are injective } \implies g \circ f \text{ is injective}$$
+$$g, f \text{ are surjective} \implies g \circ f \text{ is surjective}$$</p>
+<p>$\circ$ is associative. For $f \colon X \to Y$, $f \circ 1_x = 1_y \circ f = f$.</p>
+<h3 id="identity-function">
+<a id="user-content-identity-function" class="anchor" href="#identity-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Identity function</h3>
+<p>For a set $X$, $1_{X} \colon X \to X$ is the identity function on $X$.</p>
+<h3 id="partial-function">
+<a id="user-content-partial-function" class="anchor" href="#partial-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Partial function</h3>
+<p>We write $f \colon X \hookrightarrow Y$ to say that $f$ has a domain which is a <em><strong>subset</strong></em> of $X$($f(x)$ might be undefined for some $x \in X$).</p>
+<h4 id="total-function">
+<a id="user-content-total-function" class="anchor" href="#total-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Total function</h4>
+<p>A total function $f \colon X \to Y$ is a special case of partial function which has $f(x)$ defined for each $x \in X$.</p>
+<h3 id="image-and-co-image">
+<a id="user-content-image-and-co-image" class="anchor" href="#image-and-co-image" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Image and co-image</h3>
+<p>Let $A \subseteq X, B \subseteq Y$, and consider $f : X \rightarrow Y$.
+$f[A] = \{f(x) \mid x \in A\}$ is the <strong>image</strong> of $A$ under $f$.
+$f^{-1}[B] = \{x \in X \mid f(x) \in B\}$ is the <strong>co-image</strong> of $B$ under $f$.</p>
+<h3 id="inverse-function">
+<a id="user-content-inverse-function" class="anchor" href="#inverse-function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inverse Function</h3>
+<p>Given $f \colon X \to Y$, a function $g \colon Y \to X$ is its <strong>inverse</strong> iff $g \circ f = 1_X$ and $f \circ g = 1_Y$.</p>
+<p>An inverse function, if it exists, is <strong>unique</strong>.
+A function has an inverse function iff it's <strong>bijective</strong>.</p>
+<p>If $f \colon X \to Y$ is a bijection, we denote its inverse by $f^{-1} \colon Y \to X$.</p>
+<h2 id="set">
+<a id="user-content-set" class="anchor" href="#set" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Set</h2>
+<p>A set is a collection into a whole of definite, distinct objects of our intuition or of our thought. The objects are called the elements (members) of the set.</p>
+<p>$a \in A$ expresses that $a$ is a member of $A$.</p>
+<h3 id="properties-2">
+<a id="user-content-properties-2" class="anchor" href="#properties-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Properties</h3>
+<ul>
+<li>Empty set $\emptyset \subseteq A$ for every set $A$.</li>
+<li>A set with just a single element is a <em><strong>singleton</strong></em>
+</li>
+<li>A set with two elements is a <em><strong>pair</strong></em>
+</li>
+<li>$A \cap B = \{x \mid x \in A \land x \in B\}$ (intersection)</li>
+<li>$A \cup B = \{x \mid x \in A \lor x \in B\}$ (union)</li>
+<li>$A \ B = \{x \mid x \in A \land x \not\in B \}$ (difference)</li>
+<li>$A \oplus B = \{ (A \ B) \cup (B \ A) \}$ (symmetric difference) (TODO)</li>
+<li>If the universal set $X$ is defined, $A^c = X \ A$ is the <strong>complement</strong> of $A$</li>
+</ul>
+<h3 id="laws">
+<a id="user-content-laws" class="anchor" href="#laws" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Laws</h3>
+<h4 id="absorption">
+<a id="user-content-absorption" class="anchor" href="#absorption" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Absorption</h4>
+<p>$$A \cap A = A$$
+$$A \cup A = A$$</p>
+<h4 id="commutativity">
+<a id="user-content-commutativity" class="anchor" href="#commutativity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commutativity</h4>
+<p>$$A \cap B = B \cap A$$
+$$A \cup B = B \cup A$$</p>
+<h4 id="associativity">
+<a id="user-content-associativity" class="anchor" href="#associativity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Associativity</h4>
+<p>$$A \cap (B \cap C) = (A \cap B) \cap C$$
+$$A \cup (B \cup C) = (A \cup B) \cup C$$</p>
+<h4 id="distributivity">
+<a id="user-content-distributivity" class="anchor" href="#distributivity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Distributivity</h4>
+<p>$$A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$$
+$$A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$$</p>
+<h4 id="double-complement">
+<a id="user-content-double-complement" class="anchor" href="#double-complement" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Double complement</h4>
+<p>$$A = (A^c)^c$$</p>
+<h4 id="de-morgan">
+<a id="user-content-de-morgan" class="anchor" href="#de-morgan" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>De Morgan</h4>
+<p>$$(A \cap B)^c = A^c \cup B^c$$
+$$(A \cup B)^c = A^c \cap B^c$$</p>
+<h4 id="duality">
+<a id="user-content-duality" class="anchor" href="#duality" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Duality</h4>
+<p>$$X^c = \emptyset \text{ and } \emptyset^c = X$$</p>
+<h4 id="identity">
+<a id="user-content-identity" class="anchor" href="#identity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Identity</h4>
+<p>$$A \cup \emptyset = A \text{ and } A \cap X = A$$</p>
+<h4 id="dominance">
+<a id="user-content-dominance" class="anchor" href="#dominance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dominance</h4>
+<p>$$A \inter \emptyset = \emptyset \text{ and } A \union X = X$$</p>
+<h4 id="complementation">
+<a id="user-content-complementation" class="anchor" href="#complementation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Complementation</h4>
+<p>$$A \inter A^c = \emptyset \text{ and } A \union A^c = X$$</p>
+<h3 id="principle-of-extensionality">
+<a id="user-content-principle-of-extensionality" class="anchor" href="#principle-of-extensionality" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Principle of Extensionality</h3>
+<p>For all sets $A$ and $B$, we have $A = B \iff \forall x (x \in A \iff x \in B)$.</p>
+<h3 id="well-foundedness-todo">
+<a id="user-content-well-foundedness-todo" class="anchor" href="#well-foundedness-todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Well-foundedness (TODO)</h3>
+<p>Call a set $S$ well-founded if there is <strong>no infinite sequence</strong> $S = S_0 \in S_1 \in S_2 \in ...$.</p>
+
+<h3 id="subset">
+<a id="user-content-subset" class="anchor" href="#subset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Subset</h3>
+<p>$A$ is a <em>subset</em> of $B$ iff $\forall x(x \in A \implies x \in B)$. We use $A \subseteq B$ to represent it.</p>
+<h4 id="subset-properties">
+<a id="user-content-subset-properties" class="anchor" href="#subset-properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Subset Properties</h4>
+<ul>
+<li>$$A \subseteq B \equiv A = A \inter B \equiv B = A \union B$$</li>
+<li>$$A^c \subseteq B^c \equiv B \subseteq A$$</li>
+<li>$$A \subseteq B^c \equiv B \subseteq A^c$$</li>
+<li>$$A^c \subseteq B \equiv B^c \subseteq A$$</li>
+</ul>
+<h4 id="proper-subset">
+<a id="user-content-proper-subset" class="anchor" href="#proper-subset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Proper subset</h4>
+<p>If $A \subseteq B$ and $A \ne B$, we say that $A$ is a <strong>proper subset</strong> of $B$, and we write this $A \subset B$.</p>
+<h4 id="reflexivity">
+<a id="user-content-reflexivity" class="anchor" href="#reflexivity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reflexivity</h4>
+<p>$A \subseteq A$ ??</p>
+<h4 id="antisymmetry">
+<a id="user-content-antisymmetry" class="anchor" href="#antisymmetry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Antisymmetry</h4>
+<p>$A \subseteq B \land B \subseteq A \implies A = B$</p>
+<h4 id="transitivity">
+<a id="user-content-transitivity" class="anchor" href="#transitivity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transitivity</h4>
+<p>$A \subseteq B \land B \subseteq C \implies A \subseteq C$</p>
+<h3 id="powerset">
+<a id="user-content-powerset" class="anchor" href="#powerset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Powerset</h3>
+<p>The powerset $\powerset(X)$ of set $X$ is the set $\{A \mid A \subseteq X\}$ of all subsets of $X$, including $\emptyset$ and $X$ itself. If $X$ is finite, of cardinality $n$, then $\powerset(X)$ is of cardinality $2^n$.</p>
+<h3 id="union-of-sets">
+<a id="user-content-union-of-sets" class="anchor" href="#union-of-sets" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Union of sets</h3>
+<p>$$\bigcup {_{i \in l}} A_i = \{ x \mid \exists i \in l (x \in A_i)\}$$</p>
+<p>TODO</p>
+<h3 id="intersection-of-sets">
+<a id="user-content-intersection-of-sets" class="anchor" href="#intersection-of-sets" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Intersection of sets</h3>
+<p>$$\bigcap {_{i \in l}} A_i = \{ x \mid \forall i \in l (x \in A_i) \}$$</p>
+<p>TODO</p>
+<h3 id="cartesian-product">
+<a id="user-content-cartesian-product" class="anchor" href="#cartesian-product" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cartesian product</h3>
+<p>The Cartesian product of $A$ and $B$ is defined $A \times B = \{ (a,b) \mid a \in A \land b \in B \}$.</p>
+<p>We define the set $A^n$ of <strong>n-tuples</strong> over $A$ as $A^0 = \{\emptyset\}$ and $A^{n+1} = A \times A^n$.</p>
+<h3 id="cantors-criterion">
+<a id="user-content-cantors-criterion" class="anchor" href="#cantors-criterion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cantor’s Criterion</h3>
+<p>$$card(X) \le card(Y) \text{ iff there is a total, injective } f \colon X \to Y$$</p>
+<p>$$card(X) = card(Y) \iff card(X) \le card(Y) \land card(Y) \le card(X)$$
+$$card(X) = card(Y) \iff \text{ there exists a bijective function from $X$ to $Y$}$$</p>
+<p>$$\text{X is countable iff } card(X) \le card(\natural)$$
+$$\text{X is countable infinite iff } card(X) = card(\natural)$$</p>
+<p>$$\mathbb{Z}, \mathbb{N}^k \text{, and } \mathbb{N}^* \text{ are all countably infinite}$$</p>
+<h3 id="relation">
+<a id="user-content-relation" class="anchor" href="#relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Relation</h3>
+<p>An n-ary <strong>relation</strong> is a set of n-tuples. A relation is a subset of some Cartesian product $A_1 \times A_2 \times A_3 \times ... \times A_n$. Or, we can think of a relation as a function from $A_1 \times A_2 \times ... \times A_n$ to $\{0, 1\}$.</p>
+<h4 id="binary-relation">
+<a id="user-content-binary-relation" class="anchor" href="#binary-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Binary relation</h4>
+<p>A binary relation is a set of pairs (2-tuples).</p>
+<p>The domain of $R$ is $dom(R) = \{x \mid \exists y R(x, y)\}$
+The range of $R$ is $ran(R) = \{y \mid \exists x R(x, y)\}$</p>
+<p>We say a relation $R$ is from $A$ to $B$ if $dom(R) \subseteq A$ and $ran(R) \subseteq B$. Or, $R$ is a relation between $A$ and $B$.</p>
+<p>A relation from $A$ to $A$ is a relation ***on $A$***.</p>
+<p><em>Being unifiable</em> is a relation on <em>Term</em>.</p>
+<h5 id="identity-relation">
+<a id="user-content-identity-relation" class="anchor" href="#identity-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Identity relation</h5>
+<p>$\delta_A = \{(x,x) \mid x \in A\}$ is a relation on $A$ - <em>the identity relation</em>.</p>
+<h5 id="inverse-of-relation">
+<a id="user-content-inverse-of-relation" class="anchor" href="#inverse-of-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Inverse of relation</h5>
+<p>If $R$ is a relation from $A$ to $B$, then $R^{-1} = \{(b,a) \mid R(a,b)\}$ is a relation from $B$ to $A$, called the <strong>inverse</strong> of $R$.</p>
+<p>$$(R^{-1})^{-1} = R$$</p>
+<h5 id="reflexive-relation">
+<a id="user-content-reflexive-relation" class="anchor" href="#reflexive-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reflexive Relation</h5>
+<p>$$R \text{ is reflexive iff } R(x,x) \text{ for all } x \in A$$</p>
+<h5 id="irreflexive-relation">
+<a id="user-content-irreflexive-relation" class="anchor" href="#irreflexive-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Irreflexive Relation</h5>
+<p>$$R \text{ is irreflexive iff } R(x,x) \text{ for no } x \in A$$</p>
+<h5 id="symmetric-relation">
+<a id="user-content-symmetric-relation" class="anchor" href="#symmetric-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Symmetric Relation</h5>
+<p>$$R \text{ is symmetric iff } R(x,y) \implies R(y,x) \text{ for all x,y in A}$$</p>
+<h5 id="asymmetric-relation">
+<a id="user-content-asymmetric-relation" class="anchor" href="#asymmetric-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Asymmetric Relation</h5>
+<p>$$R \text{ is asymmetric iff } R(x,y) \implies \not R(y,x) \text{ for all x,y in A}$$</p>
+<h5 id="antisymmetric-relation">
+<a id="user-content-antisymmetric-relation" class="anchor" href="#antisymmetric-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Antisymmetric Relation</h5>
+<p>$$R \text{ is antisymmetric iff } R(x,y) \land R(y,x) \implies x = y \text{ for all x,y in A}$$</p>
+<p>In other word, for all $x, y \in A$, if $R(x,y)$ holds, $R(y,x)$ must not hold.</p>
+<h5 id="transitive-relation">
+<a id="user-content-transitive-relation" class="anchor" href="#transitive-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transitive Relation*</h5>
+<p>$$R \text{ is transitive iff } R(x,y) \land R(y,z) \implies R(x,z) \text{ for all x,y,z in A}$$</p>
+<h5 id="composing-relation">
+<a id="user-content-composing-relation" class="anchor" href="#composing-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Composing Relation</h5>
+<p>Let $R_1 \text{ and } R_2$ are relations on $A$. The composition $R_1 \circ R_2$ is the relation on $A$ defined by $(x,z) \in (R_1 \circ R_2) \iff \exists y (R_1(x,y) \land R_2(y,z))$.</p>
+<p>The n-fold composition $R^n$ is defined by
+$$R^1 = R$$
+$$R^{n+1} = R^n \circ R$$</p>
+<h5 id="equivalence-relation">
+<a id="user-content-equivalence-relation" class="anchor" href="#equivalence-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Equivalence Relation</h5>
+<p>A binary relation is reflexive, symmetric and transitive is an <em>equivalence relation</em>.</p>
+<h4 id="partial-orders">
+<a id="user-content-partial-orders" class="anchor" href="#partial-orders" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Partial orders</h4>
+<p>$R$ is a <strong>pre-order</strong> iff $R$ is <strong>transitive</strong> and <strong>reflexive</strong>.
+$R$ is a <strong>strict partial order</strong> iff $R$ is <strong>transitive</strong> and <strong>irreflexive</strong>.
+$R$ is a <strong>partial order</strong> iff $R$ is an antisymmetric preorder.
+$R$ is <strong>linear</strong> iff $R(x,y) \lor R(y,x) \lor x = y$ for all $x,y$ in $A$.</p>
+<p>A <strong>linear partial order</strong> is called a <strong>total order</strong>.
+In a <em>total order</em>, every two elements from $A$ are <strong>comparable</strong>.</p>
+<h2 id="turing-machine">
+<a id="user-content-turing-machine" class="anchor" href="#turing-machine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Turing Machine</h2>
+<p>A 7-tuple $M = (Q, \sigma, \Gamma, \delta, q_0, q_a, q_r)$ where
+$Q$ is a finite set of states.
+$\Gamma$ is a finite tape alphabet, ***which includes the blank character $\sqcup$***.
+$\sigma \subseteq \Gamma \ \{\sqcup\}$ is the input alphabet.
+$\delta : Q \times \Gamma \times \{ L, R\}$ is the transition function.
+$q_0$ is the initial state.
+$q_a$ is the accept state.
+$q_r (\ne q_a)$ is the reject state.</p>
+<p>A transition $\delta(q_i, x) = (q_j, y, d)$ depends on two things - the current state $q_i$ and the current symbol $x$ under the tape head. It will change to state $q_j$, overwrite tape symbol $x$ by $y$ and move the tape head in direction $d$.</p>
+<p>A Turing machine has distinct <em>accept state</em> and <em>reject state</em>.</p>
+<p>Turing recognizable(recursively enumerable or r.e.) languages: Those that have a Turing machine that acts as a recognizer (and does not necessarily halt).</p>
+<p>A Turing machine has an <strong>unbounded tape</strong> through which it takes its input and performs its computations. It can read from and write to the tape. It can move either left or right over the tape.</p>
+<p>A Turing machine can not only recognize some languages but also produce output through its tape.</p>
+<p>A Turing machine can also be an <strong>enumerator</strong> which can generate all strings $w \in L$ where $L$ is a language. $L$ is Turing recognizable iff some enumerator enumerates $L$.</p>
+<p>Turing machine is capable of simulating other Turing machines and DFA.
+A halting Turing machine can translate an NFA to an equivalent DFA.</p>
+<h3 id="graph-representation">
+<a id="user-content-graph-representation" class="anchor" href="#graph-representation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Graph representation</h3>
+<p>On an arrow from $q_i$ to $q_j$, we write:</p>
+<p>$x \rightarrow d$ when $\delta(q_i, x) = (q_j, x, d)$
+$x \rightarrow y,d$ when $\delta(q_i, x) = (q_j, y, d), y \ne x$</p>
+<h3 id="multitape-turing-machine">
+<a id="user-content-multitape-turing-machine" class="anchor" href="#multitape-turing-machine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Multitape Turing machine</h3>
+<p>A multitape Turing machine has $k$ tapes. The transition function will then be
+$\delta \colon Q \times \Gamma^k \to Q \times \Gamma^k \times \{L, R\}^k$.</p>
+<p>For example, $\delta(q_i, a_1, ..., a_k) = (q_j, (b_1, ..., b_k), (d_1, ..., d_k))$.</p>
+<h3 id="nondeterministic-turing-machine">
+<a id="user-content-nondeterministic-turing-machine" class="anchor" href="#nondeterministic-turing-machine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Nondeterministic Turing machine</h3>
+<p>A nondeterministic Turing machine has transition function $\delta \colon Q \times \Gamma \to \powerset(Q \times \Gamma \times \{L, R\})$.</p>
+<h3 id="decidability">
+<a id="user-content-decidability" class="anchor" href="#decidability" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Decidability</h3>
+<p>Decidable languages: <strong>Languages that are recognized by a Turing machine which halts for all input</strong>.</p>
+<p>A language is decidable iff some Turing machine decides it.</p>
+<p><a href="Summary-Image/Turing-languages.png" target="_blank"><img src="Summary-Image/Turing-languages.png" alt="Turing languages" style="max-width:100%;"></a></p>
+<h4 id="prove-undecidable-by-diagonalisation">
+<a id="user-content-prove-undecidable-by-diagonalisation" class="anchor" href="#prove-undecidable-by-diagonalisation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prove undecidable by diagonalisation.</h4>
+<p>If a set is uncountable, there is no bijection $h \colon \natural \to (\integer \to \integer)$.</p>
+<p>Proof:
+Assume $h$ exists, then $h(1), h(2), ..., h(n), ...$ contains every function in $\integer \to \integer$ without duplicates. Now construct $f \colon \integer \to \integer$ as follows: $f(n) = h(n)(n) + 1$. Then $f \ne h(n)$ for all $n$ , so we have a contradiction(proved by contradiction).</p>
+<h3 id="computability">
+<a id="user-content-computability" class="anchor" href="#computability" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Computability</h3>
+<p>Computable is what a Turing machine can compute</p>
+<h3 id="halting-problem">
+<a id="user-content-halting-problem" class="anchor" href="#halting-problem" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Halting problem</h3>
+<p>There is no machine can tell whether an algorithm can halt.</p>
+<h2 id="extra-stuff">
+<a id="user-content-extra-stuff" class="anchor" href="#extra-stuff" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extra Stuff</h2>
+<h3 id="terminology">
+<a id="user-content-terminology" class="anchor" href="#terminology" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Terminology</h3>
 <ul>
 <li>strict function : A function f is said to be strict if, when applied to a non-terminating expression, it also fails to terminate.</li>
 </ul>
-<h3 id="refutableirrefutable"><a name="user-content-refutableirrefutable" href="#refutableirrefutable" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>refutable/irrefutable</h3>
-<p>Patterns that never fail is said to be <em>irrefutable</em>.<br />
-Otherwise, it is <em>refutable</em>.</p></article></body></html>
+<h3 id="refutableirrefutable">
+<a id="user-content-refutableirrefutable" class="anchor" href="#refutableirrefutable" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Refutable/Irrefutable</h3>
+<p>Closed formula that never have truth value $0$ is said to be <strong>irrefutable</strong>.
+Otherwise, it is <strong>refutable</strong>.</p>
+<h2 id="exam-specific">
+<a id="user-content-exam-specific" class="anchor" href="#exam-specific" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Exam specific</h2>
+<ul>
+<li>Natural number $\mathbb{N}$ in this subject <em><strong>contains</strong></em> $0$</li>
+<li>There's no induction proof in the exam</li>
+<li>Wang's algorithm is non-examinable</li>
+<li>When drawing DFA, <strong>must check whether the transition function is total</strong>.</li>
+<li>When doing subset construction, <strong>must check whether I have checked all the outgoing edges</strong>.</li>
+<li>For DFA, remember to add outgoing edges for the fail state</li>
+<li>The "complement trick" only works for DFA</li>
+<li>When trying to find a <em>complement of a regular expression</em>
+<ul>
+<li>
+<ol>
+<li>convert to NFA</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>convert to DFA</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>complement the DFA</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>convert to regular expression</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="todolist">
+<a id="user-content-todolist" class="anchor" href="#todolist" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Todolist</h2>
+<ul>
+<li>Relation property closure</li>
+<li>Full relation</li>
+<li>Definition for function</li>
+<li>NFA formal definition</li>
+<li>All closure stuff</li>
+<li>Pumping lemma</li>
+<li>Turing machine configuration</li>
+</ul>
+</article></body></html>

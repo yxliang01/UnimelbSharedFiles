@@ -1,5 +1,9 @@
 # Models of Computations
 
+Summary is written by Xiao Liang Yu.
+This summary includes material that was created by my dear lecturer Harald Søndergaard.
+This document might contain some personal but controversial opinions (might be mine or Harald's).
+
 [TOC]
 
 <!-- Definition of Mathjax commands -->
@@ -13,7 +17,7 @@ $$
 
 ## Haskell
 
-This section is meant to be a complimentary to my DP-Summary.
+This section is meant to be a complimentary to my [DP-Summary](https://github.com/yxliang01/UnimelbSharedFiles/blob/master/Declarative%20Programming/DP-Summary.md).
 
 Prelude code: https://www.haskell.org/onlinereport/haskell2010/haskellch9.html
 
