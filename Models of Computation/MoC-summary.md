@@ -1,8 +1,11 @@
 # Models of Computations
 
 Summary is written by Xiao Liang Yu.
+
 This summary might include material that was created by my dear lecturer Harald Søndergaard.
+
 This document might contain some personal but controversial opinions (might be mine or Harald's).
+
 
 [TOC]
 
