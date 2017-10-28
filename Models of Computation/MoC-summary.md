@@ -6,6 +6,7 @@ This summary might include material that was created by my dear lecturer Harald 
 
 This document might contain some personal but controversial opinions (might be mine or Harald's).
 
+While most of the content is correct, it's possible that this document contains incorrect content. If you find one, please let me know by making a pull request or comment. :)
 
 [TOC]
 
@@ -706,5 +707,4 @@ Otherwise, it is **refutable**.
 - Definition for function
 - NFA formal definition
 - All closure stuff
-- Pumping lemma
 - Turing machine configuration
