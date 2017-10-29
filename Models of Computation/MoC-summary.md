@@ -6,7 +6,7 @@ This summary might include material that was created by my dear lecturer Harald 
 
 This document might contain some personal but controversial opinions (might be mine or Harald's).
 
-While most of the content is correct, it's possible that this document contains incorrect content. If you find one, please let me know by making a pull request or comment. :)
+While most of the content is correct, it's possible that this document contains incorrect content. If you find one, please let me know by making a pull request or comment. They are welcome even for formatting errors. :)
 
 [TOC]
 
@@ -33,9 +33,14 @@ Prelude code: https://www.haskell.org/onlinereport/haskell2010/haskellch9.html
 - `all :: (a -> Bool) -> [a] -> Bool`
     + `all` is similar to `and.map`
 
+## Complexity Theory
+- Satisfiability is NP-Complete.
+- Validity is Co-NP-Complete.
+
 ## Propositional Logic
 
 ### General Terminology
+- truth assignment : A truth assignment maps **each propositional letter** to $t$ or $f$
 - conjunction : $P \land Q$
 - disjunction : $P \lor Q$
 - connectives : $\neg, \lor, \land, \implies, \iff, \oplus$
@@ -45,12 +50,14 @@ Prelude code: https://www.haskell.org/onlinereport/haskell2010/haskellch9.html
 - non-valid : there exists **at least one truth assignment** to make it `false`
 - unsatisfiable : **no truth assignment** makes it `true`
 - satisfiable : there exists **at least one truth assignment** to make it `true`
+- refutable : there exists a truth assignment to make it `false`
 - tautology : a **valid propositional formula**
 - contradiction : a **unsatisfiable propositional formula**
 - substitution : replace propositional letters by formulas
 - interchange of equivalents : replace a formula with another formula
 - decidability : 
 - clause : a **set** (disjunction) of literals
+- Horn clause (non-examinable) : a clause with at most one position literal
 - clausal form : TODO
 - conjunctive normal form (CNF) : a conjunction of disjunctions of literals (a conjunction of *clauses*)
 - reduced CNF (RCNF) : CNF formula that is in RCNF if for each of its clauses, no propositional letter occurs twice
@@ -88,6 +95,10 @@ $(C_1 \\{P\\}) \cup (C_2 \\{\neg P\\})$ is a resolvent of $C_1$ and $C_2$.
 
 Theorem : If $R$ is a resolvent of $C_1$ and $C_2$ then $C_1 \land C_2 \vDash R$.
 
+$C$ is unsatisfiable iff the solution method can add $\bot$ after a finite number of steps.
+
+The method of resolution is undecida    ble.
+
 ##### As a way to verify that a CNF formula is **unsatisfiable**
 
 If we derive the empty clause $\bot$, then the original set of clauses were unsatisfiable.
@@ -101,6 +112,7 @@ We first negative the formula, then use resolution to try deriving $\bot$. If th
 A *resolution deduction* of clause $C$ from a set $S$ of clauses is a finite sequence $C_1, C_2, ... , C_n$ of clauses such that $C_n = C$ and for each $i, 1 \ge i \ge n$, $C_i$ is either a member of $S$ or a resolvent of $C_j$ and $C_k$, for some $j,k < 1$.
 
 A *resolution refutation* of a set $S$ of clauses is a resolution deduction of $\bot$ from $S$.
+
 
 ### Converting formula
 
@@ -153,14 +165,14 @@ These bind tighter than $\oplus$, which binds tighter than $\implies$ and $\iff$
 
 ## Predicate logic
 
-#### General Terminology
+### General Terminology
 - Existential quantification (there exists) : $\exists$
 - Universal quantification (for all) : $\forall$
 - the arity of a function/predicate : a number that says how many arguments the function takes
 - literal : an atomic formula or its negation
 - valuation : a function which maps truth value to variables
 
-#### Concept
+### Concept
 - term - $f(t_1, ..., t_n)$
     + definition : a variable or a constant or a construction
     + when $n > 0$, $f$ is a function symbol of arity $n$, and each $t_i$ is a term
@@ -189,11 +201,57 @@ These bind tighter than $\oplus$, which binds tighter than $\implies$ and $\iff$
         * *valid* iff $I \vDash F$ for every interpretation $I$
         * *unsatisfiable* iff $I \nvDash F$ for every interpretation $I$
         * *non-valid* iff $I \nvDash F$ for some interpretation $I$
-#### Side points
+
+### Quantifier
+
+#### Passage of Quantifier
+
+$$\exists x (\not F_1) \equiv \not \forall x F_1$$
+$$\forall x (\not F_1) \equiv \not \exists x F_1$$
+$$\exists x (F_1 \lor F_2) \equiv (\exists x F_1 \lor \exists x F_2)$$
+$$\forall x (F_1 \land F_2) \equiv (\forall x F_1) \land (\forall x F_2)$$
+
+If $G$ has no occurrence of $x$:
+$$\exists x G \equiv G$$
+$$\forall x G \equiv G$$
+$$\exists x (F \land G) \equiv (\exists x F) \land G$$
+$$\forall x (F \lor G) \equiv (\forall x F) \lor G$$
+$$\forall x (F \implies G) \equiv (\exists x F) \implies G$$
+
+
+
+### Unification
+
+A unifier of two terms $s$ and $t$ is a substitution $\theta$ such that $\theta(s) = \theta(t)$. 
+
+The terms $s$ and $t$ are **unifiable** iff there exists a unifier for $s$ and $t$.
+
+#### Most general unifier (mgu)
+
+A most general unifier (mgu) for $s$ and $t$ is a substitution $\theta$ such that $\theta$ is a unifier for $s$ and $t$ AND every other unifier $\Theta$ of $s$ and $t$ can be expressed as $\tau \circ \theta$ for some substitution $\tau$.
+
+If $s$ and $t$ are unifiable, they have a most general unifier.
+
+##### Algorithm to produce mgu
+
+![Unification-Algorithm1](Summary-Image/Unification-Algorithm1.PNG)
+![Unification-Algorithm2](Summary-Image/Unification-Algorithm2.PNG)
+
+#### Examples
+
+$P(x, a) \text{ and } P(b, c)$ are not unifiable (can't map constant to a constant).
+$P(f(x), y) \text{ and } P(a, w)$ are not unifiable (can't do $f(x) \mapsto a$)
+$P(x, c) \text{ and } P(a, y)$ are unifiable using $\\{x \mapsto a, y \mapsto c\\}$.
+$P(f(x), c) \text{ and } P(f(a), y)$ also unifiable using $\\{x \mapsto a, y \mapsto c\\}$.
+
+$P(x) \text{ and } P(f(x))$ are not unifiable since if we are allowed to unify them, substitution $\\{x \mapsto f(f(f(...)))\\}$ would also be possible but it can't happen because terms are *finite*.
+
+### Side points
 - Usually use $\implies$ with $\forall$ and $\land$ with $\exists$
 - $\forall x \exists y$ is **not same** as $\exists y \forall x$
 - $\forall x \forall y$ is same as $\forall y \forall x$ and $\exists x \exists y$ is same as $\exists y \exists x$
 - $\exists x F \equiv \neg \forall x \neg F$
+
 
 ## Finite State Machine
 
@@ -265,6 +323,18 @@ A language over alphabet $\Sigma$ is a set of finite strings over $\Sigma$.
 $\Sigma^*$ denotes the set of all finite strings over $\Sigma$.
 
 Let say $M_1$ is an automation. $L(M_1)$ is the language recognized by $M_1$.
+
+### First-order language
+
+#### Alphabets
+- Variables $(x, y, z, u, v, ...)$
+- Function symbols $(f, g, h, ..., +, ., ...)$
+- Constants $(a, b, c, 0, 1, tom, ...)$
+- Predicate Symbols $(P, Q, R, A, B, ...)$
+- Connectives
+- Quantifiers
+- Parentheses
+- $t, f$
 
 ### Regular language
 
@@ -583,7 +653,7 @@ $$R \text{ is antisymmetric iff } R(x,y) \land R(y,x) \implies x = y \text{ for 
 
 In other word, for all $x, y \in A$, if $R(x,y)$ holds, $R(y,x)$ must not hold.
 
-##### Transitive Relation*
+##### Transitive Relation
 
 $$R \text{ is transitive iff } R(x,y) \land R(y,z) \implies R(x,z) \text{ for all x,y,z in A}$$
 
@@ -681,12 +751,6 @@ There is no machine can tell whether an algorithm can halt.
 ### Terminology
 - strict function : A function f is said to be strict if, when applied to a non-terminating expression, it also fails to terminate.
 
-
-### Refutable/Irrefutable
-
-Closed formula that never have truth value $0$ is said to be **irrefutable**.
-Otherwise, it is **refutable**.
-
 ## Exam specific
 - Natural number $\mathbb{N}$ in this subject ***contains*** $0$
 - There's no induction proof in the exam
@@ -708,3 +772,4 @@ Otherwise, it is **refutable**.
 - NFA formal definition
 - All closure stuff
 - Turing machine configuration
+- Unification

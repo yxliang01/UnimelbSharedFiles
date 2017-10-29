@@ -815,7 +815,7 @@ MathJax.Hub.Config({
 <p>Summary is written by Xiao Liang Yu.</p>
 <p>This summary might include material that was created by my dear lecturer Harald Søndergaard.</p>
 <p>This document might contain some personal but controversial opinions (might be mine or Harald's).</p>
-<p>While most of the content is correct, it's possible that this document contains incorrect content. If you find one, please let me know by making a pull request or comment. :)</p>
+<p>While most of the content is correct, it's possible that this document contains incorrect content. If you find one, please let me know by making a pull request or comment. They are welcome even for formatting errors. :)</p>
 <p>[TOC]</p>
 
 <p>$$
@@ -844,11 +844,18 @@ $$</p>
 </ul>
 </li>
 </ul>
+<h2 id="complexity-theory">
+<a id="user-content-complexity-theory" class="anchor" href="#complexity-theory" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Complexity Theory</h2>
+<ul>
+<li>Satisfiability is NP-Complete.</li>
+<li>Validity is Co-NP-Complete.</li>
+</ul>
 <h2 id="propositional-logic">
 <a id="user-content-propositional-logic" class="anchor" href="#propositional-logic" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Propositional Logic</h2>
 <h3 id="general-terminology">
 <a id="user-content-general-terminology" class="anchor" href="#general-terminology" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General Terminology</h3>
 <ul>
+<li>truth assignment : A truth assignment maps <strong>each propositional letter</strong> to $t$ or $f$</li>
 <li>conjunction : $P \land Q$</li>
 <li>disjunction : $P \lor Q$</li>
 <li>connectives : $\neg, \lor, \land, \implies, \iff, \oplus$</li>
@@ -862,6 +869,8 @@ $$</p>
 </li>
 <li>satisfiable : there exists <strong>at least one truth assignment</strong> to make it <code>true</code>
 </li>
+<li>refutable : there exists a truth assignment to make it <code>false</code>
+</li>
 <li>tautology : a <strong>valid propositional formula</strong>
 </li>
 <li>contradiction : a <strong>unsatisfiable propositional formula</strong>
@@ -870,6 +879,7 @@ $$</p>
 <li>interchange of equivalents : replace a formula with another formula</li>
 <li>decidability :</li>
 <li>clause : a <strong>set</strong> (disjunction) of literals</li>
+<li>Horn clause (non-examinable) : a clause with at most one position literal</li>
 <li>clausal form : TODO</li>
 <li>conjunctive normal form (CNF) : a conjunction of disjunctions of literals (a conjunction of <em>clauses</em>)</li>
 <li>reduced CNF (RCNF) : CNF formula that is in RCNF if for each of its clauses, no propositional letter occurs twice</li>
@@ -920,6 +930,8 @@ $$</p>
 <p>Let $C_1$ and $C_2$ be clauses such that $P \in C_1$ and $\neg P \in C_2$.
 $(C_1 \{P\}) \cup (C_2 \{\neg P\})$ is a resolvent of $C_1$ and $C_2$.</p>
 <p>Theorem : If $R$ is a resolvent of $C_1$ and $C_2$ then $C_1 \land C_2 \vDash R$.</p>
+<p>$C$ is unsatisfiable iff the solution method can add $\bot$ after a finite number of steps.</p>
+<p>The method of resolution is undecida    ble.</p>
 <h5 id="as-a-way-to-verify-that-a-cnf-formula-is-unsatisfiable">
 <a id="user-content-as-a-way-to-verify-that-a-cnf-formula-is-unsatisfiable" class="anchor" href="#as-a-way-to-verify-that-a-cnf-formula-is-unsatisfiable" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>As a way to verify that a CNF formula is <strong>unsatisfiable</strong>
 </h5>
@@ -1012,8 +1024,8 @@ These bind tighter than $\oplus$, which binds tighter than $\implies$ and $\iff$
 </ul>
 <h2 id="predicate-logic">
 <a id="user-content-predicate-logic" class="anchor" href="#predicate-logic" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Predicate logic</h2>
-<h4 id="general-terminology-1">
-<a id="user-content-general-terminology-1" class="anchor" href="#general-terminology-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General Terminology</h4>
+<h3 id="general-terminology-1">
+<a id="user-content-general-terminology-1" class="anchor" href="#general-terminology-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>General Terminology</h3>
 <ul>
 <li>Existential quantification (there exists) : $\exists$</li>
 <li>Universal quantification (for all) : $\forall$</li>
@@ -1021,8 +1033,8 @@ These bind tighter than $\oplus$, which binds tighter than $\implies$ and $\iff$
 <li>literal : an atomic formula or its negation</li>
 <li>valuation : a function which maps truth value to variables</li>
 </ul>
-<h4 id="concept">
-<a id="user-content-concept" class="anchor" href="#concept" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Concept</h4>
+<h3 id="concept">
+<a id="user-content-concept" class="anchor" href="#concept" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Concept</h3>
 <ul>
 <li>term - $f(t_1, ..., t_n)$
 <ul>
@@ -1079,8 +1091,41 @@ These bind tighter than $\oplus$, which binds tighter than $\implies$ and $\iff$
 </ul>
 </li>
 </ul>
-<h4 id="side-points-1">
-<a id="user-content-side-points-1" class="anchor" href="#side-points-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Side points</h4>
+<h3 id="quantifier">
+<a id="user-content-quantifier" class="anchor" href="#quantifier" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quantifier</h3>
+<h4 id="passage-of-quantifier">
+<a id="user-content-passage-of-quantifier" class="anchor" href="#passage-of-quantifier" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Passage of Quantifier</h4>
+<p>$$\exists x (\not F_1) \equiv \not \forall x F_1$$
+$$\forall x (\not F_1) \equiv \not \exists x F_1$$
+$$\exists x (F_1 \lor F_2) \equiv (\exists x F_1 \lor \exists x F_2)$$
+$$\forall x (F_1 \land F_2) \equiv (\forall x F_1) \land (\forall x F_2)$$</p>
+<p>If $G$ has no occurrence of $x$:
+$$\exists x G \equiv G$$
+$$\forall x G \equiv G$$
+$$\exists x (F \land G) \equiv (\exists x F) \land G$$
+$$\forall x (F \lor G) \equiv (\forall x F) \lor G$$
+$$\forall x (F \implies G) \equiv (\exists x F) \implies G$$</p>
+<h3 id="unification">
+<a id="user-content-unification" class="anchor" href="#unification" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unification</h3>
+<p>A unifier of two terms $s$ and $t$ is a substitution $\theta$ such that $\theta(s) = \theta(t)$.</p>
+<p>The terms $s$ and $t$ are <strong>unifiable</strong> iff there exists a unifier for $s$ and $t$.</p>
+<h4 id="most-general-unifier-mgu">
+<a id="user-content-most-general-unifier-mgu" class="anchor" href="#most-general-unifier-mgu" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Most general unifier (mgu)</h4>
+<p>A most general unifier (mgu) for $s$ and $t$ is a substitution $\theta$ such that $\theta$ is a unifier for $s$ and $t$ AND every other unifier $\Theta$ of $s$ and $t$ can be expressed as $\tau \circ \theta$ for some substitution $\tau$.</p>
+<p>If $s$ and $t$ are unifiable, they have a most general unifier.</p>
+<h5 id="algorithm-to-produce-mgu">
+<a id="user-content-algorithm-to-produce-mgu" class="anchor" href="#algorithm-to-produce-mgu" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Algorithm to produce mgu</h5>
+<p><a href="Summary-Image/Unification-Algorithm1.PNG" target="_blank"><img src="Summary-Image/Unification-Algorithm1.PNG" alt="Unification-Algorithm1" style="max-width:100%;"></a>
+<a href="Summary-Image/Unification-Algorithm2.PNG" target="_blank"><img src="Summary-Image/Unification-Algorithm2.PNG" alt="Unification-Algorithm2" style="max-width:100%;"></a></p>
+<h4 id="examples">
+<a id="user-content-examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h4>
+<p>$P(x, a) \text{ and } P(b, c)$ are not unifiable (can't map constant to a constant).
+$P(f(x), y) \text{ and } P(a, w)$ are not unifiable (can't do $f(x) \mapsto a$)
+$P(x, c) \text{ and } P(a, y)$ are unifiable using $\{x \mapsto a, y \mapsto c\}$.
+$P(f(x), c) \text{ and } P(f(a), y)$ also unifiable using $\{x \mapsto a, y \mapsto c\}$.</p>
+<p>$P(x) \text{ and } P(f(x))$ are not unifiable since if we are allowed to unify them, substitution $\{x \mapsto f(f(f(...)))\}$ would also be possible but it can't happen because terms are <em>finite</em>.</p>
+<h3 id="side-points-1">
+<a id="user-content-side-points-1" class="anchor" href="#side-points-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Side points</h3>
 <ul>
 <li>Usually use $\implies$ with $\forall$ and $\land$ with $\exists$</li>
 <li>$\forall x \exists y$ is <strong>not same</strong> as $\exists y \forall x$</li>
@@ -1157,6 +1202,20 @@ Trying to pop an empty stack leads to rejection of input.</p>
 <p>A language over alphabet $\Sigma$ is a set of finite strings over $\Sigma$.
 $\Sigma^*$ denotes the set of all finite strings over $\Sigma$.</p>
 <p>Let say $M_1$ is an automation. $L(M_1)$ is the language recognized by $M_1$.</p>
+<h3 id="first-order-language">
+<a id="user-content-first-order-language" class="anchor" href="#first-order-language" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>First-order language</h3>
+<h4 id="alphabets">
+<a id="user-content-alphabets" class="anchor" href="#alphabets" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Alphabets</h4>
+<ul>
+<li>Variables $(x, y, z, u, v, ...)$</li>
+<li>Function symbols $(f, g, h, ..., +, ., ...)$</li>
+<li>Constants $(a, b, c, 0, 1, tom, ...)$</li>
+<li>Predicate Symbols $(P, Q, R, A, B, ...)$</li>
+<li>Connectives</li>
+<li>Quantifiers</li>
+<li>Parentheses</li>
+<li>$t, f$</li>
+</ul>
 <h3 id="regular-language">
 <a id="user-content-regular-language" class="anchor" href="#regular-language" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Regular language</h3>
 <p>A language is <em>regular</em> iff there is a <strong>finite automation that recognizes it</strong>.</p>
@@ -1411,7 +1470,7 @@ The range of $R$ is $ran(R) = \{y \mid \exists x R(x, y)\}$</p>
 <p>$$R \text{ is antisymmetric iff } R(x,y) \land R(y,x) \implies x = y \text{ for all x,y in A}$$</p>
 <p>In other word, for all $x, y \in A$, if $R(x,y)$ holds, $R(y,x)$ must not hold.</p>
 <h5 id="transitive-relation">
-<a id="user-content-transitive-relation" class="anchor" href="#transitive-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transitive Relation*</h5>
+<a id="user-content-transitive-relation" class="anchor" href="#transitive-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transitive Relation</h5>
 <p>$$R \text{ is transitive iff } R(x,y) \land R(y,z) \implies R(x,z) \text{ for all x,y,z in A}$$</p>
 <h5 id="composing-relation">
 <a id="user-content-composing-relation" class="anchor" href="#composing-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Composing Relation</h5>
@@ -1484,10 +1543,6 @@ Assume $h$ exists, then $h(1), h(2), ..., h(n), ...$ contains every function in 
 <ul>
 <li>strict function : A function f is said to be strict if, when applied to a non-terminating expression, it also fails to terminate.</li>
 </ul>
-<h3 id="refutableirrefutable">
-<a id="user-content-refutableirrefutable" class="anchor" href="#refutableirrefutable" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Refutable/Irrefutable</h3>
-<p>Closed formula that never have truth value $0$ is said to be <strong>irrefutable</strong>.
-Otherwise, it is <strong>refutable</strong>.</p>
 <h2 id="exam-specific">
 <a id="user-content-exam-specific" class="anchor" href="#exam-specific" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Exam specific</h2>
 <ul>
@@ -1532,5 +1587,6 @@ Otherwise, it is <strong>refutable</strong>.</p>
 <li>NFA formal definition</li>
 <li>All closure stuff</li>
 <li>Turing machine configuration</li>
+<li>Unification</li>
 </ul>
 </article></body></html>
