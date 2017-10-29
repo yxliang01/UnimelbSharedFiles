@@ -492,7 +492,7 @@ $a \in A$ expresses that $a$ is a member of $A$.
 - $A \cap B = \\{x \mid x \in A \land x \in B\\}$ (intersection)
 - $A \cup B = \\{x \mid x \in A \lor x \in B\\}$ (union)
 - $A \\ B = \\{x \mid x \in A \land x \not\in B \\}$ (difference)
-- $A \oplus B = \\{ (A \\ B) \cup (B \\ A) \\}$ (symmetric difference) (TODO)
+- $A \oplus B = \\{ (A \\ B) \cup (B \\ A) \\}$ (symmetric difference)
 - If the universal set $X$ is defined, $A^c = X \\ A$ is the **complement** of $A$
 
 ### Laws
@@ -546,6 +546,8 @@ Call a set $S$ well-founded if there is **no infinite sequence** $S = S_0 \in S_
 
 $A$ is a *subset* of $B$ iff $\forall x(x \in A \implies x \in B)$. We use $A \subseteq B$ to represent it.
 
+A subset relation is a partial ordering.
+
 #### Subset Properties
 - $$A \subseteq B \equiv A = A \inter B \equiv B = A \union B$$
 - $$A^c \subseteq B^c \equiv B \subseteq A$$
@@ -555,18 +557,6 @@ $A$ is a *subset* of $B$ iff $\forall x(x \in A \implies x \in B)$. We use $A \s
 #### Proper subset
 
 If $A \subseteq B$ and $A \ne B$, we say that $A$ is a **proper subset** of $B$, and we write this $A \subset B$.
-
-#### Reflexivity
-
-$A \subseteq A$ ??
-
-#### Antisymmetry
-
-$A \subseteq B \land B \subseteq A \implies A = B$
-
-#### Transitivity
-
-$A \subseteq B \land B \subseteq C \implies A \subseteq C$
 
 ### Powerset
 
@@ -589,6 +579,8 @@ TODO
 The Cartesian product of $A$ and $B$ is defined $A \times B = \\{ (a,b) \mid a \in A \land b \in B \\}$.
 
 We define the set $A^n$ of **n-tuples** over $A$ as $A^0 = \\{\emptyset\\}$ and $A^{n+1} = A \times A^n$.
+
+![Cartesian-Product-Laws](Summary-Image/Cartesian-Product-Laws.png)
 
 ### Cantor’s Criterion
 
@@ -620,6 +612,14 @@ We say a relation $R$ is from $A$ to $B$ if $dom(R) \subseteq A$ and $ran(R) \su
 A relation from $A$ to $A$ is a relation ***on $A$***.
 
 *Being unifiable* is a relation on *Term*.
+
+##### Full relation
+
+We say relation $R$ is a full relation from $A$ to $B$ iff $Dom(R) = A \land Ran(R) = B$.
+
+***Properties***
+
+- Transitive
 
 ##### Identity relation
 
@@ -657,6 +657,18 @@ In other word, for all $x, y \in A$, if $R(x,y)$ holds, $R(y,x)$ must not hold.
 
 $$R \text{ is transitive iff } R(x,y) \land R(y,z) \implies R(x,z) \text{ for all x,y,z in A}$$
 
+##### Transitive Closure
+
+Let $R$ be a relation. Transitive closure of $R$ which adds the minimum amount of elements to $R$ to make it transitive.
+
+##### Reflexive Closure
+
+Let $R$ be a relation. The reflexive closure of $R$ which adds the minimum amount of elements to $R$ to make it reflexive.
+
+##### Symmetric Closure
+
+Let $R$ be a relation. $R^+$ is the symmetric closure of $R$ which adds the minimum amount of elements to $R$ to make it symmetric.
+
 ##### Composing Relation
 
 Let $R_1 \text{ and } R_2$ are relations on $A$. The composition $R_1 \circ R_2$ is the relation on $A$ defined by $(x,z) \in (R_1 \circ R_2) \iff \exists y (R_1(x,y) \land R_2(y,z))$.
@@ -667,7 +679,7 @@ $$R^{n+1} = R^n \circ R$$
 
 ##### Equivalence Relation
 
-A binary relation is reflexive, symmetric and transitive is an *equivalence relation*.
+A binary relation is **reflexive**, **symmetric** and **transitive** is an *equivalence relation*.
 
 #### Partial orders
 
@@ -767,9 +779,7 @@ There is no machine can tell whether an algorithm can halt.
 
 ## Todolist
 - Relation property closure
-- Full relation
 - Definition for function
 - NFA formal definition
 - All closure stuff
 - Turing machine configuration
-- Unification

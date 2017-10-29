@@ -1342,7 +1342,7 @@ A function has an inverse function iff it's <strong>bijective</strong>.</p>
 <li>$A \cap B = \{x \mid x \in A \land x \in B\}$ (intersection)</li>
 <li>$A \cup B = \{x \mid x \in A \lor x \in B\}$ (union)</li>
 <li>$A \ B = \{x \mid x \in A \land x \not\in B \}$ (difference)</li>
-<li>$A \oplus B = \{ (A \ B) \cup (B \ A) \}$ (symmetric difference) (TODO)</li>
+<li>$A \oplus B = \{ (A \ B) \cup (B \ A) \}$ (symmetric difference)</li>
 <li>If the universal set $X$ is defined, $A^c = X \ A$ is the <strong>complement</strong> of $A$</li>
 </ul>
 <h3 id="laws">
@@ -1392,6 +1392,7 @@ $$(A \cup B)^c = A^c \cap B^c$$</p>
 <h3 id="subset">
 <a id="user-content-subset" class="anchor" href="#subset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Subset</h3>
 <p>$A$ is a <em>subset</em> of $B$ iff $\forall x(x \in A \implies x \in B)$. We use $A \subseteq B$ to represent it.</p>
+<p>A subset relation is a partial ordering.</p>
 <h4 id="subset-properties">
 <a id="user-content-subset-properties" class="anchor" href="#subset-properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Subset Properties</h4>
 <ul>
@@ -1403,15 +1404,6 @@ $$(A \cup B)^c = A^c \cap B^c$$</p>
 <h4 id="proper-subset">
 <a id="user-content-proper-subset" class="anchor" href="#proper-subset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Proper subset</h4>
 <p>If $A \subseteq B$ and $A \ne B$, we say that $A$ is a <strong>proper subset</strong> of $B$, and we write this $A \subset B$.</p>
-<h4 id="reflexivity">
-<a id="user-content-reflexivity" class="anchor" href="#reflexivity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reflexivity</h4>
-<p>$A \subseteq A$ ??</p>
-<h4 id="antisymmetry">
-<a id="user-content-antisymmetry" class="anchor" href="#antisymmetry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Antisymmetry</h4>
-<p>$A \subseteq B \land B \subseteq A \implies A = B$</p>
-<h4 id="transitivity">
-<a id="user-content-transitivity" class="anchor" href="#transitivity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transitivity</h4>
-<p>$A \subseteq B \land B \subseteq C \implies A \subseteq C$</p>
 <h3 id="powerset">
 <a id="user-content-powerset" class="anchor" href="#powerset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Powerset</h3>
 <p>The powerset $\powerset(X)$ of set $X$ is the set $\{A \mid A \subseteq X\}$ of all subsets of $X$, including $\emptyset$ and $X$ itself. If $X$ is finite, of cardinality $n$, then $\powerset(X)$ is of cardinality $2^n$.</p>
@@ -1427,6 +1419,7 @@ $$(A \cup B)^c = A^c \cap B^c$$</p>
 <a id="user-content-cartesian-product" class="anchor" href="#cartesian-product" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cartesian product</h3>
 <p>The Cartesian product of $A$ and $B$ is defined $A \times B = \{ (a,b) \mid a \in A \land b \in B \}$.</p>
 <p>We define the set $A^n$ of <strong>n-tuples</strong> over $A$ as $A^0 = \{\emptyset\}$ and $A^{n+1} = A \times A^n$.</p>
+<p><a href="Summary-Image/Cartesian-Product-Laws.png" target="_blank"><img src="Summary-Image/Cartesian-Product-Laws.png" alt="Cartesian-Product-Laws" style="max-width:100%;"></a></p>
 <h3 id="cantors-criterion">
 <a id="user-content-cantors-criterion" class="anchor" href="#cantors-criterion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cantor’s Criterion</h3>
 <p>$$card(X) \le card(Y) \text{ iff there is a total, injective } f \colon X \to Y$$</p>
@@ -1446,6 +1439,13 @@ The range of $R$ is $ran(R) = \{y \mid \exists x R(x, y)\}$</p>
 <p>We say a relation $R$ is from $A$ to $B$ if $dom(R) \subseteq A$ and $ran(R) \subseteq B$. Or, $R$ is a relation between $A$ and $B$.</p>
 <p>A relation from $A$ to $A$ is a relation ***on $A$***.</p>
 <p><em>Being unifiable</em> is a relation on <em>Term</em>.</p>
+<h5 id="full-relation">
+<a id="user-content-full-relation" class="anchor" href="#full-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Full relation</h5>
+<p>We say relation $R$ is a full relation from $A$ to $B$ iff $Dom(R) = A \land Ran(R) = B$.</p>
+<p><em><strong>Properties</strong></em></p>
+<ul>
+<li>Transitive</li>
+</ul>
 <h5 id="identity-relation">
 <a id="user-content-identity-relation" class="anchor" href="#identity-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Identity relation</h5>
 <p>$\delta_A = \{(x,x) \mid x \in A\}$ is a relation on $A$ - <em>the identity relation</em>.</p>
@@ -1472,6 +1472,15 @@ The range of $R$ is $ran(R) = \{y \mid \exists x R(x, y)\}$</p>
 <h5 id="transitive-relation">
 <a id="user-content-transitive-relation" class="anchor" href="#transitive-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transitive Relation</h5>
 <p>$$R \text{ is transitive iff } R(x,y) \land R(y,z) \implies R(x,z) \text{ for all x,y,z in A}$$</p>
+<h5 id="transitive-closure">
+<a id="user-content-transitive-closure" class="anchor" href="#transitive-closure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Transitive Closure</h5>
+<p>Let $R$ be a relation. Transitive closure of $R$ which adds the minimum amount of elements to $R$ to make it transitive.</p>
+<h5 id="reflexive-closure">
+<a id="user-content-reflexive-closure" class="anchor" href="#reflexive-closure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reflexive Closure</h5>
+<p>Let $R$ be a relation. The reflexive closure of $R$ which adds the minimum amount of elements to $R$ to make it reflexive.</p>
+<h5 id="symmetric-closure">
+<a id="user-content-symmetric-closure" class="anchor" href="#symmetric-closure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Symmetric Closure</h5>
+<p>Let $R$ be a relation. $R^+$ is the symmetric closure of $R$ which adds the minimum amount of elements to $R$ to make it symmetric.</p>
 <h5 id="composing-relation">
 <a id="user-content-composing-relation" class="anchor" href="#composing-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Composing Relation</h5>
 <p>Let $R_1 \text{ and } R_2$ are relations on $A$. The composition $R_1 \circ R_2$ is the relation on $A$ defined by $(x,z) \in (R_1 \circ R_2) \iff \exists y (R_1(x,y) \land R_2(y,z))$.</p>
@@ -1480,7 +1489,7 @@ $$R^1 = R$$
 $$R^{n+1} = R^n \circ R$$</p>
 <h5 id="equivalence-relation">
 <a id="user-content-equivalence-relation" class="anchor" href="#equivalence-relation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Equivalence Relation</h5>
-<p>A binary relation is reflexive, symmetric and transitive is an <em>equivalence relation</em>.</p>
+<p>A binary relation is <strong>reflexive</strong>, <strong>symmetric</strong> and <strong>transitive</strong> is an <em>equivalence relation</em>.</p>
 <h4 id="partial-orders">
 <a id="user-content-partial-orders" class="anchor" href="#partial-orders" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Partial orders</h4>
 <p>$R$ is a <strong>pre-order</strong> iff $R$ is <strong>transitive</strong> and <strong>reflexive</strong>.
@@ -1582,11 +1591,9 @@ Assume $h$ exists, then $h(1), h(2), ..., h(n), ...$ contains every function in 
 <a id="user-content-todolist" class="anchor" href="#todolist" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Todolist</h2>
 <ul>
 <li>Relation property closure</li>
-<li>Full relation</li>
 <li>Definition for function</li>
 <li>NFA formal definition</li>
 <li>All closure stuff</li>
 <li>Turing machine configuration</li>
-<li>Unification</li>
 </ul>
 </article></body></html>
